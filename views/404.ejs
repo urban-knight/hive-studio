@@ -1,5 +1,23 @@
 <% include ./partials/header %>
+    <section class="error-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <a href="/" class="logo-brand">
+                        <img src="/static/img/logo.png" alt="" class="img-responsive">
+                    </a>
+                </div>
 
-<h1>404 Page</h1>
+                <div class="col-sm-7">
+                    <div class="error-info">
+                        <h1 class="mb-30">404</h1>
+                        <span class="error-sub">OOPS! PAGE NOT FOUND</span>
 
-<% include ./partials/footer %>
+                        <p>Sorry, but we can’t seem to find the page you are looking for.</p>
+                        <a class="btn btn-lg waves-effect waves-light" href="/">Take Me Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <% include ./partials/footer %>
