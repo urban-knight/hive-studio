@@ -1,0 +1,32 @@
+{
+  "name": "hive-studio",
+  "version": "1.0.0",
+  "description": "Website for Hive Studio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urban-knight/hive-studio.git"
+  },
+  "keywords": [
+    "Hive",
+    "Web",
+    "Studio"
+  ],
+  "author": "Hive Studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/urban-knight/hive-studio/issues"
+  },
+  "homepage": "https://github.com/urban-knight/hive-studio#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10"
+  }
+}
