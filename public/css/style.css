@@ -112,6 +112,13 @@ body {
     background-color: #fff !important;
 }
 
+.logo img {
+    max-width: none !important;
+    max-height: none !important;
+    width: 160px !important;
+    height: 80px !important;
+}
+
 /* ==============================
    Common styles
    ============================== */
@@ -1525,10 +1532,10 @@ a.logo:hover{
     transition: height 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 
-
-.small-height{
-    height: 55px !important;
+ul.clearlist.scroll-nav.local-scroll {
+    margin-top: 10px !important;
 }
+
 .small-height .inner-nav ul li a{
     height: 55px !important;
     line-height: 55px !important;
@@ -6513,6 +6520,68 @@ section:hover .small-item-carousel .owl-next{
 
 .moto {
     margin-left: 10em;
+}
+
+@media only screen and (max-width: 1024px) {
+    .moto {
+
+        margin-left: -1.1em;
+        
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .moto2 {
+        line-height: 24px !important;
+        
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .moto12 {
+        padding-bottom: 0px !important;
+        
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #img-services {
+        display: none !important;
+        
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .services-head {
+        display: initial !important;
+        font-size: 45px !important;
+        text-align: center !important;
+        border: 2px solid;
+        padding: 10px 45px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .services-all {
+        float: left !important;
+        margin-top: 30px !important;
+
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .service-1-1,
+    .service-2-2,
+    .service-3-3,
+    .service-4-4,
+    .service-5-5,
+    .service-6-6 {
+        border: none !important;
+    }
+}
+
+.services-head {
+    display: none;
 }
 
 .about-img {
