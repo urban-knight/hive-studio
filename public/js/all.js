@@ -5,6 +5,13 @@
     /* ---------------------------------------------
      Scripts initialization
      --------------------------------------------- */
+
+     
+
+     
+     $('.wrap-btn').click( function() {
+        $(this).toggleClass('active');
+      });
     
     $(window).load(function(){
         
@@ -510,7 +517,7 @@ function initPageSliders(){
         $(".fullwidth-slider").owlCarousel({
             slideSpeed: 350,
             singleItem: true,
-            autoHeight: true,
+            autoHeight: false,
             navigation: true,
             navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
         });
