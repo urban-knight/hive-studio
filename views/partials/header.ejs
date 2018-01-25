@@ -27,7 +27,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113086520-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-113086520-1');
@@ -61,42 +61,42 @@
                     <ul class="clearlist scroll-nav local-scroll">
                         <li>
                             <a href="/blog">
-                                <span>Blog</span>
+                                <span><%=translation.NAV_BLOG%></span>
                             </a>
                         </li>
                         <li>
                             <a href="#about">
-                                <span>About</span>
+                                <span><%=translation.NAV_ABOUT%></span>
                             </a>
                         </li>
                         <li>
                             <a href="#services">
-                                <span>Services</span>
+                                <span><%=translation.NAV_SERVICES%></span>
                             </a>
                         </li>
                         <li>
                             <a href="#portfolio">
-                                <span>Portfolio</span>
+                                <span><%=translation.NAV_PORTFOLIO%></span>
                             </a>
                         </li>
                         <li>
                             <a href="#contact">
-                                <span>Contacts</span>
+                                <span><%=translation.NAV_CONTACTS%></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="mn-has-sub">Eng
+                            <a href="#" class="mn-has-sub"><%=translation.NAV_LANG%>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="mn-sub">
                                 <li>
-                                    <a href="#">English</a>
+                                    <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="?clang=en">English</a>
                                 </li>
                                 <li>
-                                    <a href="#">Русский</a>
+                                    <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="?clang=ua">Українська</a>
                                 </li>
                                 <li>
-                                    <a href="#">Українська</a>
+                                    <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="?clang=ru">Русский</a>
                                 </li>
                             </ul>
                         </li>
