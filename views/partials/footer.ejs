@@ -1,4 +1,4 @@
-<footer class="footer-section">
+<footer class="footer-section" id="contact">
     <div class="container-footer">
         <div class="row">
             <div class="col-md-8 col-sm-12 info-block-footer">
@@ -91,16 +91,13 @@
 
 <script type="text/javascript">
     $(function () {
-        var animspeed = 1000; // animation speed in milliseconds
-        var $blockquote = $('.bigtext');
+        var animspeed = 500; // animation speed in milliseconds
+        var $blockquote = $(this).find('.bigtext');
         var height = $blockquote.height();
-        var mini = $('.bigtext p').eq(0).height() + $('.bigtext p').eq(1).height() + $('.bigtext p').eq(2).height() + $('.bigtext p').eq(2).height();
-
+      //  var mini = $('.bigtext p').eq(0).height() + $('.bigtext p').eq(1).height() + $('.bigtext p').eq(2).height() + $('.bigtext p').eq(2).height();
         $blockquote.attr('data-fullheight', height + 'px');
-        $blockquote.attr('data-miniheight', mini + 'px');
-        $blockquote.css('height', mini + 'px');
-
-
+        $blockquote.attr('data-miniheight', 110 + 'px');
+        $blockquote.css('height', 110 + 'px');
         $('.expand').on('click', function (e) {
             $text = $(this).prev();
 
