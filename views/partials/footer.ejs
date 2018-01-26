@@ -91,35 +91,24 @@
 
 <script type="text/javascript">
     $(function () {
-        var animspeed = 500; // animation speed in milliseconds
+        var animspeed = 500; // animation speed 
         var $blockquote = $(this).find('.bigtext');
-        var height = $blockquote.height();
-      //  var mini = $('.bigtext p').eq(0).height() + $('.bigtext p').eq(1).height() + $('.bigtext p').eq(2).height() + $('.bigtext p').eq(2).height();
-        $blockquote.attr('data-fullheight', height + 'px');
-        $blockquote.attr('data-miniheight', 110 + 'px');
-        $blockquote.css('height', 110 + 'px');
+        var maxheight = 160;
+        $blockquote.css('height', maxheight + 'px');
         $('.expand').on('click', function (e) {
             $text = $(this).prev();
-
-            $text.animate({
-                'height': $text.attr('data-fullheight')
-            }, animspeed);
+            $h =  $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
+            $text.animate({'height': $h}, animspeed);
             $(this).next('.contract').removeClass('hide');
             $(this).addClass('hide');
         });
-
         $('.contract').on('click', function (e) {
             $text = $(this).prev().prev();
-
-            $text.animate({
-                'height': $text.attr('data-miniheight')
-            }, animspeed);
+            $text.animate({'height': maxheight}, animspeed);
             $(this).prev('.expand').removeClass('hide');
             $(this).addClass('hide');
         });
     });
 </script>
-
 </body>
-
 </html>
