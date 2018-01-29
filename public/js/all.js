@@ -55,10 +55,10 @@
         init_map();
         init_wow();
         init_masonry();
+        type_it_init();
     });
     
     $(window).resize(function(){
-        
         init_classic_menu_resize();
         init_side_panel_resize()
         js_height_init();
@@ -1142,4 +1142,13 @@ function split_height_init(){
         }
             
     })(jQuery);
+}
+
+// typeit init 
+function type_it_init(){
+    new TypeIt('.type-it', {
+        strings: 'IN NODE WE TRUST',
+        speed: 100,
+        startDelay: 1000
+    });
 }

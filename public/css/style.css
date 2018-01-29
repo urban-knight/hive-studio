@@ -396,15 +396,13 @@ End: Services Section (5)
 Start: Web-Light Section (6, 8)
 -------------------------------------------------------------------*/
 
-.web-light-container {
-    padding-top: 3vh;
-    padding-left: 60px; 
-    padding-right: 30px;    
+.center{
+    text-align: center;
 }
-
 .web-light-section {
     min-height: 50vh;
     background-color: #fff;
+    padding: 30px 50px;
 }
 
 .web-light-head {
@@ -423,24 +421,28 @@ Start: Web-Light Section (6, 8)
     font-weight: 500;
     color: #fff;
     background: #000;
-    padding: 0 auto;
-    margin: 5px auto !important;
+    padding: 5px;
+   
 }
 
 .web-light-decription {
+    padding: 20px 0;
     font-size: 1.5rem;
     font-weight: 300;
     color: #000;
     text-align: justify;
 }
 
-.web-light-own {
+.web-light-own a {
     text-transform: uppercase;
     font-size: 2em;
     letter-spacing: 2px;
     font-weight: 500;
     color: #000; 
     margin: 0 auto;
+}
+.web-light-own a:hover {
+text-decoration: none;
 }
 
 .own-block-1 {
@@ -518,8 +520,7 @@ Start: Web-Dark Section (7, 9)
     font-weight: 500;
     color: #000;
     background: #fff;
-    padding: 0 auto;
-    margin: 5px auto !important;
+    padding: 0 5px;
     float: right;
 }
 
