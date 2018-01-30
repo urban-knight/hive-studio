@@ -16,14 +16,16 @@
                 <div class="contacts-border">
                     <img src="/static/images/elements/contacts.svg">
                 </div>
-                <p class="contact-num">
-                    +380 (97) 409 23 03
-                </p>
-                <p class="contact-mail">
-                    info@hive-studio.net
-                </p>
+                <div class="contacts-data">
+                    <p class="contact-num">
+                        +380 (97) 409 23 03
+                    </p>
+                    <p class="contact-mail">
+                        info@hive-studio.net
+                    </p>
+                </div>
             </div>
-            <div class="col-md-4 col-sm-12 btn-block-footer">
+            <div class="col-md-4 btn-block-footer">
                 <div class="svg-wrapper btn-portfolio col-lg-12 col-md-12 col-sm-12">
                     <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
                         <rect class="shape" height="60" width="320" />
@@ -98,18 +100,19 @@
         $blockquote.css('height', maxheight + 'px');
         $('.expand').on('click', function (e) {
             $text = $(this).prev();
-            $h =  $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
-            $text.animate({'height': $h}, animspeed);
+            $h = $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
+            $text.animate({ 'height': $h }, animspeed);
             $(this).next('.contract').removeClass('hide');
             $(this).addClass('hide');
         });
         $('.contract').on('click', function (e) {
             $text = $(this).prev().prev();
-            $text.animate({'height': maxheight}, animspeed);
+            $text.animate({ 'height': maxheight }, animspeed);
             $(this).prev('.expand').removeClass('hide');
             $(this).addClass('hide');
         });
     });
 </script>
 </body>
+
 </html>

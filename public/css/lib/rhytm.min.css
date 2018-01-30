@@ -3493,10 +3493,6 @@ li {
     padding: 0;
 }
 .work-item{
-    width: 25%;
-    float: left;
-    margin: 0;
-    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
