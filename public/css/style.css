@@ -13,6 +13,7 @@ Scrollbar
 
 ::-webkit-scrollbar {
     width: 1em;
+    background-color: #484a4a;
 }
  
 ::-webkit-scrollbar-track {
@@ -779,6 +780,8 @@ Start: Footer Section (11)
 -------------------------------------------------------------------*/
 
 .footer-section {
+    padding: 40px;
+    min-height: 100vh;
     background-image: url(/static/images/sections/footer.jpg);
     width: 100%;
     display: block;
@@ -794,13 +797,7 @@ Start: Footer Section (11)
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    min-height: 100vh;
 }
-
-.container-footer {
-    padding-left: 40px;
-}
-
 .contacts-border {
     margin-top: 10vh;
     margin-left: -20px;
@@ -808,6 +805,7 @@ Start: Footer Section (11)
 }
 
 .footer-moto {
+    padding: 0 0 50px 0;
     color: #fff;
     font-size: 1.5em;
     font-weight: 300;
@@ -841,7 +839,6 @@ Start: Footer Section (11)
     top: -48px !important;
     font-weight: 300;
 }
-
 .btn-portfolio {
     margin-top: 50px;
 }
@@ -854,22 +851,9 @@ Start: Footer Section (11)
     text-decoration-line: none !important;
     color: #fff !important;
 }
-
 .btn-brief-2{
     text-decoration-line: none !important;
     color: #fff !important;
-}
-
-.contact-num {
-    font-size: 26px;
-    font-weight: 600;
-    color: #fff;
-}
-
-.contact-mail {
-    font-size: 26px;
-    font-weight: 300;
-    color: #fff;
 }
 
 .footer-copy {
@@ -902,13 +886,46 @@ Start: Footer Section (11)
 
 .btn-block-footer {
     float: right;
-    padding-top: 15vh;
+    padding-top: 5vh;
+}
+.contact-num, .contact-mail{
+    color: #fff;
+    font-size:1.5em;
+}
+.contact-num{
+    font-weight: 600;
+}
+.contacts-data{
+    width: 330px;
+    padding: 30px 50px 40px 40px;
+    background-position: left;
+    background-image: url('/static/images/elements/contacts.svg'); 
+}
+.footer-social-links{
+    padding-top: 10vh;
 }
 
-.contacts-data {
-    margin-top: -180px;
-    margin-left: 20px;
-}
+.svg-wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 320px;  
+  }
+  .shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -440;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #ffffff;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  .svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+  }
 
 /*------------------------------------------------------------------
 End: Footer Section (11)

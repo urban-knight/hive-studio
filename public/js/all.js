@@ -1152,3 +1152,23 @@ function type_it_init(){
         startDelay: 1000
     });
 }
+
+$(function () {
+    var animspeed = 500; // animation speed 
+    var $blockquote = $(this).find('.bigtext');
+    var maxheight = 160;
+    $blockquote.css('height', maxheight + 'px');
+    $('.expand').on('click', function (e) {
+        $text = $(this).prev();
+        $h = $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
+        $text.animate({ 'height': $h }, animspeed);
+        $(this).next('.contract').removeClass('hide');
+        $(this).addClass('hide');
+    });
+    $('.contract').on('click', function (e) {
+        $text = $(this).prev().prev();
+        $text.animate({ 'height': maxheight }, animspeed);
+        $(this).prev('.expand').removeClass('hide');
+        $(this).addClass('hide');
+    });
+});

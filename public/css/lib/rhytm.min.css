@@ -6564,46 +6564,6 @@ section:hover .small-item-carousel .owl-next{
     .multi-columns-row .col-lg-2:nth-child(6n + 7) { clear: left; }
     .multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
 }
-
-  
-  .svg-wrapper {
-    height: 60px;
-    margin-left: 0 auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 320px;
-  }
-  
-  .shape {
-    fill: transparent;
-    stroke-dasharray: 140 540;
-    stroke-dashoffset: -474;
-    stroke-width: 8px;
-    stroke: #fff;
-  }
-  
-
-  @keyframes draw {
-    0% {
-      stroke-dasharray: 140 540;
-      stroke-dashoffset: -474;
-      stroke-width: 8px;
-    }
-    100% {
-      stroke-dasharray: 760;
-      stroke-dashoffset: 0;
-      stroke-width: 2px;
-    }
-  }
-  
-  .svg-wrapper:hover .shape {
-    -webkit-animation: 0.5s draw linear forwards;
-    animation: 0.5s draw linear forwards;
-  }
-
-
-
 .btn-website {
     text-decoration-line: none !important;
 }

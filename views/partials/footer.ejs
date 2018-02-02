@@ -1,70 +1,69 @@
-<footer class="footer-section" id="contact">
-    <div class="container-footer">
-        <div class="row">
-            <div class="col-md-8 col-sm-12 info-block-footer">
-                <div class="footer-moto">
-                    <p class="footer-moto-head">
-                        <%=translation.FTR_MOTO1%>
-                    </p>
-                    <p class="footer-moto-head">
-                        <%=translation.FTR_MOTO2%>
-                    </p>
-                    <p class="footer-moto-sub">
-                        <%=translation.FTR_MOTO3%>
-                    </p>
-                </div>
-                <div class="contacts-border">
-                    <img src="/static/images/elements/contacts.svg">
-                </div>
-                <div class="contacts-data">
-                    <p class="contact-num">
-                        +380 (97) 409 23 03
-                    </p>
+<footer class="footer-section info-block-footer" id="contact">
+    <div class="row">
+        <div class="col-md-8 col-sm-12 ">
+            <div class="footer-moto">
+                <p class="footer-moto-head">
+                    <%=translation.FTR_MOTO1%>
+                </p>
+                <p class="footer-moto-head">
+                    <%=translation.FTR_MOTO2%>
+                </p>
+                <p class="footer-moto-sub">
+                    <%=translation.FTR_MOTO3%>
+                </p>
+            </div>
+            <div class="contacts-data">
                     <p class="contact-mail">
-                        info@hive-studio.net
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 btn-block-footer">
-                <div class="svg-wrapper btn-portfolio col-lg-12 col-md-12 col-sm-12">
-                    <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="shape" height="60" width="320" />
-                    </svg>
-                    <div class="btn-footer">
-                        <a href="#" class="btn-portfolio-2">
-                            <%=translation.FTR_PRESENTATION%>
-                        </a>
-                    </div>
-                </div>
-                <div class="svg-wrapper btn-brief col-lg-12 col-md-12 col-sm-12">
-                    <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
-                        <rect class="shape" height="60" width="320" />
-                    </svg>
-                    <div class="btn-footer">
-                        <a href="#" class="btn-brief-2">
-                            <%=translation.FTR_BRIEF%>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-social-links block-social-links">
-                <a href="#" title="Facebook" target="_blank">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a href="#" title="LinkedIn" target="_blank">
-                    <i class="fa fa-linkedin"></i>
-                </a>
-                <a href="#" title="Skype" target="_blank">
-                    <i class="fa fa-skype"></i>
-                </a>
+                            info@hive-studio.net
+                        </p>
+                <p class="contact-num">
+                    +380 (97) 409 23 03
+                </p>
+               
             </div>
         </div>
-        <div class="footer-copy">
-            <a class="copyright-hive" href="http://hive-studio.net" target="_blank">&copy;Hive-Studio 2018</a>
+        <div class="col-md-4 btn-block-footer">
+            <div class="svg-wrapper btn-portfolio col-lg-12 col-md-12 col-sm-12">
+                <svg height="60" width="300" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="shape" height="60" width="300" />
+                </svg>
+                <div class="btn-footer">
+                    <a href="#" class="btn-portfolio-2">
+                        <%=translation.FTR_PRESENTATION%>
+                    </a>
+                </div>
+            </div>
+
+   
+            <div class="svg-wrapper btn-brief col-lg-12 col-md-12 col-sm-12">
+                <svg height="60" width="300" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="shape" height="60" width="300" />
+                </svg>
+                <div class="btn-footer">
+                    <a href="#" class="btn-brief-2">
+                        <%=translation.FTR_BRIEF%>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="footer-made">
-            IN NODE WE TRUST
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-social-links block-social-links">
+            <a href="#" title="Facebook" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" title="LinkedIn" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#" title="Skype" target="_blank">
+                <i class="fa fa-skype"></i>
+            </a>
         </div>
+    </div>
+    <div class="footer-copy">
+        <a class="copyright-hive" href="http://hive-studio.net" target="_blank">&copy;Hive-Studio 2018</a>
+    </div>
+    <div class="footer-made">
+        IN NODE WE TRUST
     </div>
 </footer>
 
@@ -91,28 +90,6 @@
 <script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/static/js/particles_js/particles.min.js"></script>
 <script type="text/javascript" src="/static/js/particles_js/app.js"></script>
-
-<script type="text/javascript">
-    $(function () {
-        var animspeed = 500; // animation speed 
-        var $blockquote = $(this).find('.bigtext');
-        var maxheight = 160;
-        $blockquote.css('height', maxheight + 'px');
-        $('.expand').on('click', function (e) {
-            $text = $(this).prev();
-            $h = $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
-            $text.animate({ 'height': $h }, animspeed);
-            $(this).next('.contract').removeClass('hide');
-            $(this).addClass('hide');
-        });
-        $('.contract').on('click', function (e) {
-            $text = $(this).prev().prev();
-            $text.animate({ 'height': maxheight }, animspeed);
-            $(this).prev('.expand').removeClass('hide');
-            $(this).addClass('hide');
-        });
-    });
-</script>
 </body>
 
 </html>
