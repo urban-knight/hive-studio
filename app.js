@@ -1,4 +1,5 @@
 const dotenv = require('dotenv').config({ path: './config/.env' });
+const fs = require('fs');
 const path = require("path");
 const express = require('express');
 const i18n = require("i18n-express");
@@ -24,6 +25,14 @@ app.use(i18n({
     siteLangs: ["en", "ru", "ua"],
     textsVarName: 'translation'
 }));
+
+// --- Google verification --- //
+app.get("/google80c174e7e9120a84.html", async (req, res) => {
+    fs.readFile(path.join(__dirname, 'public/google80c174e7e9120a84.html'), function (err, data) {
+        res.set('Content-Type', 'text/html');
+        return res.status(200).send(data);
+    });
+});
 
 // --- APP ROUTINGS --- //
 app.use("/", indexRouter);
