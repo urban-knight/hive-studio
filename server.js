@@ -4,7 +4,6 @@ const http = require('http');
 const https = require('https');
 
 let http_port = process.env.APP_HTTP_PORT || 80;
-let https_port = process.env.APP_HTTPS_PORT || 443;
 let host = process.env.APP_HOST || "localhost";
 
 var insecureServer = http.createServer(app).listen(http_port, () => {
