@@ -34,6 +34,14 @@ app.get("/google80c174e7e9120a84.html", async (req, res) => {
     });
 });
 
+// --- Sitemap setup --- //
+app.get("/sitemap.xml", async (req, res) => {
+    fs.readFile(path.join(__dirname, 'public/sitemap.xml'), function (err, data) {
+        res.set('Content-Type', 'text/xml');
+        return res.status(200).send(data);
+    });
+});
+
 // --- APP ROUTINGS --- //
 app.use("/", indexRouter);
 
