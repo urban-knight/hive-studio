@@ -46,7 +46,7 @@ app.get("/sitemap.xml", async (req, res) => {
 app.use("/", indexRouter);
 
 app.get("/*", async (req, res) => {
-    return res.render("404");
+    return res.status(404).render("404");
 });
 
 app.use(error);
