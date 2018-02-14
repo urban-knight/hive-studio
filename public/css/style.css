@@ -32,9 +32,18 @@ Start: Home Section (1)
 .home-section {
     height: 100vh;
 }
-
-.moto {
+@media  only screen and (max-width:600px){
+  .moto {
     margin-left: 20px;
+  }
+}
+@media  only screen and (min-width:600px){
+  .moto {
+    margin-left: 165px;
+  }
+}
+.moto {
+    
     margin-top: 30vh;
     float: left;
 }
@@ -42,11 +51,13 @@ Start: Home Section (1)
 .moto-2 {
     margin-top: 40px;
 }
-
+.moto-head-top{
+  font-weight: 500 !important;
+}
 .moto-head {
     color: #fff;
-    font-size: 7rem;
-    font-weight: bold;
+    font-size: 8rem;
+    font-weight: 800;
     letter-spacing: 5px;
     line-height: 60px;
     text-align: left;
