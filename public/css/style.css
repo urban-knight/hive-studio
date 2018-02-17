@@ -33,45 +33,99 @@ Start: Home Section (1)
     height: 100vh;
 }
 @media  only screen and (max-width:600px){
-  .moto {
+  .main-content{
     margin-left: 20px;
+  }
+  .site-title{
+    font-size: 7rem;
   }
 }
 @media  only screen and (min-width:600px){
-  .moto {
-    margin-left: 165px;
+  .main-content{
+    margin-left: 200px;
+  }
+  .site-title{
+    font-size: 10rem;
   }
 }
-.moto {
-    
-    margin-top: 30vh;
+.main-content{
+    margin-top: 15vh;
     float: left;
 }
-
-.moto-2 {
-    margin-top: 40px;
-}
-.moto-head-top{
-  font-weight: 500 !important;
-}
-.moto-head {
+.site-subtitle{
     color: #fff;
-    font-size: 8rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    line-height: 60px;
-    text-align: left;
-    text-transform: uppercase;       
-}
-
-.moto-sub {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 2.5rem;
+    font-weight: 400;
     letter-spacing: 1px;
     text-align: left;   
 }
+.bold{
+  font-weight: 800;
+}
+.site-title{
+    white-space: pre-line;
+    color: #fff;
+    letter-spacing: 5px;
+    line-height: 0.55;
+    text-align: left;
+    text-transform: uppercase;      
+}
+.scroll-down{
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  text-align: center;
+  text-decoration: none;
+  
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  -moz-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
 
+}
+
+.scroll-down:before{
+  display: block;
+  content: "";
+  width: 35px;
+  height: 35px;
+  margin: 0 0 0 -15px;
+  position: absolute;
+  left: 50%;
+  background: #dee8e6;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  -moz-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
+  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  z-index: 1;
+}
+
+.scroll-down:hover:before{
+  opacity: .6;
+}
+.scroll-down-icon{
+  width: 25px;
+  margin-left: -10px;
+  position: absolute;
+  left: 50%;
+  
+  -webkit-animation: scroll-down-anim 1s infinite;
+  -moz-animation: scroll-down-anim 1s infinite;
+  -o-animation: scroll-down-anim 1s infinite;
+  animation: scroll-down-anim 1s infinite; 
+  z-index: 2;
+}
 
 /*------------------------------------------------------------------
 End: Home Section (1)

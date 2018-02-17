@@ -1,340 +1,339 @@
 <% include ./partials/header %>
 
-    <section class="home-section" id="home">
-        <div id="particles-js"></div>
-        <div class="home-content container">
-            <div class="moto">
-                <h1 class="moto-head-top moto-head ">
-                    hive
-                </h1>
-                <h1 class="moto-head">
-                    web
-                </h1>
-                <h1 class="moto-head">
-                    studio
-                </h1>
-                <div class="moto-2">
-                    <p class="moto-sub">
-                        <span class="type-it"></span>
-                    </p>
-                </div>
-            </div>
-            <div class="local-scroll">
-                <a href="#about" class="scroll-down">
-                    <i class="fa fa-angle-down scroll-down-icon"></i>
-                </a>
-            </div>
+  <section class="home-section" id="home">
+    <div id="particles-js"></div>
+    <div class="home-content container">
+      <div class="main-content">
+        <h1 class="site-title">
+          hive
+          <span class="bold">
+            web
+            <br>studio
+          </span>
+        </h1>
+        <div>
+          <p class="site-subtitle">
+            <span class="type-it"></span>
+          </p>
         </div>
-    </section>
+      </div>
+      <div class="local-scroll">
+        <a href="#about" class="scroll-down">
+            <img class="scroll-down-icon" src="/static/images/elements/angle-down.svg" />
+          
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <section class="about-section" id="about">
-        <div class="about-block">
-            <div class="col-md-5 col-sm-12 col-xs-12 col-i-12">
-                <img class="about-img" src="/static/images/elements/about.svg" />
+  <section class="about-section" id="about">
+    <div class="about-block">
+      <div class="col-md-5 col-sm-12 col-xs-12 col-i-12">
+        <img class="about-img" src="/static/images/elements/about.svg" />
+      </div>
+      <div class="col-md-7 col-sm-12 col-xs-12 principles-block">
+        <h1 class="principles-head">
+          We are passionate about three key principles
+        </h1>
+        <p class="principles">
+          smarter
+        </p>
+        <p class="principles">
+          faster
+        </p>
+        <p class="principles">
+          better
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Services Section -->
+  <section class="team-section">
+    <h2 class="team-head">
+      <%=translation.TEAM_TITLE%>
+    </h2>
+    <div class="team-full">
+      <div class="row">
+
+        <div class="col-md-2 col-sm-6 col-xs-12 col-md-offset-1 work-item">
+          <p class="teammate-name">
+            <%=translation.TEAM_MEMB1%>
+          </p>
+          <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
+            <div class="work-img">
+              <img src="/static/images/team/team-1.jpg" />
             </div>
-            <div class="col-md-7 col-sm-12 col-xs-12 principles-block">
-                <h1 class="principles-head">
-                    We are passionate about three key principles
-                </h1>
-                <p class="principles">
-                    smarter
-                </p>
-                <p class="principles">
-                    faster
-                </p>
-                <p class="principles">
-                    better
-                </p>
+            <div class="work-intro">
+              <h3 class="work-title">
+                <%=translation.TEAM_POS1%>
+              </h3>
             </div>
+          </a>
         </div>
-    </section>
-    <!-- End About Section -->
-
-    <!-- Services Section -->
-    <section class="team-section">
-        <h2 class="team-head">
-            <%=translation.TEAM_TITLE%>
-        </h2>
-        <div class="team-full">
-            <div class="row">
-
-                <div class="col-md-2 col-sm-6 col-xs-12 col-md-offset-1 work-item">
-                    <p class="teammate-name">
-                        <%=translation.TEAM_MEMB1%>
-                    </p>
-                    <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
-                        <div class="work-img">
-                            <img src="/static/images/team/team-1.jpg" />
-                        </div>
-                        <div class="work-intro">
-                            <h3 class="work-title">
-                                <%=translation.TEAM_POS1%>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-6 col-xs-12 work-item">
-                    <h1 class="teammate-name">
-                        <%=translation.TEAM_MEMB2%>
-                    </h1>
-                    <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
-                        <div class="work-img">
-                            <img src="/static/images/team/team-1.jpg" />
-                        </div>
-                        <div class="work-intro">
-                            <p class="work-title">
-                                <%=translation.TEAM_POS2%>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-6 col-xs-12 work-item">
-                    <h1 class="teammate-name">
-                        <%=translation.TEAM_MEMB3%>
-                    </h1>
-                    <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
-                        <div class="work-img">
-                            <img src="/static/images/team/team-1.jpg" />
-                        </div>
-                        <div class="work-intro">
-                            <p class="work-title">
-                                <%=translation.TEAM_POS3%>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-6 col-xs-12 work-item">
-                    <h1 class="teammate-name">
-                        <%=translation.TEAM_MEMB4%>
-                    </h1>
-                    <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
-                        <div class="work-img">
-                            <img src="/static/images/team/team-1.jpg" />
-                        </div>
-                        <div class="work-intro">
-                            <h3 class="work-title">
-                                <%=translation.TEAM_POS4%>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-6 col-xs-12 work-item">
-                    <h1 class="teammate-name">
-                        <%=translation.TEAM_MEMB5%>
-                    </h1>
-                    <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
-                        <div class="work-img">
-                            <img src="/static/images/team/team-1.jpg" />
-                        </div>
-                        <div class="work-intro">
-                            <h3 class="work-title">
-                                <%=translation.TEAM_POS5%>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
+        <div class="col-md-2 col-sm-6 col-xs-12 work-item">
+          <h1 class="teammate-name">
+            <%=translation.TEAM_MEMB2%>
+          </h1>
+          <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
+            <div class="work-img">
+              <img src="/static/images/team/team-1.jpg" />
             </div>
+            <div class="work-intro">
+              <p class="work-title">
+                <%=translation.TEAM_POS2%>
+              </p>
+            </div>
+          </a>
         </div>
-    </section>
-
-    <section id="services" class="sources-section">
-        <div class="services-container">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="sources-title">
-                    <%=translation.TECH_STACK%>
-                </h1>
+        <div class="col-md-2 col-sm-6 col-xs-12 work-item">
+          <h1 class="teammate-name">
+            <%=translation.TEAM_MEMB3%>
+          </h1>
+          <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
+            <div class="work-img">
+              <img src="/static/images/team/team-1.jpg" />
             </div>
-            <div class="row sources-row">
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/mongodb.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/express.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/angular.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/nodejs.png" />
-                </div>
+            <div class="work-intro">
+              <p class="work-title">
+                <%=translation.TEAM_POS3%>
+              </p>
             </div>
-            <div class="row sources-row">
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/linux.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/apache.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/mysql.png" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 brand">
-                    <img src="/static/images/brands/php.png" />
-                </div>
-            </div>
-            <div class="row sources-row2">
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/git.png" />
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/react.png" />
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/css.png" />
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/html.png" />
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/sketch.png" />
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-12 brand">
-                    <img src="/static/images/brands/principle.png" />
-                </div>
-            </div>
+          </a>
         </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="services-container">
-            <div class="services-head">
-                <h1 class="services-main-head">
-                    <%=translation.SERVICES%>
-                </h1>
-                <p class="services-sub">
-                    <%=translation.SERVICES_SUB%>
-                </p>
-                <p class="services-sub">
-                    <%=translation.SERVICES_SUB2%>
-                </p>
+        <div class="col-md-2 col-sm-6 col-xs-12 work-item">
+          <h1 class="teammate-name">
+            <%=translation.TEAM_MEMB4%>
+          </h1>
+          <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
+            <div class="work-img">
+              <img src="/static/images/team/team-1.jpg" />
             </div>
-            <div class="row">
-                <div class="col-md-2 col-md-offset-1">
-                    <p class="service-num">
-                        #1
-                    </p>
-                    <p class="service-name">
-                        <%=translation.SERVICES_NAME1%>
-                    </p>
-                    <div class="bigtext">
-                        <p class="service-description">
-                            <%=translation.SERVICES_DESC1%>
-                        </p>
-                        <div class='service-price'>
-                            From $1000
-                        </div>
-                    </div>
-                    <div class="expand">
-                        <div class="more">More</div>
-                        <div class="more-line"></div>
-                    </div>
-                    <div class="contract hide">
-                        <div class="less">×</div>
-                        <div class="less-line"></div>
+            <div class="work-intro">
+              <h3 class="work-title">
+                <%=translation.TEAM_POS4%>
+              </h3>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12 work-item">
+          <h1 class="teammate-name">
+            <%=translation.TEAM_MEMB5%>
+          </h1>
+          <a href="/static/images/team/team-1.jpg" class="work-lightbox-link">
+            <div class="work-img">
+              <img src="/static/images/team/team-1.jpg" />
+            </div>
+            <div class="work-intro">
+              <h3 class="work-title">
+                <%=translation.TEAM_POS5%>
+              </h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <p class="service-num">
-                        #2
-                    </p>
-                    <p class="service-name">
-                        <%=translation.SERVICES_NAME2%>
-                    </p>
-                    <div class="bigtext">
-                        <p class="service-description">
-                            <%=translation.SERVICES_DESC2%>
-                        </p>
-                        <div class='service-price'>
-                            From $1000
-                        </div>
-                    </div>
-                    <div class="expand">
-                        <div class="more">More</div>
-                        <div class="more-line"></div>
-                    </div>
-                    <div class="contract hide">
-                        <div class="less">×</div>
-                        <div class="less-line"></div>
+  <section id="services" class="sources-section">
+    <div class="services-container">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <h1 class="sources-title">
+          <%=translation.TECH_STACK%>
+        </h1>
+      </div>
+      <div class="row sources-row">
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/mongodb.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/express.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/angular.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/nodejs.png" />
+        </div>
+      </div>
+      <div class="row sources-row">
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/linux.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/apache.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/mysql.png" />
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 brand">
+          <img src="/static/images/brands/php.png" />
+        </div>
+      </div>
+      <div class="row sources-row2">
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/git.png" />
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/react.png" />
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/css.png" />
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/html.png" />
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/sketch.png" />
+        </div>
+        <div class="col-md-2 col-sm-4 col-xs-12 brand">
+          <img src="/static/images/brands/principle.png" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <p class="service-num">
-                        #3
-                    </p>
-                    <p class="service-name">
-                        <%=translation.SERVICES_NAME3%>
-                    </p>
-                    <div class="bigtext">
-                        <p class="service-description">
-                            <%=translation.SERVICES_DESC3%>
-                        </p>
-                        <div class='service-price'>
-                            From $1000
-                        </div>
-                    </div>
-                    <div class="expand">
-                        <div class="more">More</div>
-                        <div class="more-line"></div>
-                    </div>
-                    <div class="contract hide">
-                        <div class="less">×</div>
-                        <div class="less-line"></div>
+  <section id="services" class="services-section">
+    <div class="services-container">
+      <div class="services-head">
+        <h1 class="services-main-head">
+          <%=translation.SERVICES%>
+        </h1>
+        <p class="services-sub">
+          <%=translation.SERVICES_SUB%>
+        </p>
+        <p class="services-sub">
+          <%=translation.SERVICES_SUB2%>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+          <p class="service-num">
+            #1
+          </p>
+          <p class="service-name">
+            <%=translation.SERVICES_NAME1%>
+          </p>
+          <div class="bigtext">
+            <p class="service-description">
+              <%=translation.SERVICES_DESC1%>
+            </p>
+            <div class='service-price'>
+              From $1000
+            </div>
+          </div>
+          <div class="expand">
+            <div class="more">More</div>
+            <div class="more-line"></div>
+          </div>
+          <div class="contract hide">
+            <div class="less">×</div>
+            <div class="less-line"></div>
 
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <p class="service-num">
-                        #4
-                    </p>
-                    <p class="service-name">
-                        <%=translation.SERVICES_NAME4%>
-                    </p>
-                    <div class="bigtext">
-                        <p class="service-description">
-                            <%=translation.SERVICES_DESC4%>
-                        </p>
-                        <div class='service-price'>
-                            From $1000
-                        </div>
-                    </div>
-                    <div class="expand">
-                        <div class="more">More</div>
-                        <div class="more-line"></div>
-                    </div>
-                    <div class="contract hide">
-                        <div class="less">×</div>
-                        <div class="less-line"></div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <p class="service-num">
+            #2
+          </p>
+          <p class="service-name">
+            <%=translation.SERVICES_NAME2%>
+          </p>
+          <div class="bigtext">
+            <p class="service-description">
+              <%=translation.SERVICES_DESC2%>
+            </p>
+            <div class='service-price'>
+              From $1000
+            </div>
+          </div>
+          <div class="expand">
+            <div class="more">More</div>
+            <div class="more-line"></div>
+          </div>
+          <div class="contract hide">
+            <div class="less">×</div>
+            <div class="less-line"></div>
 
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <p class="service-num">
-                        #5
-                    </p>
-                    <p class="service-name">
-                        <%=translation.SERVICES_NAME5%>
-                    </p>
-                    <div class="bigtext">
-                        <p class="service-description">
-                            <%=translation.SERVICES_DESC5%>
-                        </p>
-                        <div class='service-price'>
-                            From $1000
-                        </div>
-                    </div>
-                    <div class="expand">
-                        <div class="more">More</div>
-                        <div class="more-line"></div>
-                    </div>
-                    <div class="contract hide">
-                        <div class="less">×</div>
-                        <div class="less-line"></div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <p class="service-num">
+            #3
+          </p>
+          <p class="service-name">
+            <%=translation.SERVICES_NAME3%>
+          </p>
+          <div class="bigtext">
+            <p class="service-description">
+              <%=translation.SERVICES_DESC3%>
+            </p>
+            <div class='service-price'>
+              From $1000
+            </div>
+          </div>
+          <div class="expand">
+            <div class="more">More</div>
+            <div class="more-line"></div>
+          </div>
+          <div class="contract hide">
+            <div class="less">×</div>
+            <div class="less-line"></div>
 
-                    </div>
-                </div>
-                <!--
+          </div>
+        </div>
+        <div class="col-md-2">
+          <p class="service-num">
+            #4
+          </p>
+          <p class="service-name">
+            <%=translation.SERVICES_NAME4%>
+          </p>
+          <div class="bigtext">
+            <p class="service-description">
+              <%=translation.SERVICES_DESC4%>
+            </p>
+            <div class='service-price'>
+              From $1000
+            </div>
+          </div>
+          <div class="expand">
+            <div class="more">More</div>
+            <div class="more-line"></div>
+          </div>
+          <div class="contract hide">
+            <div class="less">×</div>
+            <div class="less-line"></div>
+
+          </div>
+        </div>
+        <div class="col-md-2">
+          <p class="service-num">
+            #5
+          </p>
+          <p class="service-name">
+            <%=translation.SERVICES_NAME5%>
+          </p>
+          <div class="bigtext">
+            <p class="service-description">
+              <%=translation.SERVICES_DESC5%>
+            </p>
+            <div class='service-price'>
+              From $1000
+            </div>
+          </div>
+          <div class="expand">
+            <div class="more">More</div>
+            <div class="more-line"></div>
+          </div>
+          <div class="contract hide">
+            <div class="less">×</div>
+            <div class="less-line"></div>
+
+          </div>
+        </div>
+        <!--
                 <div class="col-md-2">
                     <p class="service-num">
                         #6
@@ -361,216 +360,216 @@
                     </div>
                 </div>
                 -->
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="web-light-section">
+  <section class="web-light-section">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="banner-content">
+          <p class="web-light-head">landing</p>
+          <p class="web-light-price">from 500$</p>
+          <p class="web-light-decription">
+            Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+            lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
+          </p>
+          <div class="col-md-10 own-block-1">
+            <div class="web-light-own">
+              <a href="#">create your own
+                <i class="fa fa-angle-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <img src="/static/images/portfolio/paktum.jpg" class="img-light" />
+      </div>
+    </div>
+  </section>
+
+  <section class="web-dark-section">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner">
+        <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-info">
+        <div class="banner-content">
+          <p class="web-dark-head">Corporate</p>
+          <p class="web-dark-price">from 2000$</p>
+          <p class="web-dark-decription">
+            Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+            lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
+          </p>
+          <div class="col-md-12 own-block-dark">
+            <div class="web-dark-own">
+              <a href="#">
+                <i class="fa fa-angle-down"></i>
+                create your own
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner2">
+        <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
+      </div>
+    </div>
+  </section>
+
+  <section class="web-light-section">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <div class="banner-content">
+          <p class="web-light-head">Blog</p>
+          <p class="web-light-price">from 3000$</p>
+          <p class="web-light-decription">
+            Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+            lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
+          </p>
+          <div class="col-md-10 own-block-1">
+            <div class="web-light-own">
+              <a href="#">create your own
+                <i class="fa fa-angle-down"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <img src="/static/images/portfolio/paktum.jpg" class="img-light" />
+      </div>
+    </div>
+  </section>
+
+  <section class="web-dark-section">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner">
+        <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-info">
+        <div class="banner-content">
+          <p class="web-dark-head">Store</p>
+          <p class="web-dark-price">from 4000$</p>
+          <p class="web-dark-decription">
+            Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+            lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
+          </p>
+          <div class="col-md-12 own-block-dark">
+            <div class="web-dark-own">
+              <a href="#">
+                <i class="fa fa-angle-down"></i>
+                create your own
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner2">
+        <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
+      </div>
+    </div>
+  </section>
+
+  <h1 class="portfolio-main-head">
+    our
+    <strong>portfolio</strong>
+  </h1>
+  <section class="portfolio-section fullwidth-slider">
+    <div>
+      <div class="container-portfolio">
         <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="banner-content">
-                    <p class="web-light-head">landing</p>
-                    <p class="web-light-price">from 500$</p>
-                    <p class="web-light-decription">
-                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                        lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
-                    </p>
-                    <div class="col-md-10 own-block-1">
-                        <div class="web-light-own">
-                            <a href="#">create your own
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <div class="center portfolio-1">
+            <div class="col-md-6 col-sm-12 col-xs-12 portfolio-desc">
+              <div class="portfolio-content">
+                <p class="portfolio-sub-head">landing page</p>
+                <p class="portfolio-head">Paktum</p>
+                <p class="portfolio-goals">
+                  Goals
+                </p>
+                <p class="portfolio-goals-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+                <p class="portfolio-we-did">
+                  We did
+                </p>
+                <p class="portfolio-we-did-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <img src="/static/images/portfolio/paktum.jpg" class="img-light" />
+            <div class="col-md-6 col-sm-12 col-xs-12 portfolio-img">
+              <img src="/static/images/portfolio/paktum.jpg" width="700px" />
             </div>
+          </div>
         </div>
-    </section>
-
-    <section class="web-dark-section">
+      </div>
+    </div>
+    <div>
+      <div class="container-portfolio">
         <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner">
-                <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
+          <div class="col-md-12 text-center portfolio-1">
+            <div class="col-sm-6">
+              <div class="portfolio-content">
+                <p class="portfolio-sub-head">landing page</p>
+                <p class="portfolio-head">Paktum</p>
+                <p class="portfolio-goals">
+                  Goals
+                </p>
+                <p class="portfolio-goals-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+                <p class="portfolio-we-did">
+                  We did
+                </p>
+                <p class="portfolio-we-did-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-info">
-                <div class="banner-content">
-                    <p class="web-dark-head">Corporate</p>
-                    <p class="web-dark-price">from 2000$</p>
-                    <p class="web-dark-decription">
-                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                        lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
-                    </p>
-                    <div class="col-md-12 own-block-dark">
-                        <div class="web-dark-own">
-                            <a href="#">
-                                <i class="fa fa-angle-down"></i>
-                                create your own
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-sm-6 portfolio-img">
+              <img src="/static/images/portfolio/paktum.jpg" width="700px" />
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner2">
-                <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
-            </div>
+          </div>
         </div>
-    </section>
-
-    <section class="web-light-section">
+      </div>
+    </div>
+    <div>
+      <div class="container-portfolio">
         <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <div class="banner-content">
-                    <p class="web-light-head">Blog</p>
-                    <p class="web-light-price">from 3000$</p>
-                    <p class="web-light-decription">
-                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                        lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
-                    </p>
-                    <div class="col-md-10 own-block-1">
-                        <div class="web-light-own">
-                            <a href="#">create your own
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-md-12 text-center portfolio-1">
+            <div class="col-sm-6">
+              <div class="portfolio-content">
+                <p class="portfolio-sub-head">landing page</p>
+                <p class="portfolio-head">Paktum</p>
+                <p class="portfolio-goals">
+                  Goals
+                </p>
+                <p class="portfolio-goals-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+                <p class="portfolio-we-did">
+                  We did
+                </p>
+                <p class="portfolio-we-did-desc">
+                  Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
+                  lectus.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <img src="/static/images/portfolio/paktum.jpg" class="img-light" />
+            <div class="col-sm-6 portfolio-img">
+              <img src="/static/images/portfolio/paktum.jpg" width="700px" />
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="web-dark-section">
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner">
-                <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-info">
-                <div class="banner-content">
-                    <p class="web-dark-head">Store</p>
-                    <p class="web-dark-price">from 4000$</p>
-                    <p class="web-dark-decription">
-                        Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                        lectus. Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor.
-                    </p>
-                    <div class="col-md-12 own-block-dark">
-                        <div class="web-dark-own">
-                            <a href="#">
-                                <i class="fa fa-angle-down"></i>
-                                create your own
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12 web-dark-banner2">
-                <img src="/static/images/portfolio/dmcc.jpg" class="img-dark" />
-            </div>
-        </div>
-    </section>
-
-    <h1 class="portfolio-main-head">
-        our
-        <strong>portfolio</strong>
-    </h1>
-    <section class="portfolio-section fullwidth-slider">
-        <div>
-            <div class="container-portfolio">
-                <div class="row">
-                    <div class="center portfolio-1">
-                        <div class="col-md-6 col-sm-12 col-xs-12 portfolio-desc">
-                            <div class="portfolio-content">
-                                <p class="portfolio-sub-head">landing page</p>
-                                <p class="portfolio-head">Paktum</p>
-                                <p class="portfolio-goals">
-                                    Goals
-                                </p>
-                                <p class="portfolio-goals-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                                <p class="portfolio-we-did">
-                                    We did
-                                </p>
-                                <p class="portfolio-we-did-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12 portfolio-img">
-                            <img src="/static/images/portfolio/paktum.jpg" width="700px" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="container-portfolio">
-                <div class="row">
-                    <div class="col-md-12 text-center portfolio-1">
-                        <div class="col-sm-6">
-                            <div class="portfolio-content">
-                                <p class="portfolio-sub-head">landing page</p>
-                                <p class="portfolio-head">Paktum</p>
-                                <p class="portfolio-goals">
-                                    Goals
-                                </p>
-                                <p class="portfolio-goals-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                                <p class="portfolio-we-did">
-                                    We did
-                                </p>
-                                <p class="portfolio-we-did-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 portfolio-img">
-                            <img src="/static/images/portfolio/paktum.jpg" width="700px" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="container-portfolio">
-                <div class="row">
-                    <div class="col-md-12 text-center portfolio-1">
-                        <div class="col-sm-6">
-                            <div class="portfolio-content">
-                                <p class="portfolio-sub-head">landing page</p>
-                                <p class="portfolio-head">Paktum</p>
-                                <p class="portfolio-goals">
-                                    Goals
-                                </p>
-                                <p class="portfolio-goals-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                                <p class="portfolio-we-did">
-                                    We did
-                                </p>
-                                <p class="portfolio-we-did-desc">
-                                    Proin fringilla augue at maximus vestibulum. Nam pulvinar vitae neque et porttitor. Integer non dapibus diam, ac eleifend
-                                    lectus.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 portfolio-img">
-                            <img src="/static/images/portfolio/paktum.jpg" width="700px" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <% include ./partials/footer %>
+  <% include ./partials/footer %>
