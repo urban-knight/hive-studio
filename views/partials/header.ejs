@@ -15,15 +15,11 @@
 
     <link rel="canonical" href="https://www.hive-studio.net" />
     <link rel="shortcut icon" href="/static/images/favicon.png">
-
-    <link rel="stylesheet" href="/static/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/lib/grid-system.min.css"> 
     <link rel="stylesheet" href="/static/css/lib/rhytm.min.css">
-    <link rel="stylesheet" href="/static/css/lib/style-responsive.css">
-    <link rel="stylesheet" href="/static/css/lib/animate.min.css">
-    <link rel="stylesheet" href="/static/css/lib/vertical-rhythm.min.css">
     <link rel="stylesheet" href="/static/css/lib/owl.carousel.css">
-    <link rel="stylesheet" href="/static/css/lib/magnific-popup.css">
     <link rel="stylesheet" href="/static/css/lib/particles.css">
+    <link rel="stylesheet" href="/static/css/lib/jquery.fullpage.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -32,7 +28,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'UA-113086520-1');
     </script>
 
@@ -63,7 +58,11 @@
                     </a>
                 </div>
                 <div class="mobile-nav">
-                    <i class="fa fa-bars"></i>
+                  <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                  </div> 
                 </div>
                 <div class="inner-nav desktop-nav">
                     <ul class="clearlist scroll-nav local-scroll">
@@ -73,28 +72,30 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#about">
+                            <a href="../#about">
                                 <span><%=translation.NAV_ABOUT%></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#services">
+                            <a href="../#services">
                                 <span><%=translation.NAV_SERVICES%></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#portfolio">
+                            <a href="../#portfolio">
                                 <span><%=translation.NAV_PORTFOLIO%></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#contact">
+                            <a href="../#contact">
                                 <span><%=translation.NAV_CONTACTS%></span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#" class="mn-has-sub"><%=translation.NAV_LANG%>
-                                <i class="fa fa-angle-down"></i>
+                        <li >
+                            <a  class="mn-has-sub"><%=translation.NAV_LANG%>
+                              
+                             <!-- <div class="down"></div> -->
+                             
                             </a>
                             <ul class="mn-sub">
                                 <li>

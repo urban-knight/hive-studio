@@ -1,12 +1,9 @@
 (function($){
     "use strict"; // Start of use strict
     
-    
     /* ---------------------------------------------
      Scripts initialization
      --------------------------------------------- */
-
-     
 
      
      $('.wrap-btn').click( function() {
@@ -46,7 +43,7 @@
         init_fullscreen_menu();
         init_side_panel();
         init_lightbox();
-        init_parallax();
+       init_parallax();
         init_shortcodes();
         init_tooltips();
         init_counters();
@@ -56,6 +53,16 @@
         init_wow();
         init_masonry();
         type_it_init();
+        $(".hamburger").click(function(){
+          $(this).toggleClass("is-active");
+        });
+       /* $('#fullpage').fullpage({
+         // anchors:['home','about', 'team', 'technology_stack', 'services','landing', 'corporate', 'blog', 'store', 'portfolio','contact']
+         sectionSelector: '.section',
+         scrollOverflow: true,
+         navigation: true,
+         loopBottom: true
+          });*/
     });
     
     $(window).resize(function(){
