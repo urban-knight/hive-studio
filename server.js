@@ -1,7 +1,6 @@
 const fs = require("fs");
 const app = require("./app");
 const http = require('http');
-const https = require('https');
 
 let http_port = process.env.APP_HTTP_PORT || 80;
 let host = process.env.APP_HOST || "localhost";

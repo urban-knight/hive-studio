@@ -5,6 +5,7 @@ const express = require('express');
 const i18n = require("i18n-express");
 const bodyParser = require('body-parser');
 const { error } = require("./middleware");
+const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 
@@ -17,32 +18,27 @@ app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use('/static', express.static(__dirname + "/public"));
+app.use('/', express.static(__dirname + "/files"));
 app.use(methodOverride("_method"));
+app.use(cookieParser("hive-studio"));
+
+app.use(session({
+    secret: "hive-studio",
+    resave: true,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}));
 
 // --- i18n Config --- //
 app.use(i18n({
     translationsPath: path.join(__dirname, 'lang'),
     siteLangs: ["en", "ru", "ua"],
-    textsVarName: 'translation'
+    textsVarName: 'translation',
+    cookieLangName: 'lang'
 }));
 
-// --- Google verification --- //
-app.get("/google80c174e7e9120a84.html", async (req, res) => {
-    fs.readFile(path.join(__dirname, 'public/google80c174e7e9120a84.html'), function (err, data) {
-        res.set('Content-Type', 'text/html');
-        return res.status(200).send(data);
-    });
-});
-
-// --- Sitemap setup --- //
-app.get("/sitemap.xml", async (req, res) => {
-    fs.readFile(path.join(__dirname, 'public/sitemap.xml'), function (err, data) {
-        res.set('Content-Type', 'text/xml');
-        return res.status(200).send(data);
-    });
-});
-
 // --- APP ROUTINGS --- //
+
 app.use("/", indexRouter);
 
 app.get("/*", async (req, res) => {
