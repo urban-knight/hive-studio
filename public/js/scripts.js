@@ -15,12 +15,14 @@ function fullPageInit() {
     sectionSelector: '.fp-js',
     anchors: ['home', 'about', 'sd'],
     navigation: true,
+    css3: true,
     onLeave: function (index, nextIndex, direction) {
+      
       var navigation = $('#fp-nav ul li a span');
-      var lang_switcher =   $('.lang-switcher a');
+      var lang_switcher = $('.lang-switcher a');
       var logo = $('div.site-logo a img');
 
-      if ($(this).hasClass('dark-section')) {
+      if (nextIndex % 2 == 0) {
         navigation.css('background', '#333');
         lang_switcher.addClass('dark');
         $('.nav a ').addClass('dark');

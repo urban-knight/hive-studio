@@ -98,6 +98,13 @@ ul {
 a:focus, a:hover, a{
   text-decoration: none;
 }
+/*--------Custom Scrollbar--------------*/
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
 /*----------Languages switcher ---------------*/
 
 .lang-switcher{
