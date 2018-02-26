@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900&subset=cyrillic,cyrillic-ext');
-
+@font-face {
+  font-family: "Montserrat_hive";
+  src: url("../fonts/Montserrat_hive-regular_fin.otf"); 
+  font-style: normal; 
+}
 /*-----------------------------------------------
                         Init styles
 -------------------------------------------------*/
@@ -21,16 +25,26 @@ body{
   line-height: 1.6;    
   -webkit-font-smoothing: antialiased;
 }
+.hive-logo{
+  font-family: 'Montserrat_hive';
+}
 h1,h2,h3,h4,h5,h6{
   font-weight: 400;
   margin: 30px 0 5px 0;
 }
 @media  only screen and (max-width:600px){
  h1{
-  font-size: 7rem;
-  line-height: 7rem;
-  left: 0;
+  font-size: 5rem;
+  line-height: 5rem;
  }
+ .site_title{
+  top: 25vh !important;
+  left: 4% !important;
+  width: 100%;
+ }
+ .subtitle{
+  font-size: 3rem;
+}
 }
 @media  only screen and (min-width:600px){
   h1{
@@ -73,7 +87,6 @@ canvas {
   width: 100%;
   height: 100vh;
   display: block;
-    vertical-align: bottom;
 }
 strong{
   font-weight: 800;
@@ -82,9 +95,44 @@ ul {
   margin: 0;
   padding: 0;
 }
-a:focus{
+a:focus, a:hover, a{
   text-decoration: none;
 }
+/*----------Languages switcher ---------------*/
+
+.lang-switcher{
+  position: absolute;
+  top:10px;
+  z-index: 1001;
+  left: 20px;
+}
+.lang-switcher a{
+  display: block;
+}
+.lang-switcher a, .lang-switcher-mobile a{
+  margin: 10px !important;
+  padding: 10px !important;
+  color: #fff;
+  border: 1px solid #fff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
+
+.lang-switcher a:hover, .lang-selected{
+  color: #000 !important;
+  background: #fff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
+.lang-switcher-mobile{
+  display: none;
+}
+
+
+
+
 /*----------Navbar----------------*/
 ul > li > a {
   position: relative;
@@ -95,7 +143,7 @@ ul > li > a:hover {
   color: #fff;
   text-decoration: none;
 }
-ul#navmenu > li > a:before, ul#navmenu > li > ul >li > a:before {
+ul#navmenu > li > a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -109,7 +157,7 @@ ul#navmenu > li > a:before, ul#navmenu > li > ul >li > a:before {
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
-ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
+ul#navmenu > li > a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -151,30 +199,20 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
   color: #fff;
   width: 100%;
   display: none;
-  background:#000000bd;
+  background:#000000f2;
   padding: 10px 15px;
   color: #fff;
   margin: 0;
   position: absolute;
-  z-index: 20;
+  z-index: 1000;
 }
 .nav {
   position: absolute;
-  z-index: 20;
+  z-index: 1000;
   display: block;
   width: 100%;
   list-style: none;
-  padding-left: 30px;
-   *zoom: 1;
-   background:#000000bd;
-}
-.nav:before,
-.nav:after {
-  content: " "; 
-  display: table; 
-}
-.nav:after {
-  clear: both;
+  padding-left: 100px;
 }
 .nav ul {
   list-style: none;
@@ -190,11 +228,7 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
 .nav > li {
   float: left;
 }
-.nav>li>.parent::after {
-  font-family: 'FontAwesome';
-  content: "\f107";
-  font-family: 'FontAwesome';
-}
+
 .nav > li > a {
   display: block;
 }
@@ -202,35 +236,14 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
   position:absolute;
   left:0;
   overflow:hidden;
-  height:0;
-  -webkit-transition:height 200ms ease-in;
-  -moz-transition:height 200ms ease-in;
-  -o-transition:height 200ms ease-in;
-  transition:height 200ms ease-in;
-}
-.nav > li.hover > ul{
-  height:300%;
 }
 
-.nav li li.hover ul {
-  left: 100%;
-  top: 0;
-}
-.nav li li a {
-  display: block;
-  background: #000000bd;
-  position: relative;
-  z-index:100;
-}
-.nav li li li a {
-  background:#000000bd;
-  z-index:200;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
   .nav{
     margin-top: 80px;
     padding-left: 0;
+    background: #000000f2;
+    
   }
   .active {
       display: block;
@@ -238,14 +251,9 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
   .nav > li {
       float: none;
   } 
-  .nav > li.hover > ul {
-    width: 100%;
-  }
   .nav ul {
     display: block;
-  }
- .nav > li.hover > ul , .nav li li.hover ul {
-      position: static;
+    
   }
   .logo{
     display: none;
@@ -253,19 +261,16 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
   .mobile-logo{
     float: left;
   }
-  ul > li > a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0;
-    bottom: 0;
-    left: 0;
-    background-color:none;
-    visibility: hidden;
+  .lang-switcher{
+    display: none;
   }
-  ul > li > a:hover:before {
-    visibility: visible;
+  .lang-switcher-mobile{
+    display: inline-flex;
   }
+  ul {
+    text-align: center;
+  }
+  
 }
 .logo{
   float: right !important;
@@ -277,14 +282,6 @@ ul#navmenu > li > a:hover:before, ul#navmenu > li > ul >li > a:hover:before {
 /* HOME section */
 .dark-section{
   color: #fff;
-}
-.site-title{
-  white-space: pre-line;
-  position: absolute;
-  top: 20vh;
-  left: 10%;
-  line-height: 11rem;
-  z-index: 2;
 }
 .subtitle{
   font-size: 4rem;

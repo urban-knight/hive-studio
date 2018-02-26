@@ -48,29 +48,18 @@
         <img src="/static/images/logo.svg" alt="Hive logo" width="150">
       </a>
     </div>
-    <div class=" hamburger">
+    <div class="hamburger">
       <span class="line"></span>
       <span class="line"></span>
       <span class="line"></span>
     </div>
   </div>
+  <div class="lang-switcher">
+      <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
+      <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
+      <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
+  </div>
   <ul class="nav" id='navmenu'>
-    <li>
-      <a href="#">
-        <%=translation.NAV_LANG%>
-      </a>
-      <ul>
-        <li>
-          <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">English</a>
-        </li>
-        <li>
-          <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">Українська</a>
-        </li>
-        <li>
-          <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">Русский</a>
-        </li>
-      </ul>
-    </li>
     <li>
       <a href="#">
         <%=translation.NAV_CONTACTS%>
@@ -102,5 +91,10 @@
           <img src="/static/images/logo.svg" alt="Hive logo" width="135">
         </a>
       </div>
+    </li>
+    <li class="lang-switcher-mobile">
+      <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
+      <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
+      <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
     </li>
   </ul>

@@ -5,6 +5,7 @@ $(document).ready(function () {
   fullPageInit();
   typeItInit();
   navBarInit();
+  checkLanguage();
 });
 
 // fullPage.js plugin options
@@ -17,8 +18,27 @@ function fullPageInit() {
     onLeave: function (index, nextIndex, direction) {
       var navigation = $('#fp-nav ul li a span');
       $(this).hasClass('dark-section') ? navigation.css('background', '#333') : navigation.css('background', '#fff');
+      if ($(window).innerWidth > 600) {
+
+      }
     }
   });
+}
+// language selector
+function checkLanguage() {
+  var full = window.location.host
+  var parts = full.split('.');
+  var domain = parts[1];
+  switch (domain) {
+    case 'ua':
+      $('a.lang-trigger[lang=ua]').addClass('lang-selected');
+      break;
+    case 'ru':
+      $('a.lang-trigger[lang=ru]').addClass('lang-selected');
+      break;
+    default:
+      $('a.lang-trigger[lang=en]').addClass('lang-selected');
+  }
 }
 
 // typeIt init (home section)
@@ -30,9 +50,9 @@ function typeItInit() {
   });
   new TypeIt('#title', {
     strings: ["WEB", "DESIGN", "MARKETING"],
-    loopDelay: 1000,
     cursor: false,
-    speed: 500,
+    nextStringDelay: 3000,
+    speed: 300,
     breakLines: false,
     loop: true
   });
@@ -61,7 +81,7 @@ $(window).bind('resize orientationchange', function () {
 });
 
 var adjustMenu = function () {
-  if (ww < 768) {
+  if (ww <= 860) {
     $(".toggleMenu").css("display", "inline-block");
     if (!$(".toggleMenu").hasClass("active")) {
       $(".nav").hide();
@@ -198,9 +218,9 @@ $(function () {
       }*/
   });
   $('canvas').on('click', function () {
-    dots.num += 5;
+    dots.num += 3;
   });
-  setInterval(createDots, 1000 / 30);
+  setInterval(createDots, 25);
   $(window).on('resize', function () {
     canvas.width = w;
     canvas.height = h;
