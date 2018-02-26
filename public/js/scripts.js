@@ -118,7 +118,7 @@ var adjustMenu = function () {
 $(function () {
   var canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
-    color = 'rgba(255, 255, 255, .5)';
+    color = '#191716';
   var w = window.innerWidth;
   var h = window.innerHeight;
   canvas.width = w;
