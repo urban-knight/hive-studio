@@ -4,113 +4,104 @@
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 <head>
-    <title><%=translation.PAGE_TITLE%></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <meta name="description" lang="ru" content="Создание и разработка качественного сайта любой сложности под ключ. Веб студия Hive поможет разработать индивидуальный стиль с использованием самых передовых технологий. Заказав у нас, Вы получите конкурентоспособный сайт, который увеличит Вашу прибыль в 3 раза." />
-    <meta name="keywords" content="заказать сайт киев под ключ, дизайн, креативные, web studio, сайт для бизнеса заказать, заказать интернет магазин, купить, разработка веб сайта под заказ, seo оптимизация, аудит сайта, продвижение, техподдержка сайта, landing page, business card, catalogue, corporate website, internet store" />
-    <meta name="author" content="Hive-Team">
-    <meta name="robots" content="index">
-    <meta name="referrer" content="always">
+  <title>
+    <%=translation.PAGE_TITLE%>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" lang="ru" content="Создание и разработка качественного сайта любой сложности под ключ. Веб студия Hive поможет разработать индивидуальный стиль с использованием самых передовых технологий. Заказав у нас, Вы получите конкурентоспособный сайт, который увеличит Вашу прибыль в 3 раза."
+  />
+  <meta name="keywords" content="заказать сайт киев под ключ, дизайн, креативные, web studio, сайт для бизнеса заказать, заказать интернет магазин, купить, разработка веб сайта под заказ, seo оптимизация, аудит сайта, продвижение, техподдержка сайта, landing page, business card, catalogue, corporate website, internet store"
+  />
+  <meta name="author" content="Hive-Team">
+  <meta name="robots" content="index">
+  <meta name="referrer" content="always">
 
-    <link rel="canonical" href="https://www.hive-studio.net" />
-    <link rel="shortcut icon" href="/static/images/favicon.png">
-    <link rel="stylesheet" href="/static/css/lib/grid-system.min.css"> 
-    <link rel="stylesheet" href="/static/css/lib/rhytm.min.css">
-    <link rel="stylesheet" href="/static/css/lib/owl.carousel.css">
-    <link rel="stylesheet" href="/static/css/lib/particles.css">
-    <link rel="stylesheet" href="/static/css/lib/jquery.fullpage.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="canonical" href="https://www.hive-studio.net" />
+  <link rel="shortcut icon" href="/static/images/favicon.png">
+  <link rel="stylesheet" href="/static/css/lib/grid-system.min.css">
+  <link rel="stylesheet" href="/static/css/lib/particles.css">
+  <link rel="stylesheet" href="/static/css/lib/jquery.fullpage.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113086520-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'UA-113086520-1');
-    </script>
+  <link rel="stylesheet" href="/static/css/style.css">
 
-    <!-- Href links -->
-    <link rel="alternate" href="https://hive-studio.net" hreflang="en-gb" />
-    <link rel="alternate" href="https://ua.hive-studio.net" hreflang="uk-ua" />
-    <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ua" />
-    <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ru" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113086520-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113086520-1');
+  </script>
+
+  <!-- Href links -->
+ <link rel="alternate" href="https://hive-studio.net" hreflang="en-gb" />
+ <link rel="alternate" href="https://ua.hive-studio.net" hreflang="uk-ua" />
+ <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ua" />
+ <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ru" />
 
 </head>
-
-<body class="appear-animate">
-
-    <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader">Loading...</div>
+<body>
+  <div class="toggleMenu">
+    <div class="mobile-logo">
+      <a href="/">
+        <img src="/static/images/logo.svg" alt="Hive logo" width="150">
+      </a>
     </div>
-    <!-- End Page Loader -->
-
-    <div class="page" id="top">
-
-        <!-- Navigation panel -->
-        <nav class="main-nav dark transparent stick-fixed">
-            <div class="full-wrapper relative clearfix">
-                <div class="nav-logo-wrap local-scroll">
-                    <a href="/" class="logo">
-                        <img src="/static/images/logo.svg" alt="" height="250" width="250">
-                    </a>
-                </div>
-                <div class="mobile-nav">
-                  <div class="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                  </div> 
-                </div>
-                <div class="inner-nav desktop-nav">
-                    <ul class="clearlist scroll-nav local-scroll">
-                        <li>
-                            <a href="/blog">
-                                <span><%=translation.NAV_BLOG%></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../#about">
-                                <span><%=translation.NAV_ABOUT%></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../#services">
-                                <span><%=translation.NAV_SERVICES%></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../#portfolio">
-                                <span><%=translation.NAV_PORTFOLIO%></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../#contact">
-                                <span><%=translation.NAV_CONTACTS%></span>
-                            </a>
-                        </li>
-                        <li >
-                            <a  class="mn-has-sub"><%=translation.NAV_LANG%>
-                              
-                             <!-- <div class="down"></div> -->
-                             
-                            </a>
-                            <ul class="mn-sub">
-                                <li>
-                                    <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">English</a>
-                                </li>
-                                <li>
-                                    <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">Українська</a>
-                                </li>
-                                <li>
-                                    <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">Русский</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- End Navigation panel -->
+    <div class=" hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </div>
+  <ul class="nav" id='navmenu'>
+    <li>
+      <a href="#">
+        <%=translation.NAV_LANG%>
+      </a>
+      <ul>
+        <li>
+          <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">English</a>
+        </li>
+        <li>
+          <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">Українська</a>
+        </li>
+        <li>
+          <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">Русский</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <%=translation.NAV_CONTACTS%>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <%=translation.NAV_PORTFOLIO%>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <%=translation.NAV_SERVICES%>
+      </a>
+    </li>
+    <li data-menuanchor="about">
+      <a href="#about">
+        <%=translation.NAV_ABOUT%>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <%=translation.NAV_BLOG%>
+      </a>
+    </li>
+    <li class="logo">
+      <div class="site-logo">
+        <a href="/">
+          <img src="/static/images/logo.svg" alt="Hive logo" width="135">
+        </a>
+      </div>
+    </li>
+  </ul>
