@@ -33,11 +33,11 @@ function fullPageInit() {
         $('.nav a').removeClass('dark');
         logo.attr('src', logo.data('white'));
       }
-      currentUrl = document.URL;
-      urlParts = currentUrl.split('#');
+    },
+    afterLoad: function(anchorLink, index){
       $('.lang-switcher a.lang-trigger').each(function () {
-        var url = $(this).attr('href');
-        $(this).attr('href', url + '#' + urlParts[1]);
+        var url = $(this).attr('href').split('#')[0];
+        $(this).attr('href', url + '#'+anchorLink);
       });
     }
   });
