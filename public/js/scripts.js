@@ -17,7 +17,7 @@ function fullPageInit() {
     navigation: true,
     css3: true,
     onLeave: function (index, nextIndex, direction) {
-      
+      //invertation colors (navbar, lang switcher)
       var navigation = $('#fp-nav ul li a span');
       var lang_switcher = $('.lang-switcher a');
       var logo = $('div.site-logo a img');
@@ -33,13 +33,19 @@ function fullPageInit() {
         $('.nav a').removeClass('dark');
         logo.attr('src', logo.data('white'));
       }
+      currentUrl = document.URL;
+      urlParts = currentUrl.split('#');
+      $('.lang-switcher a.lang-trigger').each(function () {
+        var url = $(this).attr('href');
+        $(this).attr('href', url + '#' + urlParts[1]);
+      });
     }
   });
 }
 // language selector
 function checkLanguage() {
-  var full = window.location.host
-  var parts = full.split('.');
+  var full_url = window.location.host;
+  var parts = full_url.split('.');
   var domain = parts[1];
   switch (domain) {
     case 'ua':
