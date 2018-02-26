@@ -112,30 +112,30 @@ a:focus, a:hover, a{
 .lang-switcher a, .lang-switcher-mobile a{
   margin: 10px !important;
   padding: 10px !important;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #fffff2;
+  border: 1px solid #fffff2;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
 }
 .dark{
-  color: #000 !important;
-  border: 1px solid #000 !important;
+  color: #191716 !important;
+  border: 1px solid #191716 !important;
 }
 .lang-selected.dark{
-  color: #fff !important;;
-  background: #000;
+  color: #fffff2 !important;;
+  background: #191716;
 }
 .lang-switcher a.dark:hover{
-  color: #fff !important;;
-  background: #000;
+  color: #fffff2 !important;;
+  background: #191716;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
 }
 .lang-switcher a:hover, .lang-selected{
-  color: #000 !important;
-  background: #fff;
+  color: #191716 !important;
+  background: #fffff2;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -147,15 +147,15 @@ a:focus, a:hover, a{
 /*----------Navbar----------------*/
 ul > li > a {
   position: relative;
-  color: #fff;
+  color: #fffff2;
   text-decoration: none;
 }
 ul > li > a:hover {
-  color: #fff;
+  color: #fffff2;
   text-decoration: none;
 }
 ul#navmenu > li > a.dark:before{
-  background-color: #000;
+  background-color: #191716;
 }
 ul#navmenu > li > a:before {
   content: "";
@@ -164,7 +164,7 @@ ul#navmenu > li > a:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #fffff2;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -210,12 +210,12 @@ ul#navmenu > li > a:hover:before {
 }
 .toggleMenu {
   padding: 10px 15px;
-  color: #fff;
+  color: #fffff2;
   width: 100%;
   display: none;
   background:#000000f2;
   padding: 10px 15px;
-  color: #fff;
+  color: #fffff2;
   margin: 0;
   position: absolute;
   z-index: 1000;
@@ -234,7 +234,7 @@ ul#navmenu > li > a:hover:before {
 }
 .nav a {
   padding: 30px 30px 12px 30px;
-  color:#fff;
+  color:#fffff2;
 }
 .nav li {
   position: relative;
@@ -297,7 +297,7 @@ ul#navmenu > li > a:hover:before {
 
 /* HOME section */
 .dark-section{
-  color: #fff;
+  color: #fffff2;
 }
 .subtitle{
   font-size: 4rem;
@@ -377,6 +377,6 @@ ul#navmenu > li > a:hover:before {
 /*---------Footer-------------------------/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
-  background: #fff; 
+  background: #fffff2; 
 }
 /*-----------------------------------------*/
