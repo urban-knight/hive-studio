@@ -118,7 +118,21 @@ a:focus, a:hover, a{
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
 }
-
+.dark{
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+.lang-selected.dark{
+  color: #fff !important;;
+  background: #000;
+}
+.lang-switcher a.dark:hover{
+  color: #fff !important;;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+}
 .lang-switcher a:hover, .lang-selected{
   color: #000 !important;
   background: #fff;
@@ -130,9 +144,6 @@ a:focus, a:hover, a{
   display: none;
 }
 
-
-
-
 /*----------Navbar----------------*/
 ul > li > a {
   position: relative;
@@ -142,6 +153,9 @@ ul > li > a {
 ul > li > a:hover {
   color: #fff;
   text-decoration: none;
+}
+ul#navmenu > li > a.dark:before{
+  background-color: #000;
 }
 ul#navmenu > li > a:before {
   content: "";
@@ -219,7 +233,7 @@ ul#navmenu > li > a:hover:before {
   width: 9em;
 }
 .nav a {
-  padding: 20px 30px;
+  padding: 30px 30px 12px 30px;
   color:#fff;
 }
 .nav li {
@@ -228,14 +242,17 @@ ul#navmenu > li > a:hover:before {
 .nav > li {
   float: left;
 }
-
 .nav > li > a {
   display: block;
+  text-transform: lowercase;
 }
 .nav li ul {
   position:absolute;
   left:0;
   overflow:hidden;
+}
+.nav a.dark{
+  border: none !important;
 }
 
 @media screen and (max-width: 860px) {
@@ -270,7 +287,6 @@ ul#navmenu > li > a:hover:before {
   ul {
     text-align: center;
   }
-  
 }
 .logo{
   float: right !important;
@@ -358,8 +374,9 @@ ul#navmenu > li > a:hover:before {
   100%{ bottom: 2px; }
 }
 
-
+/*---------Footer-------------------------/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
   background: #fff; 
 }
+/*-----------------------------------------*/

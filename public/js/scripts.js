@@ -11,15 +11,25 @@ $(document).ready(function () {
 // fullPage.js plugin options
 function fullPageInit() {
   $('#fp-js').fullpage({
-    sectionsColor: ['', '#f435'],
+    sectionsColor: ['', '#fff', '#000'],
     sectionSelector: '.fp-js',
-    anchors: ['home', 'about'],
+    anchors: ['home', 'about', 'sd'],
     navigation: true,
     onLeave: function (index, nextIndex, direction) {
       var navigation = $('#fp-nav ul li a span');
-      $(this).hasClass('dark-section') ? navigation.css('background', '#333') : navigation.css('background', '#fff');
-      if ($(window).innerWidth > 600) {
+      var lang_switcher =   $('.lang-switcher a');
+      var logo = $('div.site-logo a img');
 
+      if ($(this).hasClass('dark-section')) {
+        navigation.css('background', '#333');
+        lang_switcher.addClass('dark');
+        $('.nav a ').addClass('dark');
+        logo.attr('src', logo.data('dark'));
+      } else {
+        navigation.css('background', '#fff');
+        lang_switcher.removeClass('dark');
+        $('.nav a').removeClass('dark');
+        logo.attr('src', logo.data('white'));
       }
     }
   });

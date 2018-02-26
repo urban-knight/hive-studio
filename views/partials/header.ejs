@@ -35,12 +35,13 @@
   </script>
 
   <!-- Href links -->
- <link rel="alternate" href="https://hive-studio.net" hreflang="en-gb" />
- <link rel="alternate" href="https://ua.hive-studio.net" hreflang="uk-ua" />
- <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ua" />
- <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ru" />
+  <link rel="alternate" href="https://hive-studio.net" hreflang="en-gb" />
+  <link rel="alternate" href="https://ua.hive-studio.net" hreflang="uk-ua" />
+  <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ua" />
+  <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ru" />
 
 </head>
+
 <body>
   <div class="toggleMenu">
     <div class="mobile-logo">
@@ -55,9 +56,9 @@
     </div>
   </div>
   <div class="lang-switcher">
-      <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
-      <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
-      <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
+    <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
+    <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
+    <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
   </div>
   <ul class="nav" id='navmenu'>
     <li>
@@ -88,7 +89,8 @@
     <li class="logo">
       <div class="site-logo">
         <a href="/">
-          <img src="/static/images/logo.svg" alt="Hive logo" width="135">
+          <img data-dark='/static/images/logo-dark.svg' data-white='/static/images/logo.svg' src="/static/images/logo.svg" alt="Hive logo"
+            width="135">
         </a>
       </div>
     </li>
