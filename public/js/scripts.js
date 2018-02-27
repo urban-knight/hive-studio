@@ -17,6 +17,7 @@ function fullPageInit() {
     navigation: true,
     css3: true,
     onLeave: function (index, nextIndex, direction) {
+
       //invertation colors (navbar, lang switcher)
       var navigation = $('#fp-nav ul li a span');
       var lang_switcher = $('.lang-switcher a');
@@ -34,10 +35,11 @@ function fullPageInit() {
         logo.attr('src', logo.data('white'));
       }
     },
-    afterLoad: function(anchorLink, index){
+    //dunamic languages-switcher links
+    afterLoad: function (anchorLink, index) {
       $('.lang-switcher a.lang-trigger').each(function () {
         var url = $(this).attr('href').split('#')[0];
-        $(this).attr('href', url + '#'+anchorLink);
+        $(this).attr('href', url + '#' + anchorLink);
       });
     }
   });
@@ -157,7 +159,7 @@ $(function () {
     };
   } else {
     var dots = {
-      num: 200,
+      num: 100,
       distance: 100,
       d_radius: 200,
       velocity: -.9,

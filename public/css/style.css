@@ -386,4 +386,7 @@ ul#navmenu > li > a:hover:before {
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
   background: #fffff2; 
 }
+#fp-nav ul li a.active span, #fp-nav ul li a span{
+  border-radius: 0 !important;
+}
 /*-----------------------------------------*/
