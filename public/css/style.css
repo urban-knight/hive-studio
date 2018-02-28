@@ -30,7 +30,7 @@ body{
 }
 h1,h2,h3,h4,h5,h6{
   font-weight: 400;
-  margin: 30px 0 5px 0;
+  margin: 0;
 }
 @media  only screen and (max-width:600px){
  h1{
@@ -59,16 +59,13 @@ h1,h2,h3,h4,h5,h6{
    }
 }
 .site_title{
-  top: 20vh;
+  top: 30vh;
   left: 10%;
   position: absolute;
   z-index: 2;
 }
-h2{
-  font-size: 5rem;
-}
-h3{
-  font-size: 4rem;
+h2, h3{
+  font-size: 3rem;
 }
 h4{
   font-size: 3rem;
@@ -98,13 +95,25 @@ ul {
 a:focus, a:hover, a{
   text-decoration: none;
 }
-/*--------Custom Scrollbar--------------*/
+p{
+  margin: 0;
+  font-size: 2rem;
+}
+p.count span{
+  font-size: 3rem;
+  font-weight: 100;
+}
+p span{
+  font-weight: bold;
+}
+.count-descr{
+  line-height: 2rem;
+}
 
+/*----------Scrollbar fixes--------------------*/
 ::-webkit-scrollbar {
   width: 0;
 }
-
-
 /*----------Languages switcher ---------------*/
 
 .lang-switcher{
@@ -150,7 +159,6 @@ a:focus, a:hover, a{
 .lang-switcher-mobile{
   display: none;
 }
-
 /*----------Navbar----------------*/
 ul > li > a {
   position: relative;
@@ -261,13 +269,11 @@ ul#navmenu > li > a:hover:before {
 .nav a.dark{
   border: none !important;
 }
-
 @media screen and (max-width: 860px) {
   .nav{
     margin-top: 80px;
     padding-left: 0;
     background: #000000f2;
-    
   }
   .active {
       display: block;
@@ -277,7 +283,6 @@ ul#navmenu > li > a:hover:before {
   } 
   .nav ul {
     display: block;
-    
   }
   .logo{
     display: none;
@@ -301,11 +306,65 @@ ul#navmenu > li > a:hover:before {
 .site-logo{
   padding-top:20px !important;
 }
-
-/* HOME section */
+/*----SECTIONS-----*/
 .dark-section{
   color: #fffff2;
+  background-color: #191716;
 }
+.white-section{
+  color: #191716;
+  background-color: #fffff2;
+}
+.section-content{
+  text-align:center;
+  padding: 0 75px;
+  margin: 0 auto;
+}
+.section-header{
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+}
+.section-header span{
+  font-weight: 300;
+}
+p.count{
+  font-size: 10rem;
+}
+img.grey {
+  width: 100%;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+img.grey:hover  {
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+.right-border{
+  border-right: 2px solid #d2d2d2;
+}
+.bold{
+  font-weight: bold;
+}
+a.button{
+  padding: 10px;
+  background-color: #191716;
+  color: #fffff2;
+  border: none;
+  font-size: 3rem;
+}
+.row{
+  margin-bottom: 3rem;
+}
+.npddng{
+  padding-top: 0!important;
+}
+
+
+
+/* HOME section */
 .subtitle{
   font-size: 4rem;
 }
@@ -381,12 +440,18 @@ ul#navmenu > li > a:hover:before {
   100%{ bottom: 2px; }
 }
 
-/*---------Footer-------------------------/
+/*---------Footer-------------------------*/
+
+
+
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
   background: #fffff2; 
 }
 #fp-nav ul li a.active span, #fp-nav ul li a span{
   border-radius: 0 !important;
+}
+.iScrollVerticalScrollbar, .iScrollLoneScrollbar{
+  display: none;
 }
 /*-----------------------------------------*/

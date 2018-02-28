@@ -11,11 +11,11 @@ $(document).ready(function () {
 // fullPage.js plugin options
 function fullPageInit() {
   $('#fp-js').fullpage({
-    sectionsColor: ['', '#fff', '#000'],
     sectionSelector: '.fp-js',
-    anchors: ['home', 'about', 'sd'],
+    anchors: ['', 'about', 'services'],
     navigation: true,
-    css3: true,
+    scrollOverflow: true,
+    paddingTop: '75px',
     onLeave: function (index, nextIndex, direction) {
 
       //invertation colors (navbar, lang switcher)
@@ -24,12 +24,12 @@ function fullPageInit() {
       var logo = $('div.site-logo a img');
 
       if (nextIndex % 2 == 0) {
-        navigation.css('background', '#333');
+        navigation.css('background', '#191716');
         lang_switcher.addClass('dark');
         $('.nav a ').addClass('dark');
         logo.attr('src', logo.data('dark'));
       } else {
-        navigation.css('background', '#fff');
+        navigation.css('background', '#fffff2');
         lang_switcher.removeClass('dark');
         $('.nav a').removeClass('dark');
         logo.attr('src', logo.data('white'));
@@ -128,7 +128,7 @@ var adjustMenu = function () {
 $(function () {
   var canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
-    color = 'rgba(255, 255, 255, .5)';
+    color = '#dee8e6';
   var w = window.innerWidth;
   var h = window.innerHeight;
   canvas.width = w;
@@ -138,8 +138,8 @@ $(function () {
   ctx.strokeStyle = color;
 
   var mousePosition = {
-    x: 10 * w / 100,
-    y: 10 * h / 100
+    x:  w*100 ,
+    y:  h*100 
   };
   /*
     var dots = {
