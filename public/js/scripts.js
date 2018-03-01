@@ -39,10 +39,9 @@ function fullPageInit() {
     afterLoad: function (anchorLink, index) {
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
-        $('.lang-switcher a.lang-trigger').each(function(){
-          var url = "https://www." + $(this).attr('lang') + ".hive-studio.net/" + '#' + anchorLink;
-          $(this).attr('href', url);
-        });
+        $('.lang-switcher a.lang-trigger[lang="en"]').attr('href', "https://www.hive-studio.net/" + '#' + anchorLink);
+        $('.lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.ua.hive-studio.net/" + '#' + anchorLink);
+        $('.lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.ru.hive-studio.net/" + '#' + anchorLink);
       } else {
         $('.lang-switcher a.lang-trigger').each(function(){
           var url = "http://localhost" + '#' + anchorLink;
