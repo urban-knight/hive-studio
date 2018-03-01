@@ -40,7 +40,7 @@ function fullPageInit() {
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
         $('.lang-switcher a.lang-trigger').each(function(){
-          var url = "https://www." + $(this).attr('lang') + hostname.split('.')[2] + '#' + anchorLink;
+          var url = "https://www." + $(this).attr('lang') + ".hive-studio.net/" + '#' + anchorLink;
           $(this).attr('href', url);
         });
       } else {
