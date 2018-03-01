@@ -1,0 +1,14 @@
+{
+    "pages": [
+        {"url": "/", "name": "index"},
+        {"url": "/about", "name": "about"},
+        {"url": "/contacts", "name": "contacts"},
+        {"url": "/order", "name": "order"},
+        {"url": "/support", "name": "support"}
+    ],
+    "indexes": [
+        {"url": "/services", "name": "services"},
+        {"url": "/products", "name": "products"},
+        {"url": "/portfolio", "name": "projects"}
+    ]
+}

@@ -2,7 +2,7 @@ const dotenv = require('dotenv').config({ path: './config/.env' });
 const fs = require('fs');
 const path = require("path");
 const express = require('express');
-const i18n = require("i18n-express");
+const langer = require("./utils/langer");
 const bodyParser = require('body-parser');
 const { error } = require("./middleware");
 const session = require('express-session');
@@ -11,7 +11,7 @@ const methodOverride = require('method-override');
 
 const { promisifyAll } = require('bluebird');
 
-const indexRouter = require("./routes/index");
+const Controller = require("./routes/controller");
 
 // --- Application configuration --- //
 app = express();
@@ -29,17 +29,21 @@ app.use(session({
     cookie: { maxAge: 60000 }
 }));
 
-// --- i18n Config --- //
-app.use(i18n({
+var pageURLs = ["/", "/about", "/contacts", "/order", "/support"];
+var indexURLs = ["/services", "/products", "/projects"];
+
+// --- Langer Config --- //
+app.use(langer({
     translationsPath: path.join(__dirname, 'lang'),
     siteLangs: ["en", "ru", "ua"],
     textsVarName: 'translation',
-    cookieLangName: 'lang'
+    cookieLangName: 'lang',
+    pageURLs: pageURLs,
+    indexURLs: indexURLs
 }));
 
 // --- APP ROUTINGS --- //
-
-app.use("/", indexRouter);
+app.use("/", Controller);
 
 app.get("/*", async (req, res) => {
     return res.status(404).render("404");

@@ -37,18 +37,39 @@ function fullPageInit() {
     },
     //dunamic languages-switcher links
     afterLoad: function (anchorLink, index) {
-      $('.lang-switcher a.lang-trigger').each(function () {
-        var url = $(this).attr('href').split('#')[0];
-        $(this).attr('href', url + '#' + anchorLink);
-      });
+      var hostname = window.location.hostname;
+      if (hostname !== 'localhost') {
+        $('.lang-switcher a.lang-trigger').each(function(){
+          var url = "https://www." + $(this).attr('lang') + hostname.split('.')[2] + '#' + anchorLink;
+          $(this).attr('href', url);
+        });
+      } else {
+        $('.lang-switcher a.lang-trigger').each(function(){
+          var url = "http://localhost" + '#' + anchorLink;
+          $(this).attr('href', url);
+        });
+      }
     }
   });
 }
+
+// cookie parser by name
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
 // language selector
 function checkLanguage() {
   var full_url = window.location.host;
-  var parts = full_url.split('.');
-  var domain = parts[1];
+  if (full_url === 'localhost') {
+    var domain = getCookie('lang');
+  } else {
+    var parts = full_url.split('.');
+    var domain = parts[1];
+  }
+
   switch (domain) {
     case 'ua':
       $('a.lang-trigger[lang=ua]').addClass('lang-selected');
