@@ -365,6 +365,7 @@ a.button{
   color: #fffff2;
   border: none;
   font-size: 3.5vh;
+  font-weight: 100;
 }
 .row{
   margin-bottom: 3rem;
@@ -479,6 +480,63 @@ a.button-sect-3{
   border: none;
   font-size: 3.5vh;
 }
+/*---------CTA SECTION---------------*/
+.section-header-cta{
+  width: 50%;
+  font-size: 7.5vh;
+  line-height: 7.5vh;
+  font-weight: bold;
+  padding: 10vh 0;
+}
+.button-block-cta{
+  text-align: center;
+}
+.btn-cta{
+  padding: 4vh 0;
+}
+.btn-cta a{
+  font-weight: 500;
+}
+/*-----------------------------------------*/
+/*-----------------------------------------*/
+/*---------NEWS SECTION---------------*/
+.section-header-news{
+  font-size: 7.5vh;
+  font-weight: bold;
+}
+
+.blog-card{
+  padding: 3vh 2vh 0 2vh;
+}
+.blog-img {
+  width: 100%;
+}
+.blog-detalis{
+  padding: 1vh 0;
+  display: inline-flex; 
+}
+.blog-date{
+  font-weight: 500;
+  padding: 0 1.2vh;
+  background-color: #191716;
+  color: #fffff2;
+}
+.blog-author{
+  padding-left: 3vh;
+}
+.blog-head{
+  font-size: 3.2vh;
+  line-height: 3.5vh;
+  padding: 1vh 0;
+  font-weight: 500;
+}
+.blog-info{
+  font-size: 2.2vh;
+  text-align: justify;
+}
+.news-button-block{
+  text-align: center;
+}
 /*-----------------------------------------*/
 
 /*---------FOOTER---------------*/
@@ -496,10 +554,11 @@ a.button-sect-3{
   font-weight: bold;
 }
 .site-map-text{
+  letter-spacing: 1px;
   padding: 1.5vh 0;
   line-height: 3vh;
-  font-size: 2.2vh;
-  font-weight: 500;  
+  font-size: 2.5vh;
+  font-weight: 100;  
 }
 .contacts-block{
   text-align: center;
@@ -521,6 +580,11 @@ a.button-sect-3{
 a.site-map-link{
   color: #fffff2;
 }
+.copyright{
+  font-size: 1.8vh;
+  font-weight: 100;
+}
+
 
 
 /*-----------------------------------------*/
