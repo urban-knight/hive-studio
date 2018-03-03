@@ -12,7 +12,7 @@ $(document).ready(function () {
 function fullPageInit() {
   $('#fp-js').fullpage({
     sectionSelector: '.fp-js',
-    anchors: ['', 'about', 'services'],
+    anchors: ['home', 'about', 'services', '','','','',''],
     navigation: true,
     scrollOverflow: true,
     paddingTop: '75px',
@@ -93,6 +93,7 @@ function typeItInit() {
     cursor: false,
     nextStringDelay: 3000,
     speed: 300,
+    scrollOverflow: true,
     breakLines: false,
     loop: true
   });
@@ -271,10 +272,12 @@ $(function () {
 });
 // expanders
 /*
+var height = $( '.slide-content' ).height();
+$( '.slide-content' ).height( height + 1400 );*/
 $(function () {
-  var animspeed = 500; // animation speed 
-  var $blockquote = $(this).find('.bigtext');
-  var maxheight = 160;
+  var animspeed = 400; // animation speed 
+  var $blockquote = $(this).find('.exp-full');
+  var maxheight = 155;
   $blockquote.css('height', maxheight + 'px');
   $('.expand').on('click', function (e) {
     $text = $(this).prev();
@@ -282,11 +285,13 @@ $(function () {
     $text.animate({ 'height': $h }, animspeed);
     $(this).next('.contract').removeClass('hide');
     $(this).addClass('hide');
+    $.fn.fullpage.reBuild();
   });
   $('.contract').on('click', function (e) {
     $text = $(this).prev().prev();
     $text.animate({ 'height': maxheight }, animspeed);
     $(this).prev('.expand').removeClass('hide');
     $(this).addClass('hide');
+    $.fn.fullpage.reBuild();
   });
-});*/
+});

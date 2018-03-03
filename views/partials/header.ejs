@@ -61,18 +61,18 @@
     <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
   </div>
   <ul class="nav" id='navmenu'>
-    <li>
-      <a href="#">
+    <li data-menuanchor='contacts'>
+      <a href="#contacts">
         <%=translation.NAV_CONTACTS%>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li data-menuanchor='portfolio'>
+      <a href="#portfolio">
         <%=translation.NAV_PORTFOLIO%>
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li data-menuanchor='services'>
+      <a href="#services">
         <%=translation.NAV_SERVICES%>
       </a>
     </li>
@@ -82,13 +82,13 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="/blog">
         <%=translation.NAV_BLOG%>
       </a>
     </li>
     <li class="logo">
       <div class="site-logo">
-        <a href="/">
+        <a>
           <img data-dark='/static/images/logo-dark.svg' data-white='/static/images/logo.svg' src="/static/images/logo.svg" alt="Hive logo"
             width="135">
         </a>
