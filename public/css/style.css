@@ -25,8 +25,10 @@ body{
   line-height: 1.6;    
   -webkit-font-smoothing: antialiased;
 }
-.hive-logo{
+h1::first-line{
   font-family: 'Montserrat_hive';
+  letter-spacing: -10px;
+  font-size: 10rem;
 }
 h1,h2,h3,h4,h5,h6{
   font-weight: 400;
@@ -91,7 +93,10 @@ canvas {
   display: block;
 }
 strong{
-  font-weight: 800;
+  font-weight: 700;
+}
+h1 strong{
+  font-weight: 900;
 }
 ul {
   margin: 0;
@@ -364,9 +369,6 @@ img.grey:hover  {
 .right-border{
   border-right: 2px solid #d2d2d2;
 }
-.bold{
-  font-weight: bold;
-}
 .button-border-dark, .button-border-white{
   width: max-content;
   margin: 0 auto;
@@ -510,7 +512,7 @@ a.button-white:hover{
 /*---------SERVICES SECTION---------------*/
 
 .container-hive{
-  padding: 0 25vh;
+  padding: 0 20vh;
 }
 .num-service {
   font-size: 8vh;
@@ -523,71 +525,47 @@ a.button-white:hover{
 .description-service{
   padding: 1vh;
   text-align: justify;
-  border: 1px solid #fffff2;
   font-size: 1.7vh;
 }
 .service-description {
   font-size: 2vh;
   padding: 1vh;
 }
-
-.exp-full{
-  text-align: justify;
-  border: 1px solid #fffff2;
-  font-size: 1.7vh;
-  height: 100%;
+.original{
+  position: relative;
+  top:30%;
+}
+.box {
   display: block;
+  width: 100%;
+  height: 450px;
   overflow: hidden;
-}
-
-.expand, .contract {
-  cursor: pointer;
-  text-align: left;
-  color: #fffff2;
-  font-size: 20px;
-  transition: 0.5s;
-}
-
-.expand:hover, .contract:hover {
-  transition: 0.5s;
-  color: #999999;
-}
-
-.hide {
-  display: none;
-}
-
-.service-price{
-  font-size: 3vh;
-  background-color: #fffff2;
-  color: #000;
   text-align: center;
-  padding: 10px 5px;
+  position: relative;
+  font-size: 2.2vh;
 }
-
-.more {
-  display: inline-block; 
-  width:32%
+.overlay {
+  padding: 20px;
+  text-align: justify;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
-
-.more-line {
-  width: 65%; 
-  display: inline-block;
-  border-bottom: 1px solid #fffff2; 
-  margin-bottom: 5px;
+.slide-up .overlay {
+  background-color: #191716;
+  border: 1px solid #fffff2;
+  transform-origin: 0 0;
+  transform: rotate(90deg);
+  -webkit-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
-
-.less {
-  display: inline-block; 
-  width:20%; 
-  font-size: 36px;
-}
-
-.less-line {
-  width: 75%;
-  display: inline-block;
-  border-bottom: 1px solid #fffff2;
-  margin-bottom: 12px;
+.slide-up .box:hover .overlay {
+ transform: rotate(0deg);
 }
 /*---------CTA SECTION---------------*/
 .section-header-cta{
@@ -756,8 +734,11 @@ a.site-map-link{
 }
 #fp-nav ul li a.active span, #fp-nav ul li a span{
   border-radius: 0 !important;
-}/*
+}
 .iScrollVerticalScrollbar, .iScrollLoneScrollbar{
   display: none;
-}*/
+}
+.col-md-3{
+  padding: 0;
+}
 /*-----------------------------------------*/
