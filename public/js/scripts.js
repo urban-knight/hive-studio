@@ -3,6 +3,7 @@ var ww = document.body.clientWidth;
 $(document).ready(function () {
   //init scrips
   fullPageInit();
+  canvasBackgroundInit();
   typeItInit();
   navBarInit();
   checkLanguage();
@@ -12,7 +13,7 @@ $(document).ready(function () {
 function fullPageInit() {
   $('#fp-js').fullpage({
     sectionSelector: '.fp-js',
-    anchors: ['home', 'about', 'services', '','','','',''],
+    anchors: ['home', 'about', 'services', '', '', '', '', ''],
     navigation: true,
     scrollOverflow: true,
     paddingTop: '75px',
@@ -43,7 +44,7 @@ function fullPageInit() {
         $('.lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.ua.hive-studio.net/" + '#' + anchorLink);
         $('.lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.ru.hive-studio.net/" + '#' + anchorLink);
       } else {
-        $('.lang-switcher a.lang-trigger').each(function(){
+        $('.lang-switcher a.lang-trigger').each(function () {
           var url = "http://localhost" + '#' + anchorLink;
           $(this).attr('href', url);
         });
@@ -146,7 +147,7 @@ var adjustMenu = function () {
   }
 }
 // canvas animation (home section)
-$(function () {
+function canvasBackgroundInit() {
   var canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
     color = '#dee8e6';
@@ -157,10 +158,9 @@ $(function () {
   ctx.fillStyle = color;
   ctx.lineWidth = .1;
   ctx.strokeStyle = color;
-
   var mousePosition = {
-    x:  w*100 ,
-    y:  h*100 
+    x: w * 100,
+    y: h * 100
   };
   /*
     var dots = {
@@ -190,10 +190,8 @@ $(function () {
   function Dot() {
     this.x = Math.random() * w;
     this.y = Math.random() * h;
-
     this.vx = dots.velocity + Math.random();
     this.vy = dots.velocity + Math.random();
-
     this.radius = Math.random() * 2;
   }
   Dot.prototype = {
@@ -269,29 +267,4 @@ $(function () {
     ctx.lineWidth = .1;
     ctx.strokeStyle = color;
   });
-});
-// expanders
-/*
-var height = $( '.slide-content' ).height();
-$( '.slide-content' ).height( height + 1400 );*/
-$(function () {
-  var animspeed = 400; // animation speed 
-  var $blockquote = $(this).find('.exp-full');
-  var maxheight = 155;
-  $blockquote.css('height', maxheight + 'px');
-  $('.expand').on('click', function (e) {
-    $text = $(this).prev();
-    $h = $(this).prev().find('.service-description').outerHeight(true) + $(this).prev().find('.service-price').outerHeight(true);
-    $text.animate({ 'height': $h }, animspeed);
-    $(this).next('.contract').removeClass('hide');
-    $(this).addClass('hide');
-    $.fn.fullpage.reBuild();
-  });
-  $('.contract').on('click', function (e) {
-    $text = $(this).prev().prev();
-    $text.animate({ 'height': maxheight }, animspeed);
-    $(this).prev('.expand').removeClass('hide');
-    $(this).addClass('hide');
-    $.fn.fullpage.reBuild();
-  });
-});
+}
