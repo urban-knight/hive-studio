@@ -1,9 +1,24 @@
 var mongoose = require("mongoose");
 
-var ProjectSchema = mongoose.Schema({
-    title: { type: String, default: "new title" },
-    description: { type: String, default: "new description" },
-    targets: { type: String, default: "new target" },
+var ServiceSchema = mongoose.Schema({
+    en: {
+        url: {type: String},
+        name: {type: String},
+        desc: {type: String},
+        ext_desc: {type: String}
+    },
+    ua: {
+        url: {type: String},
+        name: {type: String},
+        desc: {type: String},
+        ext_desc: {type: String}
+    },
+    ru: {
+        url: {type: String},
+        name: {type: String},
+        desc: {type: String},
+        ext_desc: {type: String}
+    }
 });
 
-module.exports = mongoose.model("Service", ProjectSchema);
+module.exports = mongoose.model("Service", ServiceSchema);

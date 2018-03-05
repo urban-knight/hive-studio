@@ -1,14 +1,11 @@
 {
-    "pages": [
-        {"url": "/", "name": "index"},
-        {"url": "/about", "name": "about"},
-        {"url": "/contacts", "name": "contacts"},
-        {"url": "/order", "name": "order"},
-        {"url": "/support", "name": "support"}
-    ],
-    "indexes": [
-        {"url": "/services", "name": "services"},
-        {"url": "/products", "name": "products"},
-        {"url": "/portfolio", "name": "projects"}
-    ]
+    "domain": "hive-studio.net",
+    "langs": ["en", "ua", "ru"],
+    "defaultLang": "en",
+    "langPath": "lang",
+    "langVar": "translation",
+    "langCookie": "lang",
+    "pages": ["about", "contacts", "order", "support"],
+    "indexes": ["services", "products", "projects"],
+    "indexTarget": "url"
 }
