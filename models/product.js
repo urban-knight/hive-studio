@@ -1,9 +1,40 @@
 var mongoose = require("mongoose");
 
-var ProjectSchema = mongoose.Schema({
-    picture_id: { type: String, default: "." },
-    description: { type: String, default: "new description" },
-    scope: { type: String, default: "new scope" },
+var ProductSchema = mongoose.Schema({
+    en: {
+        picture_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Picture"
+        },
+        url: { type: String },
+        name: { type: String },
+        price: { type: String },
+        desc: { type: String },
+        ext_desc: {type: String}
+    },
+    ru: {
+        picture_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Picture"
+        },
+        url: { type: String },
+        name: { type: String },
+        price: { type: String },
+        desc: { type: String },
+        ext_desc: {type: String}
+    },
+    ua: {
+        picture_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Picture"
+        },
+        url: { type: String },
+        name: { type: String },
+        price: { type: String },
+        desc: { type: String },
+        ext_desc: {type: String}
+    },
+
 });
 
-module.exports = mongoose.model("Product", ProjectSchema);
+module.exports = mongoose.model("Product", ProductSchema);

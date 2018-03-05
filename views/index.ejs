@@ -112,78 +112,22 @@
         <h2 class="section-header container-fluid">Our services.</h2>
         <div class="container-hive">
           <div class="row">
-            <div class="col-md-3 slide-up four col">
-              <div class="box">
-                <div class="original">
-                  <h3 class="num-service">#1</h3>
-                  <h3 class="name-service">System Maintenance & Hosting</h3>
-                </div>
-                <div class="overlay">
-                  The stability and speed of any web resource is based, first of all, on its technical component. High-quality system administration
-                  with high-end hardware will guarantee you a 24-hour system uptime with efficient load distribution. We
-                  work in a wide range of services, designing local network and system architecture, customizing equipment
-                  and providing multi-cluster SSD hosting. Our Hive admins will ensure fast and safe migration of your web
-                  service and its further round-the-clock administration.
-                  <div>
-                    <a class="card-button" href="#">See pricing</a>
+            <% services.forEach(function(service, i){ %>
+              <div class="col-md-3 slide-up four col">
+                <div class="box">
+                  <div class="original">
+                    <h3 class="num-service">#<%= i+1 %></h3>
+                    <h3 class="name-service"><%= service.name %></h3>
+                  </div>
+                  <div class="overlay">
+                    <%= service.desc %>
+                    <div>
+                      <a class="card-button" href="/services/<%= service.url %>">See pricing</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-3 slide-up four col">
-              <div class="box">
-                <div class="original">
-                  <h3 class="num-service">#2</h3>
-                  <h3 class="name-service">Fullstack Web Development</h3>
-                </div>
-                <div class="overlay">
-                  Development of new web services on a turn-key basis, functional expansion of existing project and complex website modernization.
-                  For new projects our studio offers ready-made digital products that contain all the necessary functionalities
-                  and are ready for customization. If you need to add some functionality to your resource, implement new
-                  design solutions or fix existing errors, our team of Hive developers is always ready to develop the most
-                  effective solution for your specific project.
-                  <div>
-                    <a class="card-button" href="#">See pricing</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 slide-up four col">
-              <div class="box">
-                <div class="original">
-                  <h3 class="num-service">#3</h3>
-                  <h3 class="name-service">Identity Design & Branding</h3>
-                </div>
-                <div class="overlay">
-                  Since the identity of business creates a first impression on potential customers, it is one of the most important aspects
-                  of branding. High-quality brand changes consumers' perceptions of seeing or hearing about your company.
-                  The team of Hive designers will create an effective and memorable branding, integrated with the latest
-                  web design. Our branding kit includes both a graphic and a polygraph component that maximizes the scope
-                  of its use in a marketing campaign.
-                  <div>
-                    <a class="card-button" href="#">See pricing</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 slide-up four col">
-              <div class="box">
-                <div class="original">
-                  <h3 class="num-service">#4</h3>
-                  <h3 class="name-service">SEO & Digital Marketing</h3>
-                </div>
-                <div class="overlay">
-                  Even the best market offers require advertising and promotion, especially at the time the company enters a new market. Search
-                  engine promotion is aimed at improving the visibility of a website in the categories for the target audience,
-                  which is subsequently converted into clients. Our SEO is supported by Digital Marketing, which uses all
-                  the complex of digital channels through which the company brand is promoted, providing to you the highest
-                  ranks on market.
-                  <div>
-                    <a class="card-button" href="#">See pricing</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <% }) %>
           </div>
         </div>
       </div>

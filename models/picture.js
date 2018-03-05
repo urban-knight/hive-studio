@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var PictureSchema = new mongoose.Schema({
-    contentType: { type: String, default: 'image/jpeg' },
+    contentType: { type: String},
     data: { type: Buffer}
 });
 

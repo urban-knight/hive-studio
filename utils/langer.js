@@ -44,6 +44,7 @@ function getLangFromHeaders(req, siteLangs) {
         languages.some(function (l) {
             if (siteLangs.indexOf(l) >= 0) {
                 _lang = l;
+                return _lang;
             }
         });
     }

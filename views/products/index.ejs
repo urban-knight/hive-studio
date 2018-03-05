@@ -1,1 +1,17 @@
-<h1>Products Index</h1>
+<link rel="stylesheet" href="/static/css/lib/grid-system.min.css">
+
+<div class="container-fluid">
+    <div class="row">
+        <h1><%= translation.HEADING %></h1>
+    </div>
+    <div class="row">
+        <% products.forEach(function(product){ %>
+            <div class="col-lg-3">
+                <h2><%= product.name %></h2>
+                <p><strong><%= product.price %></strong></p>
+                <p><%= product.desc %></p>
+                <a href="/products/<%= product.url %>">To product</a>
+            </div>
+        <% }); %>
+    </div>
+</div>
