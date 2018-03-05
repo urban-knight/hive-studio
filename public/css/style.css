@@ -370,7 +370,10 @@ img.grey:hover  {
 	filter: grayscale(0);
 }
 .right-border{
-  border-right: 2px solid #d2d2d2;
+  border-right: 2px solid #fffff2;
+}
+.right-border-black{
+  border-right: 2px solid #191716;
 }
 .button-border-dark, .button-border-white{
   width: max-content;
@@ -590,15 +593,118 @@ img.grey:hover  {
   color: #fffff2;
   background: #191716;
 }
+.card-button-black{
+  border: 2px solid #191716;
+  color: #fffff2;
+  background-color: #191716;
+}
+.card-button-black:hover{
+  color: #191716;
+  background: #fffff2;
+}
+.btn-article{
+  font-size: 2.5vh;
+}
 
+/*---------PRODUCTS SECTION---------------*/
+.head-product{
+  text-align: left;
+  font-size: 7.5vh;
+  font-weight: bold;
+}
+.info-product{
+  text-align: justify;
+  font-size: 2.5vh;
+  font-weight: 300;
+}
+.price{
+  font-size: 3vh;
+  font-weight: 300;
+  color: #fffff2;
+  background-color: #191716;
+  padding: 0.5vh 1vh;
+}
+.price-white{
+  color: #191716;
+  background-color: #fffff2;
+}
+.view-product{
+  padding: 2vh 0;
+}
+.btn-price{
+  padding: 1vh 0;
+}
 
+/*----------------------------------------*/
+/*---------PORTFOLIO SECTION--------------*/
+.section-sub-header{
+  text-align: center;
+  padding-bottom: 3vh;
+}
+.portfolio-item-head{
+  text-transform: uppercase;
+  font-size: 6vh;
+}
+.portfolio-item-sub-head{
+  font-size: 3vh;
+}
+.portfolio-item-info{
+  text-align: justify;
+  font-size: 2.5vh;
+  font-weight: 300;
+  padding: 2vh 0;
+}
+.portfolio-link{
+  padding: 4vh;
+  float: left;
+  color: #191716;
+}
+.portfolio-link:hover{
+  color: #191716;
+}
+.footer-social-black{
+  float: left;
+}
+/*----------------------------------------*/
 /*---------CTA SECTION---------------*/
 .section-header-cta{
-  width: 50%;
   font-size: 7.5vh;
-  line-height: 7.5vh;
+  line-height: 9.5vh;
   font-weight: bold;
-  padding: 10vh 0;
+  padding: 20vh 0;
+}
+.button-presentation{
+  text-align: center;
+  line-height: 2.5vh;
+  padding: 10vh 0 0 0;
+  font-size: 3vh;
+}
+a.btn-download{
+  padding: 1vh 0;
+  border-bottom: 2px solid #fffff2;
+  line-height: 20px;
+}
+.sub-block-cta{
+ padding: 30vh;
+}
+.button-order{
+  margin: 0 10px;
+  padding: 6px 30px;
+  border: none;
+  font-size: 5vh;
+  font-weight: 100;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.button-order:hover{
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 /*-----------------------------------------*/
@@ -608,7 +714,6 @@ img.grey:hover  {
   font-size: 7.5vh;
   font-weight: bold;
 }
-
 .blog-card{
   padding: 3vh 2vh 0 2vh;
 }
@@ -620,12 +725,14 @@ img.grey:hover  {
   display: inline-flex; 
 }
 .blog-date{
+  font-size: 2.5vh;
   font-weight: 500;
   padding: 0 1.2vh;
   background-color: #191716;
   color: #fffff2;
 }
 .blog-author{
+  font-size: 2.5vh;
   padding-left: 3vh;
 }
 .blog-head{
@@ -637,6 +744,11 @@ img.grey:hover  {
 .blog-info{
   font-size: 2.2vh;
   text-align: justify;
+}
+a.btn-article{
+  padding: 1vh 0;
+  border-bottom: 2px solid #191716;
+  color: #191716;
 }
 /*-----------------------------------------*/
 
@@ -705,6 +817,9 @@ a.site-map-link{
   -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
   transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
+.footer-social-black a{
+  color: #191716 !important;
+}
 .footer-social-links a{
   margin: 15px;
 }
@@ -742,16 +857,25 @@ a.site-map-link{
   -ms-transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000); 
   transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1.000);
 }
+.footer-social-black a:before{
+  border-color: #191716 !important;
+}
 .footer-social-links a:hover{
   color: #191716;
+}
+.footer-social-black a:hover{
+  color: #fffff2 !important;
 }
 .footer-social-links a:hover:before{
   background: #fffff2;
 }
+.footer-social-black a:hover:before{
+  background: #191716 !important;
+}
 /*-----------------------------------------*/
 
 
-/*---------STYLE REASSIGN---------------*/
+/*---------404---------------*/
 .page-404{
   height: 100vh;
   margin: 0 auto;
