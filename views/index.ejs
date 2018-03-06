@@ -21,50 +21,48 @@
     </div>
     <div class='fp-js white-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid">Take the
-          <span>HIVE</span> five.</h2>
+        <h2 class="section-header container-fluid">
+          <%-langer.ABOUT_HEADING%>
+        </h2>
         <div class="row">
           <div class="col-xl-2 col-md-2 col-md-offset-1 col-sm-offset-2 col-xs-12">
             <p class="count">12</p>
-            <p class="count-descr">key
-              <br>
-              <span>projects</span>
+            <p class="count-descr">
+              <%-langer.ABOUT_F1%>
             </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">5</p>
-            <p class="count-descr">projects
-              <br>
-              <span>members</span>
+            <p class="count-descr">
+              <%-langer.ABOUT_F2%>
             </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">4</p>
-            <p class="count-descr">contact
-              <br>
-              <span>languages</span>
+            <p class="count-descr">
+              <%-langer.ABOUT_F3%>
             </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">24
               <span>h</span>
             </p>
-            <p class="count-descr">operation
-              <br>
-              <span>time</span>
+            <p class="count-descr">
+              <%-langer.ABOUT_F4%>
             </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">100
               <span>%</span>
             </p>
-            <p class="count-descr">business
-              <br>
-              <span>integrity</span>
+            <p class="count-descr">
+              <%-langer.ABOUT_F5%>
             </p>
           </div>
         </div>
-        <h3 class="section-header-2">Tech. stack</h3>
+        <h3 class="section-header-2">
+          <%=langer.ABOUT_TECH%>
+        </h3>
         <div class="container-tech tech-stack">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -102,220 +100,179 @@
           </div>
         </div>
         <div class="button-border button-border-white">
-          <a class="button button-white" href="/about">Who
-            <strong>we</strong> are?</a>
+          <a class="button button-white" href="/about">
+            <%-langer.ABOUT_BTN%>
+          </a>
         </div>
       </div>
     </div>
     <div class='fp-js dark-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid">Our services.</h2>
+        <h2 class="section-header container-fluid">
+          <%=langer.SERVICES_HEADING%>
+        </h2>
         <div class="container-hive">
           <div class="row">
             <% services.forEach(function(service, i){ %>
               <div class="col-xl-3 col-md-3 col-sm-6 col-xs-12 slide-up four col">
                 <div class="box">
                   <div class="original">
-                    <h3 class="num-service">#<%= i+1 %></h3>
-                    <h3 class="name-service"><%= service.name %></h3>
+                    <h3 class="num-service">#
+                      <%= i+1 %>
+                    </h3>
+                    <h3 class="name-service">
+                      <%= service.name %>
+                    </h3>
                   </div>
                   <div class="overlay">
                     <%= service.desc %>
-                    <div>
-                      <a class="card-button" href="/services/<%= service.url %>">See pricing</a>
+                      <div>
+                        <a class="card-button" href="/services/<%= service.url %>">
+                          <%= langer.SERVICE_BTN %>
+                        </a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% var chunks = []; %>
+    <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
+
+      <% chunks.forEach(function(chunk, i){ %>
+        <div class='fp-js <%= (i%2 != 0?"white-section":"dark-section") %>"'>
+          <h2><%= i %></h2>
+          <div class="container-hive">
+            <div class="row">
+              <% for (product of chunk) { %>
+                <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border-black">
+                  <h2 class="head-product">
+                    <%= product.name %>
+                  </h2>
+                  <a class="price">
+                    <%= product.price %>
+                  </a>
+                  <p class="info-product">
+                    <%= product.desc %>
+                  </p>
+                  <div class="view-product">
+                    <p class="view-mode">Choose view mode:</p>
+                  </div>
+                  <div class="btn-price">
+                    <a class="card-button card-button-black" href="/products/<%= product.url %>">
+                      <%= langer.PRODUCT_BTN %>
+                    </a>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+            <div class='fp-js white-section'>
+              <div class="container-hive">
+                <div class="row">
+                  <h2 class="section-header">Key projects.</h2>
+                  <p class="section-sub-header">our efficiency confirmed by our works</p>
+                  <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                    <a class="price">Landing</a>
+                    <h2 class="portfolio-item-head">paktum</h2>
+                    <p class="portfolio-item-sub-head">website for debt collection company</p>
+                    <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and sales
+                      on the Internet, an online store will cope with this task. This interactive website is designed to
+                      provide certain goods to your clients via account</p>
+                    <div class="footer-social-links footer-social-black">
+                      <a href="#" title="Behance" target="_blank">
+                        <i class="fab fa-behance"></i>
+                      </a>
+                    </div>
+                    <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                    <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                  </div>
+                </div>
+                <div class="button-border button-border-white">
+                  <a class="button button-white" href="#">Our
+                    <strong>projects</strong> speak for us.</a>
+                </div>
+              </div>
+            </div>
+            <div class='fp-js dark-section'>
+              <div class="container-hive">
+                <div class="row">
+                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
+                    <h2 class="section-header-cta">Let us make your website easy on the eyes.</h2>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 sub-block-cta">
+                    <div class="button-border button-border-dark">
+                      <a class="button-order button-dark" href="../">Order
+                        <strong>now</strong>.
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="button-presentation">
+                      <a class="btn-download" href="#">Download
+                        <strong>presentation</strong>.
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
-            <% }) %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js white-section'>
-      <div class="container-hive">
-        <div class="row">
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border-black">
-            <h2 class="head-product">Landing.</h2>
-            <a class="price">
-              <strong>Price: </strong>$650</a>
-            <p class="info-product">In order to get acquainted user with product or service of your company and present it in the most efficient
-              way, you need a Landing Page. Being composed as a small resource, landing is made as a single page to give
-              visitors the most efficient sales information. We propose to create profitable business tool, converting your
-              visitors in customers. Hive will develop a profitable Landing with the correct promotion of product or service
-              in digital world.
-              <strong>Term: 7-10 days</strong>
-            </p>
-            <div class="view-product">
-              <p class="view-mode">Choose view mode:</p>
             </div>
-            <div class="btn-price">
-              <a class="card-button card-button-black" href="#">See pricing</a>
+            <div class='fp-js white-section'>
+              <div class="container-hive">
+                <h2 class="section-header-news">Latest news.</h2>
+                <div class="row">
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-border button-border-white">
+                  <a class="button button-white" href="/blog">Find
+                    <strong>more</strong>
+                    articles
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <h2 class="head-product">Catalogue.</h2>
-            <a class="price">
-              <strong>Price: </strong>$750</a>
-            <p class="info-product">It is vitally important to present your company on the Internet in an appropriate way. This will help you to
-              increase your target audience and your current sales volume as well. For such needs, you should have Catalogue,
-              which is presented in the form of 5-10 pages, containing basic information about the organization, goods or
-              services, price list, as well as contact information. Hive Studio will build a logical website structure, integrating
-              it with social networks.
-              <strong>Term: 7-10 days</strong>
-            </p>
-            <div class="view-product">
-              <p class="view-mode">Choose view mode:</p>
-            </div>
-            <div class="btn-price">
-              <a class="card-button card-button-black" href="#">See pricing</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js dark-section'>
-      <div class="container-hive">
-        <div class="row">
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border">
-            <h2 class="head-product">Corporate.</h2>
-            <a class="price price-white">
-              <strong>Price: </strong>$1300</a>
-            <p class="info-product">By providing additional information about your company, you will attract the attention of both ordinary users
-              and partners for expanding your business. For such purposes, we offer to develop a corporate website, which
-              consists of information about the company, list of all products. Corporate website will represent an inner
-              life of your company and its employees via extended functionality of news feed and convenient account system.
-              <strong>Term: 20-25 days</strong>
-            </p>
-            <div class="view-product">
-              <p class="view-mode">Choose view mode:</p>
-            </div>
-            <div class="btn-price">
-              <a class="card-button" href="#">See pricing</a>
-            </div>
-          </div>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <h2 class="head-product">Store.</h2>
-            <a class="price price-white">
-              <strong>Price: </strong>$1650</a>
-            <p class="info-product">If you want a site that contains all the effective mechanisms for the product presentation and sales on the Internet,
-              an online store will cope with this task. This interactive website is designed to provide certain goods to
-              your clients via account system with all the necessary functionality required for digital shopping. This includes
-              flexible customer database, product management system and sales integration same as comfortable user interface
-              for your customers.
-              <strong>Term: 30-35 days</strong>
-            </p>
-            <div class="view-product">
-              <p class="view-mode">Choose view mode:</p>
-            </div>
-            <div class="btn-price">
-              <a class="card-button" href="#">See pricing</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js white-section'>
-      <div class="container-hive">
-        <div class="row">
-          <h2 class="section-header">Key projects.</h2>
-          <p class="section-sub-header">our efficiency confirmed by our works</p>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <a class="price">Landing</a>
-            <h2 class="portfolio-item-head">paktum</h2>
-            <p class="portfolio-item-sub-head">website for debt collection company</p>
-            <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and sales on the Internet,
-              an online store will cope with this task. This interactive website is designed to provide certain goods to
-              your clients via account</p>
-            <div class="footer-social-links footer-social-black">
-              <a href="#" title="Behance" target="_blank">
-                <i class="fab fa-behance"></i>
-              </a>
-            </div>
-            <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
-          </div>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
-          </div>
-        </div>
-        <div class="button-border button-border-white">
-          <a class="button button-white" href="#">Our
-            <strong>projects</strong> speak for us.</a>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js dark-section'>
-      <div class="container-hive">
-        <div class="row">
-          <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
-            <h2 class="section-header-cta">Let us make your website easy on the eyes.</h2>
-          </div>
-          <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 sub-block-cta">
-            <div class="button-border button-border-dark">
-              <a class="button-order button-dark" href="../">Order
-                <strong>now</strong>.
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="button-presentation">
-              <a class="btn-download" href="#">Download
-                <strong>presentation</strong>.
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js white-section'>
-      <div class="container-hive">
-        <h2 class="section-header-news">Latest news.</h2>
-        <div class="row">
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="button-border button-border-white">
-          <a class="button button-white" href="/blog">Find
-            <strong>more</strong>
-            articles
-          </a>
-        </div>
-      </div>
-    </div>
 
 
-    <% include ./partials/footer %>
+            <% include ./partials/footer %>

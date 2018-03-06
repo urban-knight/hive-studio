@@ -25,6 +25,7 @@ router.post("/login", passport.authenticate("local",
         failureRedirect: "/cms/login"
     }),  wrap(async (req, res) => {
 }));
+router.use(middleware.isLoggedIn);
 router.get("/logout", function(req, res){
     req.logout();
     res.redirect("/cms/login");
@@ -42,8 +43,6 @@ router.put("/settings", wrap(async (req, res) => {
         });
 }));
 
-router.use(middleware.isLoggedIn);
-
 router.get("/", wrap(async (req, res) => {
     var counter = {};
 
@@ -54,6 +53,12 @@ router.get("/", wrap(async (req, res) => {
     res.render("cms/index", {counter: counter, indexes: indexes});
 }));
 
+router.get(indexes.map(a => a.cmsUrl), wrap(async (req, res) => {
+    var index = indexes.find((e)=>{return e.url == req.originalUrl});
+    var objects = await models[index.model].findAsync({}).map(a => a[res.locals.lang]);
+    
+    return res.render(path.join(index.name, "index"), {[index.name]: objects});
+}));
 //router.use("/projects", routers.Project);
 
 module.exports = router;

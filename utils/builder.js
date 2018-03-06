@@ -46,6 +46,7 @@ var extractIndexes = (indexes, indexTarget) => {
     for (index of indexes) {
         var _index = {
             url: index["url"] ? index["url"] : "/" + index,
+            cmsUrl: index["url"] ? index["url"] : "/cms/" + index,
             name: index["name"] ? index["name"] : index,
             model: index["model"] ? index["model"] : capitalize(index.slice(0, -1)),
             target: "/" + index + "/:" + (index["target"] ? index["target"] : indexTarget)

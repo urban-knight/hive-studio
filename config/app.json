@@ -3,7 +3,7 @@
     "langs": ["en", "ua", "ru"],
     "defaultLang": "en",
     "langPath": "lang",
-    "langVar": "translation",
+    "langVar": "langer",
     "langCookie": "lang",
     "pages": ["about", "contacts", "order", "support"],
     "indexes": ["services", "products", "projects"],
