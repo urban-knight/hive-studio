@@ -7,6 +7,12 @@ const wrap = require("../../middleware/async-wrapper.js");
 const models = require("../../models");
 const routers = require("./routers");
 
+const builder = require("../../utils/builder.js");
+const config = require("../../config/app.json");
+
+var pages = builder.extractPages(config.pages);
+var indexes = builder.extractIndexes(config.indexes, config.indexTarget);
+
 var router  = express.Router();
 
 // --- CMS LOGIN SYSTEM --- //
@@ -40,9 +46,12 @@ router.use(middleware.isLoggedIn);
 
 router.get("/", wrap(async (req, res) => {
     var counter = {};
-    //counter.pages = await models.Page.count();  
 
-    res.render("cms/index", {counter: counter});
+    for (index of indexes) {
+        index.counter = await models[index.model].count();
+    }
+      
+    res.render("cms/index", {counter: counter, indexes: indexes});
 }));
 
 //router.use("/projects", routers.Project);

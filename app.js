@@ -21,8 +21,7 @@ const { promisifyAll } = require('bluebird');
 const Controller = require("./routes/controller");
 const CMSController = require("./routes/cms");
 
-
-// --- App configuration --- //
+// --- App Config --- //
 app = express();
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +40,10 @@ app.use(passport.session());
 passport.use(new LocalStrategy(models.User.authenticate()));
 passport.serializeUser(models.User.serializeUser());
 passport.deserializeUser(models.User.deserializeUser());
+app.use(async (req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 var pages = builder.extractPages(config.pages);
 var indexes = builder.extractIndexes(config.indexes, config.indexTarget);

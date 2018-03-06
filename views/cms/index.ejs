@@ -1,1 +1,44 @@
-<h1>CMS Index</h1>
+<% include ./partials/header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron dmcc-jumbo cms-heading">
+					<h1>Welcome to
+						<strong>HIVE</strong> CMS!</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3 class="dmcc-color">Website Pages
+							<span class="badge counter">3</span>
+						</h3>
+						<p>Here you can modify the information, represented on special pages of Hive Studio website.</p>
+						<p>
+							<a href="/cms/pages" class="btn btn-primary menu-btn">Open Pages</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<% for (index of indexes){ %>
+				<div class="col-lg-6">
+					<div class="thumbnail menu-card">
+						<div class="caption">
+							<h3 style="text-transform: capitalize"><%= index.name %>
+								<span class="badge counter"><%= index.counter %></span>
+							</h3>
+							<p>Select the information, displayed on main page from any of data represented by website.</p>
+							<p>
+								<a href="/cms<%= index.url %>" class="btn btn-primary menu-btn">Open <%= index.name %></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+	<% include ./partials/footer %>
