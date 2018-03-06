@@ -36,13 +36,13 @@ h1,h2,h3,h4,h5,h6{
 }
 
 /*-----RESPONSIVE----------*/
-@media  only screen and (max-width:600px){
+@media  only screen and (max-width:1000px){
 .container-tech{
-  display: none;
+  padding: 0 15px;
   }
  h1{
-  font-size: 5rem;
-  line-height: 5rem;
+  font-size: 4.5rem !important;
+  line-height: 7rem !important;
  }
  .site_title{
   top: 25vh !important;
@@ -50,9 +50,32 @@ h1,h2,h3,h4,h5,h6{
   width: 100%;
  }
  .subtitle{
-  font-size: 3rem;
+  font-size: 3rem !important;
+}
+.tech-stack{
+  display: none;
+}
+.container-hive{
+  padding: 0 30px !important;
+}
+.sub-block-cta{
+  padding: 0 !important;
+}
+.right-border{
+  font-size: 5rem !important;
+  border: none !important;
+}
+.site-map{
+  display: none;
 }
 }
+
+@media  only screen and (max-width:1300px){
+  .container-hive{
+    padding: 0 15px !important;
+  }
+}
+
 @media  only screen and (min-width:600px){
   h1{
     font-size: 9rem;
@@ -905,6 +928,28 @@ span.or{
 }
 /*-----------------------------------------*/
 
+/*---------ABOUT PAGE---------------*/
+
+hr { 
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  width: 20%;
+  text-align: center;
+} 
+.about-info{
+  text-align: center;
+  padding: 2vh 0;
+}
+.about-sub-header{
+  text-transform: uppercase;
+}
+
+/*-----------------------------------------*/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
   background: #fffff2; 
