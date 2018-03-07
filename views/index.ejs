@@ -128,6 +128,9 @@
                 <p class="info-product"><%= product.desc %></p>
                 <div class="view-product">
                   <p class="view-mode">Choose view mode:</p>
+                  <a><img class="view-icon" src="/static/images/products/pc.svg"></a>
+                  <a><img class="view-icon" src="/static/images/products/pad.svg"></a>
+                  <a><img class="view-icon" src="/static/images/products/phone.svg"></a>
                 </div>
                 <div class="btn-price">
                   <a class='card-button <%= (i%2 == 0?"card-button-black":"") %>' href="/products/<%= product.url %>"><%= langer.PRODUCT_BTN %></a>
@@ -139,34 +142,59 @@
       </div>
     <% }); %>
     <div class='fp-js white-section'>
-      <div class="container-hive">
-        <div class="row">
-          <h2 class="section-header">Key projects.</h2>
-          <p class="section-sub-header">our efficiency confirmed by our works</p>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <a class="price">Landing</a>
-            <h2 class="portfolio-item-head">paktum</h2>
-            <p class="portfolio-item-sub-head">website for debt collection company</p>
-            <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and sales on the Internet,
-              an online store will cope with this task. This interactive website is designed to provide certain goods to
-              your clients via account</p>
-            <div class="footer-social-links footer-social-black">
-              <a href="#" title="Behance" target="_blank">
-                <i class="fab fa-behance"></i>
-              </a>
+    <div class="container-hive">
+      <div class="row">
+        <h2 class="section-header">Key projects.</h2>
+        <p class="section-sub-header">our efficiency confirmed by our works</p>
+        <div class="wrapper">
+          <div class="owl-carousel">
+            <div>
+              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                <a class="price">Landing</a>
+                <h2 class="portfolio-item-head">paktum</h2>
+                <p class="portfolio-item-sub-head">website for debt collection company</p>
+                <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                  sales on the Internet, an online store will cope with this task. This interactive website is
+                  designed to provide certain goods to your clients via account</p>
+                <div class="footer-social-links footer-social-black">
+                  <a href="#" title="Behance" target="_blank">
+                    <i class="fab fa-behance"></i>
+                  </a>
+                </div>
+                <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+              </div>
+              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+              </div>
             </div>
-            <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+            <div>
+              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                <a class="price">Landing</a>
+                <h2 class="portfolio-item-head">paktum</h2>
+                <p class="portfolio-item-sub-head">website for debt collection company</p>
+                <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                  sales on the Internet, an online store will cope with this task. This interactive website is
+                  designed to provide certain goods to your clients via account</p>
+                <div class="footer-social-links footer-social-black">
+                  <a href="#" title="Behance" target="_blank">
+                    <i class="fab fa-behance"></i>
+                  </a>
+                </div>
+                <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+              </div>
+              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+              </div>
+            </div>
           </div>
-          <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-            <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
-          </div>
-        </div>
-        <div class="button-border button-border-white">
-          <a class="button button-white" href="#">Our
-            <strong>projects</strong> speak for us.</a>
         </div>
       </div>
+      <div class="button-border button-border-white">
+        <a class="button button-white" href="#">Our
+          <strong>projects</strong> speak for us.</a>
+      </div>
     </div>
+  </div>
     <div class='fp-js dark-section'>
       <div class="container-hive">
         <div class="row">
