@@ -13,7 +13,7 @@ $(document).ready(function () {
 function fullPageInit() {
   $('#fp-js').fullpage({
     sectionSelector: '.fp-js',
-    anchors: ['home', 'about', 'services', '', '', '', '', ''],
+    anchors: ['home', 'about', 'services', 'products', 'products-2', 'portfolio', 'order', 'blog', 'contacts'],
     navigation: true,
     scrollOverflow: true,
     paddingTop: '75px',
