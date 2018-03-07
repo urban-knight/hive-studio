@@ -1006,10 +1006,17 @@ hr {
   text-align: center;
   border-bottom: 5px solid #191716;
 } 
+
+
 /*-----------------------------------------*/
+/*---------CONTACTS PAGE---------------*/
 
-
-/*---------ABOUT PAGE---------------*/
+.container-contacts{
+  padding: 0 10vh !important;
+}
+.contacts-page{
+  padding: 5vh 0;
+}
 #map{
   height: 400px;
   width: 100%;
@@ -1017,8 +1024,28 @@ hr {
 .hive-map{
   position: initial !important;
   overflow: auto !important;
-
 }
+.google-head{
+  color: #191716;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+.google-sub-head p{
+  color: #191716;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.metro{
+  color: #191716;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  font-weight: bold; 
+}
+
 /*-----------------------------------------*/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
@@ -1036,4 +1063,81 @@ hr {
 /*-----------------------------------------*/
 
 
+/*
+ * Accordion
+ */
+.support-page{
+  padding: 3vh 0;
+}
+.support-sub-header{
+  text-align: left;
+  padding: 1vh 0;
+  font-size: 3.5rem;
+}
+.accordion > dt{
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.accordion > dt > a{
+  display: block;
+  position: relative;
+  color: #fffff2;
+  text-decoration: none;
+  padding: 2vh 2.5vh;
+  border: 1px solid #fffff2;
+  -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
+  -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+.accordion > dt > a:hover{
+  text-decoration: none;
+  border-color: #fffff2;
+  background-color: #fffff2;    
+  color: #191716;
+}
+.accordion > dt > a.active{
+  color: #191716;
+  border-color: #fffff2;
+  background-color: #fffff2;
+}
+.accordion > dt > a:after{
+  position: absolute;
+  top: 50%;
+  text-transform: none;
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #fffff2;
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
+  -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
 
+.accordion > dt > a:hover:after{
+  color: #191716;
+}
+
+.accordion > dd{
+  margin-bottom: 10px;
+  padding: 2vh 0;
+  font-size: 1.7rem;
+  line-height: 1.8;
+  color: #fffff2;
+}
+.hr-sub-cta{
+  display: block;
+  margin: 5vh 0 15vh 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #191716;
+  width: 30%;
+  text-align: center;
+}
+.button-cta-blog{
+  font-size: 5vh;
+}

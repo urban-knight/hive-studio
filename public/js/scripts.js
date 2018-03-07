@@ -282,3 +282,18 @@ $(document).ready(function () {
     navText: ['<i class="fa fa-angle-left fa-5x"></i>', '<i class="fa fa-angle-right fa-5x"></i>']
   });
 });
+
+// Accordion        
+$(".accordion").each(function () {
+  var allPanels = $(this).children("dd").hide();
+
+  $(this).children("dt").children("a").click(function () {
+    var current = $(this).parent().next("dd");
+    $(".accordion > dt > a").removeClass("active");
+    $(this).addClass("active");
+    allPanels.not(current).slideUp("easeInExpo");
+    $(this).parent().next().slideDown("easeOutExpo");
+    return false;
+  });
+
+});

@@ -2,8 +2,8 @@ var map, geocoder;
 
 function initMap() {
     var image = {
-        url: '/static/images/favicon.png',
-        scaledSize: new google.maps.Size(32, 32),
+        url: '/static/images/geotag.svg',
+        scaledSize: new google.maps.Size(70, 70),
         origin: new google.maps.Point(0, 0)
     };
     var geocoder = new google.maps.Geocoder();
@@ -212,12 +212,14 @@ function initMap() {
             map.mapTypes.set('styled_map', styledMapType);
             map.setMapTypeId('styled_map');
 
-            var contentString = '<div id="content" style="color: #ffffff !important;">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-            '<div id="bodyContent">'+
-            '<p></p>'+
+            var contentString = '<div id="content" class="google-content">'+
+            '<p id="firstHeading" class="google-head">Adress.</p>'+
+            '<div id="bodyContent" class="google-sub-head">'+
+            '<p>6G, Hryhoriia Andriushchenka St.</p>'+
+            '<p>Kyiv, Ukraine</p>'+
+            '<br>'+
+            '<p class="metro">Nearest Metro Station</p>'+
+            '<p>Polytechnic Institute | Lukyanivska</p>'+
             '</div>'+
             '</div>';
 
@@ -228,7 +230,7 @@ function initMap() {
             var marker = new google.maps.Marker({
                 position: myLatlng,
                 title: "Hive Studio",
-                icon: image.url,
+                icon: image,
                 map: map
             });
 
