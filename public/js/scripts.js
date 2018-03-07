@@ -268,3 +268,17 @@ function canvasBackgroundInit() {
     ctx.strokeStyle = color;
   });
 }
+
+$(document).ready(function () {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    items: 1,
+    margin: 0,
+    autoplay: true,
+    dots: true,
+    nav: true,
+    autoplayTimeout: 8500,
+    smartSpeed: 450,
+    navText: ['<i class="fa fa-angle-left fa-5x"></i>', '<i class="fa fa-angle-right fa-5x"></i>']
+  });
+});

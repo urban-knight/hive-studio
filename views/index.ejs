@@ -140,59 +140,89 @@
       </div>
     </div>
     <% var chunks = []; %>
-    <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
+      <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
 
-      <% chunks.forEach(function(chunk, i){ %>
-        <div class='fp-js <%= (i%2 != 0?"white-section":"dark-section") %>"'>
-          <h2><%= i %></h2>
-          <div class="container-hive">
-            <div class="row">
-              <% for (product of chunk) { %>
-                <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border-black">
-                  <h2 class="head-product">
-                    <%= product.name %>
-                  </h2>
-                  <a class="price">
-                    <%= product.price %>
-                  </a>
-                  <p class="info-product">
-                    <%= product.desc %>
-                  </p>
-                  <div class="view-product">
-                    <p class="view-mode">Choose view mode:</p>
-                  </div>
-                  <div class="btn-price">
-                    <a class="card-button card-button-black" href="/products/<%= product.url %>">
-                      <%= langer.PRODUCT_BTN %>
+        <% chunks.forEach(function(chunk, i){ %>
+          <div class='fp-js <%= (i%2 != 0?"white-section":"dark-section") %>"'>
+            <h2>
+              <%= i %>
+            </h2>
+            <div class="container-hive">
+              <div class="row">
+                <% for (product of chunk) { %>
+                  <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border-black">
+                    <h2 class="head-product">
+                      <%= product.name %>
+                    </h2>
+                    <a class="price">
+                      <%= product.price %>
                     </a>
+                    <p class="info-product">
+                      <%= product.desc %>
+                    </p>
+                    <div class="view-product">
+                      <p class="view-mode">Choose view mode:</p>
+                      <a><img class="view-icon" src="/static/images/products/pc.svg"></a>
+                      <a><img class="view-icon" src="/static/images/products/pad.svg"></a>
+                      <a><img class="view-icon" src="/static/images/products/phone.svg"></a>
+                    </div>
+                    <div class="btn-price">
+                      <a class="card-button card-button-black" href="/products/<%= product.url %>">
+                        <%= langer.PRODUCT_BTN %>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              <% } %>
+                  <% } %>
+              </div>
             </div>
           </div>
-        </div>
-      <% }); %>
+          <% }); %>
             <div class='fp-js white-section'>
               <div class="container-hive">
                 <div class="row">
                   <h2 class="section-header">Key projects.</h2>
                   <p class="section-sub-header">our efficiency confirmed by our works</p>
-                  <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                    <a class="price">Landing</a>
-                    <h2 class="portfolio-item-head">paktum</h2>
-                    <p class="portfolio-item-sub-head">website for debt collection company</p>
-                    <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and sales
-                      on the Internet, an online store will cope with this task. This interactive website is designed to
-                      provide certain goods to your clients via account</p>
-                    <div class="footer-social-links footer-social-black">
-                      <a href="#" title="Behance" target="_blank">
-                        <i class="fab fa-behance"></i>
-                      </a>
+                  <div class="wrapper">
+                    <div class="owl-carousel">
+                      <div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <a class="price">Landing</a>
+                          <h2 class="portfolio-item-head">paktum</h2>
+                          <p class="portfolio-item-sub-head">website for debt collection company</p>
+                          <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                            sales on the Internet, an online store will cope with this task. This interactive website is
+                            designed to provide certain goods to your clients via account</p>
+                          <div class="footer-social-links footer-social-black">
+                            <a href="#" title="Behance" target="_blank">
+                              <i class="fab fa-behance"></i>
+                            </a>
+                          </div>
+                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                        </div>
+                      </div>
+                      <div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <a class="price">Landing</a>
+                          <h2 class="portfolio-item-head">paktum</h2>
+                          <p class="portfolio-item-sub-head">website for debt collection company</p>
+                          <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                            sales on the Internet, an online store will cope with this task. This interactive website is
+                            designed to provide certain goods to your clients via account</p>
+                          <div class="footer-social-links footer-social-black">
+                            <a href="#" title="Behance" target="_blank">
+                              <i class="fab fa-behance"></i>
+                            </a>
+                          </div>
+                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                        </div>
+                      </div>
                     </div>
-                    <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
-                  </div>
-                  <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                    <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
                   </div>
                 </div>
                 <div class="button-border button-border-white">
@@ -209,7 +239,7 @@
                   </div>
                   <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 sub-block-cta">
                     <div class="button-border button-border-dark">
-                      <a class="button-order button-dark" href="../">Order
+                      <a class="button-order button-dark" href="/order">Order
                         <strong>now</strong>.
                       </a>
                     </div>

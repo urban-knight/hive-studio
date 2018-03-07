@@ -652,12 +652,20 @@ img.grey:hover  {
   background-color: #fffff2;
 }
 .view-product{
+  display: inline-flex;
   padding: 2vh 0;
 }
 .btn-price{
   padding: 1vh 0;
 }
-
+.view-icon{
+  width: 40px;
+  height: 40px;
+  padding: 0 0.5vh;
+}
+.view-mode{
+  padding: 0.5vh 2vh 0.5vh 0;
+}
 /*----------------------------------------*/
 /*---------PORTFOLIO SECTION--------------*/
 .section-sub-header{
@@ -688,6 +696,37 @@ img.grey:hover  {
 .footer-social-black{
   float: left;
 }
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.owl-carousel .owl-nav [class*='owl-'] {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.owl-carousel .owl-nav [class*='owl-'].disabled:hover {
+  background-color: #000;
+}
+.owl-carousel {
+  position: relative;
+}
+.owl-carousel .owl-next,
+.owl-carousel .owl-prev {
+  width: 22px;
+  height: 40px;
+  margin-top: -20px;
+  position: absolute;
+  top: 45%;
+  color: #000;
+}
+.owl-carousel .owl-prev {
+  left: -55px;
+}
+.owl-carousel .owl-next {
+  right: -30px;
+}
+
+
 /*----------------------------------------*/
 /*---------CTA SECTION---------------*/
 .section-header-cta{
@@ -948,7 +987,38 @@ hr {
 .about-sub-header{
   text-transform: uppercase;
 }
+.team-img{
+  width: 100%;
+}
+.team-name{
+  font-size: 2rem;
+  font-weight: 500;
+}
+.team-pos{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.team-border { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  text-align: center;
+  border-bottom: 5px solid #191716;
+} 
+/*-----------------------------------------*/
 
+
+/*---------ABOUT PAGE---------------*/
+#map{
+  height: 400px;
+  width: 100%;
+}
+.hive-map{
+  position: initial !important;
+  overflow: auto !important;
+
+}
 /*-----------------------------------------*/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
@@ -964,3 +1034,6 @@ hr {
   padding: 0;
 }
 /*-----------------------------------------*/
+
+
+
