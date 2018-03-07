@@ -15,16 +15,15 @@ var pages = builder.extractPages(config.pages);
 
 router.get(pages.map(a => a.url), wrap(async (req, res) => {
     var page = pages.find((e)=>{return e.url == req.originalUrl});
+    var data = {pages: pages};
 
     if (page.models) {
-        var data = {};
         for (const [i, model] of page.models.entries()) {
             data[page.data[i]] = await models[model].findAsync({}).map(a => a[res.locals.lang]);
         }
-        return res.render(page.name, data);
     }
 
-    return res.render(page.name);
+    return res.render(page.name, data);
 }));
 
 var indexes = builder.extractIndexes(config.indexes, config.indexTarget);
