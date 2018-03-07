@@ -21,7 +21,7 @@
     </div>
     <div class='fp-js white-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid"><%-langer.ABOUT_HEADING%></h2>
+        <h2 class="section-header container-fluid"><%-langer.ABOUT_HEADING%>.</h2>
         <div class="row">
           <div class="col-xl-2 col-md-2 col-md-offset-1 col-sm-offset-2 col-xs-12">
             <p class="count">12</p>
@@ -44,7 +44,7 @@
             <p class="count-descr"><%-langer.ABOUT_F5%></p>
           </div>
         </div>
-        <h3 class="section-header-2"><%=langer.ABOUT_TECH%></h3>
+        <h3 class="section-header-2"><%=langer.ABOUT_TECH%>.</h3>
         <div class="container-tech tech-stack">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -88,7 +88,7 @@
     </div>
     <div class='fp-js dark-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid"><%=langer.SERVICES_HEADING%></h2>
+        <h2 class="section-header container-fluid"><%=langer.SERVICES_HEADING%>.</h2>
         <div class="container-hive">
           <div class="row">
             <% services.forEach(function(service, i){ %>
@@ -123,11 +123,11 @@
                   <%= (i%2 == 0?"right-border-black":"right-border") %>
                 <% } %>
               '>
-                <h2 class="head-product"><%= product.name %></h2>
+                <h2 class="head-product"><%= product.name %>.</h2>
                 <a class='price <%= (i%2 == 0?"":"price-white") %>'><%= product.price %></a>
                 <p class="info-product"><%= product.desc %></p>
                 <div class="view-product">
-                  <p class="view-mode">Choose view mode:</p>
+                  <p class="view-mode"><%= langer.PRODUCT_MODE %>:</p>
                   <a><img class="view-icon" src="/static/images/products/pc.svg"></a>
                   <a><img class="view-icon" src="/static/images/products/pad.svg"></a>
                   <a><img class="view-icon" src="/static/images/products/phone.svg"></a>
@@ -144,8 +144,8 @@
     <div class='fp-js white-section'>
     <div class="container-hive">
       <div class="row">
-        <h2 class="section-header">Key projects.</h2>
-        <p class="section-sub-header">our efficiency confirmed by our works</p>
+        <h2 class="section-header"><%= langer.PROJECTS_HEADING %></h2>
+        <p class="section-sub-header"><%= langer.PROJECTS_SUBHEAD %></p>
         <div class="wrapper">
           <div class="owl-carousel">
             <div>
@@ -190,8 +190,7 @@
         </div>
       </div>
       <div class="button-border button-border-white">
-        <a class="button button-white" href="#">Our
-          <strong>projects</strong> speak for us.</a>
+        <a class="button button-white" href="#"><%- langer.PROJECTS_BTN %></a>
       </div>
     </div>
   </div>
@@ -199,20 +198,16 @@
       <div class="container-hive">
         <div class="row">
           <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
-            <h2 class="section-header-cta">Let us make your website easy on the eyes.</h2>
+            <h2 class="section-header-cta"><%= langer.ORDER_HEADING %></h2>
           </div>
           <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 sub-block-cta">
             <div class="button-border button-border-dark">
-              <a class="button-order button-dark" href="../">Order
-                <strong>now</strong>.
-              </a>
+              <a class="button-order button-dark" href="../"><%- langer.ORDER_BTN %></a>
             </div>
           </div>
           <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
             <div class="button-presentation">
-              <a class="btn-download" href="#">Download
-                <strong>presentation</strong>.
-              </a>
+              <a class="btn-download" href="#"><%- langer.ORDER_DOWNLOAD %></a>
             </div>
           </div>
         </div>
@@ -220,7 +215,7 @@
     </div>
     <div class='fp-js white-section'>
       <div class="container-hive">
-        <h2 class="section-header-news">Latest news.</h2>
+        <h2 class="section-header-news"><%= langer.BLOG_HEADING %></h2>
         <div class="row">
           <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
             <img class="blog-img" src="/static/images/blog/post-1.jpg">
@@ -260,10 +255,7 @@
           </div>
         </div>
         <div class="button-border button-border-white">
-          <a class="button button-white" href="/blog">Find
-            <strong>more</strong>
-            articles
-          </a>
+          <a class="button button-white" href="/blog"><%- langer.BLOG_BTN %></a>
         </div>
       </div>
     </div>
