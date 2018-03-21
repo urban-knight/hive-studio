@@ -5,14 +5,17 @@ var router = express.Router();
 
 // Index
 router.get("/", wrap(async (req, res) => {
-    var projects = await models.Project.find({}).populate("pages");
-        projects.reverse();
+    var projects = await models.Project.findAsync({});
+
     return res.render("cms/projects/index", { projects: projects });
 }));
 
 // Create
 router.get("/new", wrap(async (req, res) => {
-    var categories = await models.Category.find({ url: { $in: ["sectors", "services"] } }).populate("pages");
+    var categories = [];
+    var products = await models.Product.findAsync({});
+    var services = await models.Service.findAsync({});
+    categories = categories.concat(products, services);
     var pictures = await models.Picture.findAsync();
 
     return res.render("cms/projects/new", { categories: categories, pictures: pictures });

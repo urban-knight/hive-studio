@@ -58,5 +58,6 @@ router.get("/", wrap(async (req, res) => {
 router.use("/services", routers.Service);
 router.use("/products", routers.Product);
 router.use("/pictures", routers.Picture);
+router.use("/projects", routers.Project);
 
 module.exports = router;

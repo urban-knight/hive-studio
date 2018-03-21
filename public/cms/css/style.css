@@ -135,8 +135,13 @@ html, body {
 }
 
 span.badge {
-	line-height: 1.2;
-	background-color: #bbb;
+	padding: 3px 6px;
+    margin-bottom: 4px;
+	background-color: #fffff2;
+	border-radius: 0%;
+	border: 1px solid #191715;
+	color: #191715;
+	font-weight: 100;
 }
 
 #header-jumbo {
