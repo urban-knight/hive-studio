@@ -1,60 +1,38 @@
 var mongoose = require("mongoose");
 
 var ProjectSchema = mongoose.Schema({
-    en: {
-        picture_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Picture"
-        },
-        url: { type: String },
-        name: { type: String },
-        released: { type: Date },
-        category: {
-            name: {type: String},
-            subcategory: {type: String}
-        },
-        business_case: { type: String},
-        tech_stack: [{
-            name: {type: String},
-            icon: {type: String}
-        }]
+    picture_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Picture"
     },
-    ru: {
-        picture_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Picture"
-        },
+    business_case: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Case"
+    },
+    category: {
+        kind: String,
+        item: { type: ObjectId, refPath: 'category.kind' }
+    },
+    released: { type: Date },
+    hours: {type: Number},
+    en: {
         url: { type: String },
         name: { type: String },
-        released: { type: Date },
-        category: {
-            name: {type: String},
-            subcategory: {type: String}
-        },
-        business_case: { type: String},
-        tech_stack: [{
-            name: {type: String},
-            icon: {type: String}
-        }]
+        desc: { type: String },
+        scope: []
     },
     ua: {
-        picture_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Picture"
-        },
         url: { type: String },
         name: { type: String },
-        released: { type: Date },
-        category: {
-            name: {type: String},
-            subcategory: {type: String}
-        },
-        business_case: { type: String},
-        tech_stack: [{
-            name: {type: String},
-            icon: {type: String}
-        }]
-    }
+        desc: { type: String },
+        scope: []
+    },
+    ru: {
+        url: { type: String },
+        name: { type: String },
+        desc: { type: String },
+        scope: []
+    },
 });
 
 module.exports = mongoose.model("Project", ProjectSchema);

@@ -1,25 +1,125 @@
-<% include ./partials/header %>
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <title>
+    <%=page404.PAGE_TITLE%>
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="author" content="Hive-Team">
+
+  <link rel="canonical" href="https://www.hive-studio.net" />
+  <link rel="shortcut icon" href="/static/images/favicon.png">
+  <link rel="stylesheet" href="/static/css/lib/grid-system.min.css">
+  <link rel="stylesheet" href="/static/css/lib/jquery.fullpage.min.css">
+  <link rel="stylesheet" href="/static/css/lib/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/lib/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/css/lib/owl.theme.default.min.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113086520-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-113086520-1');
+  </script>
+
+  <!-- Href links -->
+  <link rel="alternate" href="https://hive-studio.net" hreflang="en" />
+  <link rel="alternate" href="https://ua.hive-studio.net" hreflang="uk-ua" />
+  <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ua" />
+  <link rel="alternate" href="https://ru.hive-studio.net" hreflang="ru-ru" />
+
+</head>
+
+<body>
+  <div class="toggleMenu">
+    <div class="mobile-logo">
+      <a href="/">
+        <img src="/static/images/logo.svg" alt="Hive logo" width="150">
+      </a>
+    </div>
+    <div class="hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </div>
+  <div class="lang-switcher">
+    <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
+    <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
+    <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
+  </div>
+  <ul class="nav" id='navmenu'>
+    <li data-menuanchor="about">
+      <a href="/about">
+        <%=page404.NAV_ABOUT%>
+      </a>
+    </li>
+    <li data-menuanchor='services'>
+      <a href="/services">
+        <%=page404.NAV_SERVICES%>
+      </a>
+    </li>
+    <li data-menuanchor='products'>
+      <a href="/products">
+        <%=page404.NAV_PRODUCTS%>
+      </a>
+    </li>
+    <li data-menuanchor='portfolio'>
+      <a href="/portfolio">
+        <%=page404.NAV_PORTFOLIO%>
+      </a>
+    </li>
+    <li data-menuanchor='blog'>
+      <a href="/blog">
+        <%=page404.NAV_BLOG%>
+      </a>
+    </li>
+    <li data-menuanchor='contacts'>
+      <a href="/contacts">
+        <%=page404.NAV_CONTACTS%>
+      </a>
+    </li>
+    <li class="logo">
+      <div class="site-logo">
+        <a>
+          <img data-dark='/static/images/logo-dark.svg' data-white='/static/images/logo.svg' src="/static/images/logo.svg" alt="Hive logo"
+            width="135">
+        </a>
+      </div>
+    </li>
+    <li class="lang-switcher-mobile">
+      <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net/">EN</a>
+      <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net/">UA</a>
+      <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net/">RU</a>
+    </li>
+  </ul>
   <div class="page-404 dark-section">
     <div class="container">
       <div class="row">
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 right-border">
           <h2 class="head-404">404</h2>
-          <h3 class="sub-head-404">Page not Found</h3>
+          <h3 class="sub-head-404"><%=page404.NOT_FOUND%></h3>
         </div>
         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 sub-block-404">
-          <p class="contacts-404">Contact us
-            <span class="or"> or</span>
+          <p class="contacts-404"><%=page404.CONTACT%>
+            <span class="or"><%=page404.OR%></span>
           </p>
           <div class="button-border button-border-dark">
-            <a class="button button-dark" href="../">Return to Main
-              <strong>Page</strong>.
-            </a>
+            <a class="button button-dark" href="../"><%-page404.BTN_TO_MAIN%></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  </body>
+</body>
 
-  </html>
+</html>

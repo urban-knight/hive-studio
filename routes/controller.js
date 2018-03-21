@@ -13,33 +13,48 @@ var router = express.Router();
 
 var pages = builder.extractPages(config.pages);
 
-router.get(pages.map(a => a.url), wrap(async (req, res) => {
-    var page = pages.find((e)=>{return e.url == req.originalUrl});
-    var data = {pages: pages};
-
-    if (page.models) {
-        for (const [i, model] of page.models.entries()) {
-            data[page.data[i]] = await models[model].findAsync({}).map(a => a[res.locals.lang]);
-        }
+router.get("/", wrap(async (req, res) => {
+    var data = {
+        services: await models.Service.findAsync({}).map(a => a[res.locals.lang]),
+        products: await models.Product.findAsync({}).map(a => a[res.locals.lang]),
+        projects: await models.Product.findAsync({}).map(a => a[res.locals.lang]),
+        langer: require("../lang/" + res.locals.lang + ".json")
     }
-
-    return res.render(page.name, data);
+    return res.render("index", data);
 }));
 
-var indexes = builder.extractIndexes(config.indexes, config.indexTarget);
-
-router.get(indexes.map(a => a.url), wrap(async (req, res) => {
-    var index = indexes.find((e)=>{return e.url == req.originalUrl});
-    var objects = await models[index.model].findAsync({}).map(a => a[res.locals.lang]);
-    
-    return res.render(path.join(index.name, "index"), {[index.name]: objects});
+router.get("/about", wrap(async (req, res) => {
+    var data = {
+        langer: require("../lang/about/" + res.locals.lang + ".json")
+    }
+    return res.render("about", data);
 }));
 
-router.get(indexes.map(a => a.target), wrap(async (req, res) => {
-    var index = indexes.find((e)=>{return e.url == "/" + req.originalUrl.split("/")[1]});
-    var obj = await models[index.model].findOneAsync({[res.locals.lang + ".url"]: req.params.url});
-    
-    return res.render(path.join(index.name, "show"), {[index.name.slice(0, -1)]: obj[res.locals.lang]});
+router.get("/order", wrap(async (req, res) => {
+    var data = {
+        langer: require("../lang/order/" + res.locals.lang + ".json")
+    }
+    return res.render("order", data);    
 }));
+
+router.get("/contacts", wrap(async (req, res) => {
+    var data = {
+        langer: require("../lang/contacts/" + res.locals.lang + ".json")
+    }
+    return res.render("contacts", data);
+}));
+
+router.get("/support", wrap(async (req, res) => {
+    var data = {
+        langer: require("../lang/support/" + res.locals.lang + ".json")
+    }
+    return res.render("support", data);
+}));
+
+router.use("/blog", require("./blog"));
+router.use("/services", require("./services"));
+router.use("/products", require("./products"));
+router.use("/projects", require("./projects"));
+router.use("/pictures", require("./pictures"));
 
 module.exports = router;

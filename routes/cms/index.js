@@ -44,21 +44,19 @@ router.put("/settings", wrap(async (req, res) => {
 }));
 
 router.get("/", wrap(async (req, res) => {
-    var counter = {};
-
-    for (index of indexes) {
-        index.counter = await models[index.model].count();
+    var counter = {
+        services: await models.Service.find({}).count(),
+        products: await models.Product.find({}).count(),
+        projects: await models.Project.find({}).count(),
+        posts: await models.Post.find({}).count(),
+        pictures: await models.Picture.find({}).count(),
     }
       
-    res.render("cms/index", {counter: counter, indexes: indexes});
+    res.render("cms/index", {counter: counter});
 }));
 
-router.get(indexes.map(a => a.cmsUrl), wrap(async (req, res) => {
-    var index = indexes.find((e)=>{return e.url == req.originalUrl});
-    var objects = await models[index.model].findAsync({}).map(a => a[res.locals.lang]);
-    
-    return res.render(path.join(index.name, "index"), {[index.name]: objects});
-}));
-//router.use("/projects", routers.Project);
+router.use("/services", routers.Service);
+router.use("/products", routers.Product);
+router.use("/pictures", routers.Picture);
 
 module.exports = router;

@@ -2,13 +2,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <h1><%= translation.HEADING %></h1>
+        <h1><%= langer.HEADING %></h1>
     </div>
     <div class="row">
         <% services.forEach(function(service){ %>
             <div class="col-lg-3">
-                <h2><%= service.name %></h2>
-                <p><%= service.desc %></p>
+                <h2><%- service.name %></h2>
+                <%- service.desc %>
                 <a href="/services/<%= service.url %>">To service</a>
             </div>
         <% }); %>

@@ -2,42 +2,85 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="jumbotron dmcc-jumbo cms-heading">
-					<h1>Welcome to
-						<strong>HIVE</strong> CMS!</h1>
-				</div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-lg-6">
 				<div class="thumbnail menu-card">
 					<div class="caption">
-						<h3 class="dmcc-color">Website Pages
-							<span class="badge counter">3</span>
+						<h3>
+							Services List
+							<span class="badge counter">
+								<%= counter.services %>
+							</span>
 						</h3>
-						<p>Here you can modify the information, represented on special pages of Hive Studio website.</p>
+						<p>Modify the list of services, provided by Studio. You can add, modify or delete any service here.</p>
 						<p>
-							<a href="/cms/pages" class="btn btn-primary menu-btn">Open Pages</a>
+							<a href="/cms/services" class="btn btn-primary menu-btn">Manage Services</a>
 						</p>
 					</div>
 				</div>
 			</div>
-			<% for (index of indexes){ %>
-				<div class="col-lg-6">
-					<div class="thumbnail menu-card">
-						<div class="caption">
-							<h3 style="text-transform: capitalize"><%= index.name %>
-								<span class="badge counter"><%= index.counter %></span>
-							</h3>
-							<p>Select the information, displayed on main page from any of data represented by website.</p>
-							<p>
-								<a href="/cms<%= index.url %>" class="btn btn-primary menu-btn">Open <%= index.name %></a>
-							</p>
-						</div>
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>
+							Studio Products
+							<span class="badge counter">
+								<%= counter.products %>
+							</span>
+						</h3>
+						<p>Select the information, displayed on main page from any of data represented by website.</p>
+						<p>
+							<a href="/cms/products" class="btn btn-primary menu-btn">Manage Products</a>
+						</p>
 					</div>
 				</div>
-			<% } %>
+			</div>
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>
+							Our Portfolio
+							<span class="badge counter">
+								<%= counter.projects %>
+							</span>
+						</h3>
+						<p>Select the information, displayed on main page from any of data represented by website.</p>
+						<p>
+							<a href="/cms/projects" class="btn btn-primary menu-btn">Manage Projects</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>
+							Hive Blog
+							<span class="badge counter">
+								<%= counter.posts %>
+							</span>
+						</h3>
+						<p>Select the information, displayed on main page from any of data represented by website.</p>
+						<p>
+							<a href="/cms/blog" class="btn btn-primary menu-btn">Manage Blog</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>Corporate Gallery
+							<span class="badge counter">
+								<%= counter.pictures %>
+							</span>
+						</h3>
+						<p>The storage of corporate pictures, images and visual brandings. You can add, modify or delete any image here.</p>
+						<p>
+							<a href="/cms/pictures" class="btn btn-primary menu-btn">Manage Gallery</a>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

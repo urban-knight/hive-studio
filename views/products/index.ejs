@@ -8,8 +8,8 @@
         <% products.forEach(function(product){ %>
             <div class="col-lg-3">
                 <h2><%= product.name %></h2>
-                <p><strong><%= product.price %></strong></p>
-                <p><%= product.desc %></p>
+                <p><strong><%- product.price %></strong></p>
+                <p><%- product.desc %></p>
                 <a href="/products/<%= product.url %>">To product</a>
             </div>
         <% }); %>

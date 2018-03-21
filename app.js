@@ -1,6 +1,7 @@
 const dotenv = require('dotenv').config({ path: './config/.env' });
 const fs = require('fs');
 const path = require('path');
+const multer = require('multer');
 const express = require('express');
 const models = require("./models");
 const db = require('./utils/db.js');
@@ -10,6 +11,7 @@ const bodyParser = require('body-parser');
 const { error } = require("./middleware");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const storage = require("./utils/storage.js");
 const LocalStrategy = require('passport-local');
 const methodOverride = require('method-override');
 
@@ -31,9 +33,8 @@ app.use(methodOverride("_method"));
 app.use(cookieParser("hive-studio"));
 app.use(session({
     secret: "hive-studio",
-    resave: true,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    resave: false,
+    saveUninitialized: false,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -44,6 +45,9 @@ app.use(async (req, res, next) => {
     res.locals.currentUser = req.user;
     next();
 });
+
+// --- Multer module config --- //
+app.use(multer({ storage: storage }).any());
 
 var pages = builder.extractPages(config.pages);
 var indexes = builder.extractIndexes(config.indexes, config.indexTarget);

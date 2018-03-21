@@ -47,17 +47,10 @@ router.post("/", wrap(async (req, res) => {
 // Delete
 router.delete("/:id", wrap(async (req, res) => {
     var id = req.params.id;
-    var page = await models.Page.findOneAsync({ picture: id });
-    var project = await models.Page.findOneAsync({ picture: id });
+    
+    var deleted = await models.Picture.findByIdAndRemoveAsync(req.params.id);
+    return res.status(200).send("Deleted successfully");
 
-    if (page) {
-        return res.status(500).json({ error: "This picture is assigned to the page. Please re-assign the picture first.", id: page._id });
-    } else if (project) {
-        return res.status(500).json({ error: "This picture is assigned to the project. Please re-assign the picture first.", id: project._id });
-    } else {
-        var deleted = await models.Picture.findByIdAndRemoveAsync(req.params.id);
-        return res.status(200).send("Deleted successfully");
-    }
 }));
 
 module.exports = router;

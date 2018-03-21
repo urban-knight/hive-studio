@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron dmcc-jumbo">
+					<h2>Corporate Gallery</h2>
+					<p>The Picture of your Company is here. Add new pictures or wipe out the old ones.</p>
+					<a href="/cms" class="btn btn-primary" style="float: left;"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+					<form id="fileForm" action="/cms/pictures" method="POST" enctype="multipart/form-data" hidden>
+							<input class="file-input" type="file" name="image" accept="image/jpg" multiple="true" hidden>
+					</form>
+					<button id="fileButton" class="btn btn-primary-inversed">Upload Picture</button>
+				</div>		
+			</div>
+		</div>
+		<div class="row">
+			<% pictures.forEach(function(picture){ %>
+				<div class="col-lg-6">
+					<a href="/pictures/<%=picture._id%>" target="_blank">
+						<div class="thumbnail menu-card picture-card" style="background-image:url('/cms/pictures/<%= picture._id %>')">
+							<div class="result-wrapper invisible">
+								<p class="error-label"></p>
+							</div>
+							<form class="delete-form" action="/cms/pictures/<%= picture._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-primary menu-btn" type="submit">Delete</button>
+							</form>
+						</div>
+					</a>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+
+	<% include ../partials/footer %>
+
+	<script type="text/javascript" src="/static/cms/js/pictures/index.js"></script>

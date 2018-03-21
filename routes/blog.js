@@ -1,10 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Block = require("./../models/post.js");
-const Category = require("./../models/category.js");
+const models = require("./../models");
 const wrap = require("../middleware/async-wrapper.js");
 
+// Blog Index 
+router.get('/', wrap(async (req, res) => {
+    var data = {
+        categories: await models.Category.findAsync({}).populate("posts"),
+        featured: await models.Post.findAsync({}).sort({}).limit(5),
+        langer: require("../lang/blog/" + res.locals.lang + ".json")
+    }
 
+    return res.render("blog/index", data);
+}));
 // Category view
 router.get('/category/:category_url', wrap(async (req, res)=> {
     var perPage = 3;

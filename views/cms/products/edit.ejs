@@ -1,0 +1,133 @@
+<% include ../partials/header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel with-nav-tabs panel-default">
+					<ul class="nav nav-tabs nav-justified">
+						<li role="presentation" class="active">
+							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
+						</li>
+					</ul>
+					<div class="panel-body">
+						<form action="/cms/products/<%= product._id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+							<div class="tab-content">
+								<div id="lang_en" class="tab-pane fade in active">
+									<div class="form-group">
+										<label>URL: </label>
+										<div class="input-group">
+											<span class="input-group-addon" id="url-addon">
+												<strong>https://www.hive-studio.net/products/</strong>
+											</span>
+											<input class="form-control product-url" type="text" name="product[en][url]" lang="en" aria-describedby="url-addon" value="<%= product.en.url %>" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Name: </label>
+										<a class="btn btn-primary btn-lang" target="product-name" lang="en">translate</a>
+										<input class="form-control product-name" type="text" name="product[en][name]" lang="en" value="<%= product.en.name %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Price: </label>
+										<a class="btn btn-primary btn-lang" target="product-price" lang="en">translate</a>
+										<input class="form-control product-price" type="text" name="product[en][price]" lang="en" value="<%= product.en.price %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Description: </label>
+										<a class="btn btn-primary btn-lang" target="product-desc" lang="en">translate</a>
+										<textarea id="en-product-desc" class="form-control product-desc" type="text" name="product[en][desc]" lang="en" rows="6"><%= product.en.desc %></textarea>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Extended description: </label>
+										<a class="btn btn-primary btn-lang" target="product-ext-desc" lang="en">translate</a>
+										<textarea id="en-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[en][ext_desc]" lang="en" rows="12" ><%= product.en.ext_desc %></textarea>
+									</div>
+								</div>
+								<div id="lang_ua" class="tab-pane fade in">
+									<div class="form-group">
+										<label>URL: </label>
+										<div class="input-group">
+											<span class="input-group-addon" id="url-addon">
+												<strong>https://www.ua.hive-studio.net/products/</strong>
+											</span>
+											<input class="form-control product-url" type="text" name="product[ua][url]" lang="uk" aria-describedby="url-addon" value="<%= product.ua.url %>" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Name: </label>
+										<a class="btn btn-primary btn-lang" target="product-name" lang="uk">translate</a>
+										<input class="form-control product-name" type="text" name="product[ua][name]" lang="uk" value="<%= product.ua.name %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Price: </label>
+										<a class="btn btn-primary btn-lang" target="product-price" lang="uk">translate</a>
+										<input class="form-control product-price" type="text" name="product[ua][price]" lang="uk" value="<%= product.ua.price %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Description: </label>
+										<a class="btn btn-primary btn-lang" target="product-desc" lang="uk">translate</a>
+										<textarea id="uk-product-desc" class="form-control product-desc" type="text" name="product[ua][desc]" lang="uk" rows="6" ><%= product.ua.desc %></textarea>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Extended description: </label>
+										<a class="btn btn-primary btn-lang" target="product-ext-desc" lang="uk">translate</a>
+										<textarea id="uk-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[ua][ext_desc]" lang="uk" rows="12" ><%= product.ua.ext_desc %></textarea>
+									</div>
+								</div>
+								<div id="lang_ru" class="tab-pane fade in">
+									<div class="form-group">
+										<label>URL: </label>
+										<div class="input-group">
+											<span class="input-group-addon" id="url-addon">
+												<strong>https://www.ru.hive-studio.net/products/</strong>
+											</span>
+											<input class="form-control product-url" type="text" name="product[ru][url]" lang="ru" aria-describedby="url-addon" value="<%= product.ru.url %>" required>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Name: </label>
+										<a class="btn btn-primary btn-lang" target="product-name" lang="ru">translate</a>
+										<input class="form-control product-name" type="text" name="product[ru][name]" lang="ru" value="<%= product.ru.name %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Price: </label>
+										<a class="btn btn-primary btn-lang" target="product-price" lang="ru">translate</a>
+										<input class="form-control product-price" type="text" name="product[ru][price]" lang="ru" value="<%= product.ru.price %>" required>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Description: </label>
+										<a class="btn btn-primary btn-lang" target="product-desc" lang="ru">translate</a>
+										<textarea id="ru-product-desc" class="form-control product-desc" type="text" name="product[ru][desc]" lang="ru" rows="6"><%= product.ru.desc %></textarea>
+									</div>
+									<div class="form-group">
+										<label class="data-params">Extended description: </label>
+										<a class="btn btn-primary btn-lang" target="product-ext-desc" lang="ru">translate</a>
+										<textarea id="ru-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[ru][ext_desc]" lang="ru" rows="12" ><%= product.ru.ext_desc %></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<input class="btn btn-primary btn-lg" type="submit" value="Save Product" style="float: right;">
+							</div>
+						</form>
+						<a class="btn  btn-lg btn-primary-inversed btn-back-new" href="/cms/products">
+							<i class="glyphicon glyphicon-chevron-left"></i> Back
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<% include ../partials/footer %>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=cv1jk6lwz0h07mv2ifw3qvk32chw0tmbqe2hgti6gsm9ydo3"></script>
+	<script type="text/javascript" src="/static/lib/translate/translate.min.js"></script>
+	<script type="text/javascript" src="/static/cms/js/products/edit.js"></script>

@@ -1,0 +1,90 @@
+.login-card {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 640px;
+    height: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.19) !important;
+    background-color: #fff;
+    padding: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-card {
+        width: 100%;
+    }
+}
+
+.login-heading {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 36px;
+}
+.login-heading > strong {
+    font-weight: 900;
+}
+
+.login-input {
+    border: 1px solid #aa0060;
+    height: 42px;
+}
+
+.login-request {
+    display: inherit;
+    position: absolute;
+    color: #777;
+    font-size: 16px;
+}
+
+.menu-btn {
+    top: 45px;
+    height: 64px;
+    width: 64px;
+    font-size: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    -webkit-transition: all .2s ease-in-out 0s;
+    -moz-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+
+.login-btn > .glyphicon{
+    margin-top: 2px;
+}
+
+.back-btn {
+    position: absolute;
+    left: 0;
+    padding: 12px;
+    color: #bbb !important;
+    font-size: 21px;
+}
+
+.back-btn:hover {
+    color: #777 !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus
+input:-webkit-autofill, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid #aa0060;
+    -webkit-text-fill-color: #aa0060;
+    -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.studio-label {
+    width: 196px;
+    position: absolute;
+    bottom: 32px;
+    right: calc(50vw - 98px);
+}
