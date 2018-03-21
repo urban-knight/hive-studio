@@ -11,7 +11,7 @@ var ProjectSchema = mongoose.Schema({
     },
     category: {
         kind: String,
-        item: { type: ObjectId, refPath: 'category.kind' }
+        item: { type: mongoose.Schema.Types.ObjectId, refPath: 'category.kind' }
     },
     released: { type: Date },
     hours: {type: Number},
