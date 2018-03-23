@@ -225,6 +225,10 @@ span.badge {
 	border-radius: 0%;
 }
 
+.panel-body {
+	background-color: #fffff2;
+}
+
 .panel-default {
 	background-color: #fffff2 !important;
 }
@@ -234,11 +238,15 @@ span.badge {
 }
 
 .panel-primary {
-	border-color: #AA0066;
+	border-color: #191715;
+	border-radius: 0%;
 }
 
 .panel-primary .panel-heading {
-	background-color: #AA0066;
+	background-image: none;
+	background-color: #191715;
+	border-color: #191715;
+	border-radius: 0%;
 }
 
 .with-nav-tabs.panel-primary .nav-tabs > li > a,
@@ -253,7 +261,7 @@ span.badge {
 .with-nav-tabs.panel-primary .nav-tabs > li > a:hover,
 .with-nav-tabs.panel-primary .nav-tabs > li > a:focus {
 	color: #fff;
-	background-color: #700043;
+	background-color: #191715;
 	border: none;
 }
 .with-nav-tabs.panel-primary .nav-tabs > li.active > a,
@@ -261,7 +269,7 @@ span.badge {
 .with-nav-tabs.panel-primary .nav-tabs > li.active > a:focus {
 	color: #700043;
 	background-color: #fff;
-	border-color: #700043;
+	border-color: #191715;
 	border: none;
 }
 .with-nav-tabs.panel-primary .panel-heading {
@@ -276,12 +284,12 @@ span.badge {
 }
 
 .panel-primary > .panel-heading .active .badge.primary {
-	background-color:  #AA0066;
+	background-color:  #191715;
 	color: #ffffff;
 }
 .panel-primary > .panel-heading .badge.primary {
 	background-color: #ffffff;
-	color: #AA0066;
+	color: #191715;
 }
 /********************************************************************/
 
@@ -466,6 +474,9 @@ span.badge {
 .panel-heading > .col-lg-6 > .btn-primary-inversed {
 	float: right;
 }
+.panel-heading > .col-lg-6 > .btn-primary {
+	float: right;
+}
 .panel-title > .label {
     font-size: 11px;
 }
@@ -567,4 +578,57 @@ label.switch-label {
     border: 1px solid #191715;
     border-radius: 0px;
     text-shadow: none;
+}
+
+.btn-select {
+	border-radius: 0%;
+	border: 1px solid #191715;
+	background: #ffffff;
+}
+
+#fileButton {
+	padding: 3px 6px;
+    font-size: 13px;
+}
+
+.item-container {
+	margin-bottom: 32px;
+}
+
+.item-form {
+	display: flex;
+	width: 100%;
+}
+
+.item-form > .item-field {
+	width: calc(100% - 80px) !important;
+}
+
+.item-form > .item-cancel, .item-form > .item-save {
+	width: 40px;
+}
+
+.item {
+	border-radius: 0% !important;
+	background: #ffffff !important;
+	padding: 0;
+}
+.item > form {
+	width: 4%;
+}
+.item > .item-text {
+	width: 96%;
+}
+
+.item-remove {
+	background: #ffffff;
+    border: none;
+    box-shadow: none !important;
+}
+.item-remove > i {
+	top: 4px;
+}
+.item-text {
+	font-weight: 500 !important;
+    line-height: 34px !important;
 }

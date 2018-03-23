@@ -59,5 +59,6 @@ router.use("/services", routers.Service);
 router.use("/products", routers.Product);
 router.use("/pictures", routers.Picture);
 router.use("/projects", routers.Project);
+router.use("/business-cases", routers.Case);
 
 module.exports = router;

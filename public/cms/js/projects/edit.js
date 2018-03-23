@@ -1,86 +1,28 @@
-var selectedCategories;
+// Set default value to DatePicker
+Date.prototype.toDateInputValue = (function () {
+    var local = new Date(this);
+    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+    return local.toJSON().slice(0, 10);
+});
 
-var append = function(value){
-    var elem = `<li class="list-group-item item" value="`+ value +`">`+
-                    `<button class="btn btn-primary-inversed item-remove">
-                        <i class="glyphicon glyphicon-remove"></i>
-                    </button>` + 
-                    `<div class="item-text">` + value + "</div>" +
-                    `<input type="text" value="` + value + `" class="item-edit form-control hidden">` +
-                "</li>";
+var append = function (value) {
+    var elem = 
+    `<li class="list-group-item item" value="` + value + `">` +
+        `<button class="btn btn-primary-inversed item-remove">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>` +
+        `<div class="item-text">` + value + "</div>" +
+        `<input type="text" value="` + value + `" class="item-edit form-control hidden">` +
+    "</li>";
     return elem;
 };
 
-$(document).ready(function() {
-    selectedCategories = JSON.parse($("input#category").val());
-    var arr = selectedCategories;
-
-    for(obj of arr){
-        var checkbox = $("input[type='checkbox'][value='"+obj+"']");
-        checkbox.prop('checked', true);
-    }
-});
-
-$("input.check-category").on("change", function(){
-    var category = $(this).val();
-
-    if ($(this).is(":checked")){
-        selectedCategories.push(category);
-    } else {
-        selectedCategories.splice(selectedCategories.findIndex(i => i === category), 1);
-    }
-    $("input#category").val(JSON.stringify(selectedCategories));
-});
-
-$(".item-add").on("click", function(){
-    $(this).add($(this).parents(".item-container").find(".item-form")).toggleClass("hidden");
-});
-
-$(".item-cancel").on("click", function(){
-
-    $(this).parents(".item-container").find(".item-field").val("");
-    $(this).parents(".item-container").find(".item-form, .item-add").toggleClass("hidden");
-});
-
-$(".item-save").on("click", function(){
-    var container = $(this).parents( ".item-container" ),
-        value     = container.find( ".item-field" ).val(),
-        target    = $("input#"+container.find( ".item-field" ).attr("name")),
-        array     = JSON.parse(target.val());
-
-    array.push(value);
-    target.val(JSON.stringify(array));
-
-    $(append(value)).appendTo(container.find( "ul.item-list" ));
-    container.find( ".item-field" ).val("");
-    $(this).parents( ".item-container" ).find( ".item-form, .item-add" ).toggleClass("hidden");
-    activateRemoveBtn();
-    activateEditBtn();
-});
-
-$("input#optional-info").change(function(){
-    if ($(this).is(':checked')) {
-        $("div#optional-container").show();
-    } else {
-        $("div#optional-container").hide().find("input").val("");
-
-    }
-});
-
-function populateDisplay (key){
-    var array = JSON.parse($( "#" + key ).val());
-
-    for (i = 0; i < array.length; i++) {
-        $(append(array[i])).appendTo($(" input[name='"+ key +"'] ").parents(" div.item-container ").find(" ul.item-list "));
-    };
-};
-
 function activateRemoveBtn() {
-    $("button.item-remove").on("click", function(){
-        var item = $(this).parents( ".item" ),
-            value     = item.val(),
-            target    = $("input#" + item.parents(" .item-container ").find( ".item-field" ).attr("name")),
-            array     = JSON.parse(target.val());
+    $("button.item-remove").on("click", function () {
+        var item = $(this).parents(".item"),
+            value = item.val(),
+            target = $("input#" + item.parents(" .item-container ").find(".item-field").attr("name")),
+            array = JSON.parse(target.val());
 
         array.splice(array.findIndex(i => i === value), 1);
         target.val(JSON.stringify(array));
@@ -89,48 +31,49 @@ function activateRemoveBtn() {
 }
 
 function activateEditBtn() {
-    $(" .item-text ").on("dblclick", function(){
+    $(" .item-text ").on("dblclick", function () {
         var item = $(this).parents(".item"),
             remove = item.find("button.item-remove"),
             text = $(this),
             input = item.find(" input ");
-        
+
         text.toggleClass("hidden");
         remove.toggleClass("hidden");
-        input.toggleClass("hidden");
+        input.toggleClass("hidden").focus();
     });
 
-    $(" .item-edit ").on("focusout", function(){
-        var item   = $(this).parents(".item"),
-            text   = item.find(".item-text"),
+    $(" .item-edit ").on("focusout", function () {
+        var item = $(this).parents(".item"),
+            text = item.find(".item-text"),
             remove = item.find("button.item-remove"),
-            input  = $(this),
-            target = $("input#" + item.parents(" .item-container ").find( ".item-field" ).attr("name")),
-            array  = JSON.parse(target.val());
-            var item_value = text.text();
-            console.log(item_value);
-            var index  = array.findIndex(i => i == item_value);
+            input = $(this),
+            target = $("input#" + item.parents(" .item-container ").find(".item-field").attr("name")),
+            array = JSON.parse(target.val());
+        var item_value = text.text();
+        var index = array.findIndex(i => i == item_value);
 
         array[index] = input.val();
         text.text(input.val());
         item.val(input.val());
         target.val(JSON.stringify(array));
-        console.log(JSON.stringify(array));
         text.toggleClass("hidden");
         input.toggleClass("hidden");
         remove.toggleClass("hidden");
     });
 }
 
-$("document").ready(function(){
-    var keys = ['category', 'service', 'partner', 'data'];
-    keys.forEach(function(key) { populateDisplay(key) }, this);
+function populateDisplay(key) {
+    var array = JSON.parse($("#" + key).val());
+
+    for (i = 0; i < array.length; i++) {
+        $(append(array[i])).appendTo($(" input[name='" + key + "'] ").parents(" div.item-container ").find(" ul.item-list "));
+    };
+};
+
+$(document).ready(function () {
+
     activateRemoveBtn();
     activateEditBtn();
-
-    $('#fileButton').on("click", function () {
-        $(".file-input").click();
-    });
 
     $(".file-input").on("change", function () {
         $('#fileForm').ajaxSubmit({
@@ -142,7 +85,7 @@ $("document").ready(function(){
                 $(".pic-done-label").show();
                 $(".selected-wrapper").hide();
                 $("input#picture").val(pictureIds[0]);
-                console.log("Project Picture ID: "+ pictureIds[0]);
+                console.log("Project Picture ID: " + pictureIds[0]);
             }
         });
     });
@@ -150,24 +93,116 @@ $("document").ready(function(){
     $('#pic-carousel').slick({
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3,
-        slickGoTo: index
+        slidesToScroll: 3
     });
 
-    $(".picture-carousel-card").on("click", function(){
+    $(".picture-carousel-card").on("click", function () {
         var id = $(this).attr("target");
         $(".selected-wrapper").hide();
         $(".pic-warn-label").hide();
         $(".pic-done-label").show();
         $(this).find(".selected-wrapper").show();
         $("input#picture").val(id);
-        console.log("Project Picture ID: "+ id);
+        console.log("Project Picture ID: " + id);
     });
 
-    $(".picture-carousel-card[target='"+ $("#picture").val() +"']").find(".selected-wrapper").show();
+    $('.selectpicker').selectpicker({
+        style: "btn-select",
+        size: 10,
+        width: "fit"
+    });
+
+    // Auto-match URL by Name 
+    $("input.project-name").on("change", function () {
+        var text = $(this).val();
+        var lang = $(this).attr("lang");
+        var url = $("input.project-url[lang='" + lang + "']");
+
+        if (text.length > 0) {
+            text = text.replace("&", "and");
+            text = text.replace(/[^A-Z0-9]+/ig, "-").toLowerCase();
+            url.val(text);
+        }
+    });
+
+    tinymce.init({
+        selector: 'textarea',
+        min_height: 200,
+    });
+
+    // Translate with Google
+    var langs = ["en", "ru", "uk"];
+    translate.engine = 'google';
+    translate.key = "AIzaSyCwf0U4wGdXLFujJlFxVAx2YmWnP5cY_hY";
+
+    $(".btn-lang").on("click", function () {
+        tinyMCE.triggerSave();
+
+        var targetClass = $(this).attr("target");
+        var _lang = $(this).attr("lang");
+        var _orig = $("." + targetClass + "[lang='" + _lang + "']").val();
+
+        var target_langs = langs;
+        target_langs.splice(target_langs.indexOf(_lang), 1);
+
+        if (_orig.length > 0) {
+            target_langs.forEach(async function (lang) {
+                const translated = await translate(_orig, { to: lang });
+                var target = $("." + targetClass + "[lang='" + lang + "']");
+                target.val(translated);
+                if (targetClass !== "project-name") tinymce.get(lang + "-" + targetClass).setContent(translated);
+            });
+        }
+    });
+
+    $(".item-add").on("click", function () {
+        $(this).add($(this).parents(".item-container").find(".item-form")).toggleClass("hidden").focus();
+    });
+
+    $(".item-cancel").on("click", function () {
+
+        $(this).parents(".item-container").find(".item-field").val("");
+        $(this).parents(".item-container").find(".item-form, .item-add").toggleClass("hidden");
+    });
+
+    $(".item-save").on("click", function () {
+        var container = $(this).parents(".item-container"),
+            value = container.find(".item-field").val(),
+            target = $("input#" + container.find(".item-field").attr("name")),
+            array = JSON.parse(target.val());
+
+        array.push(value);
+        target.val(JSON.stringify(array));
+
+        $(append(value)).appendTo(container.find("ul.item-list"));
+        container.find(".item-field").val("");
+        $(this).parents(".item-container").find(".item-form, .item-add").toggleClass("hidden");
+        activateRemoveBtn();
+        activateEditBtn();
+    });
+
+    $('#fileButton').on("click", function () {
+        $(".file-input").click();
+    });
+
+    // Set Picture carousel to value and selected picture
+    $(".picture-carousel-card[target='" + $("#picture").val() + "']").find(".selected-wrapper").show();
     $(".pic-warn-label").hide();
     $(".pic-done-label").show();
-
-    var index = $(".picture-carousel-card").index($(".picture-carousel-card[target='"+ $("#picture").val() +"']"))-3;
+    var index = $(".picture-carousel-card").index($(".picture-carousel-card[target='" + $("#picture").val() + "']")) - 3;
     $('#pic-carousel').slick('slickGoTo', index);
+    
+    // Set Date to selected value
+    $('#datePicker').val(new Date(released).toDateInputValue());
+
+    // Set selectors to value
+    $('.selectpicker[name="project[business_case]"]').selectpicker('val', business_case);
+    $('.selectpicker[name="project[category]"]').selectpicker('val', JSON.stringify(category));
+
+    // Populate Data-array displays
+    var keys = ['scope-en', 'scope-ua', 'scope-ru'];
+    keys.forEach(function (key) { populateDisplay(key) }, this);
+    activateRemoveBtn();
+    activateEditBtn();
+
 });

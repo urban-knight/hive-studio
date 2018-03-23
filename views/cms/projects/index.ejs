@@ -1,5 +1,14 @@
 <% include ../partials/header %>
 
+<style>
+	.item-container {
+    margin-bottom: 0px;
+}
+.item {
+	display: flex;
+}
+</style>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -12,11 +21,49 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="col-lg-6">
+							<h3 class="panel-title">Business Cases</h3>
+						</div>
+						<div class="col-lg-6">
+							<a id="fileButton" class="btn btn-primary" href="/cms/business-cases/new"><i class="glyphicon glyphicon-plus"></i></a>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="item-container row">
+							<div class="col-lg-12">
+								<ul class="list-group item-list">
+									<% for(business_case of cases){ %>
+										<li class="list-group-item item">
+											<div class="item-text">
+												<%= business_case.en.name %>
+											</div>
+											<a class="btn btn-primary-inversed item-remove" href="/cms/business-cases/<%= business_case.id %>/edit">
+												<i class="glyphicon glyphicon-pencil"></i>
+											</a>
+											<form action="/cms/business-cases/<%= business_case.id %>?_method=DELETE" method="POST">
+												<button class="btn btn-primary-inversed item-remove"><i class="glyphicon glyphicon-remove"></i></button>
+											</form>
+										</li>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<% for (project of projects){ %>
 				<div class="col-lg-12">
 					<div class="thumbnail menu-card">
 						<div class="caption">
-							<h3><%= project.en.name %></h3>
+							<h3>
+								<%= project.en.name %>
+								<span class="badge counter"><%= project.category.item.en.name %></span>
+							</h3>
 							<p><%- project.en.desc %></p>
 								<a href="/cms/projects/<%= project.id %>/edit" class="btn btn-primary menu-btn" role="button">Edit</a>
 								<form action="/cms/projects/<%= project.id %>?_method=DELETE" method="POST">
