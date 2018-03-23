@@ -126,6 +126,36 @@ $(document).ready(function () {
     tinymce.init({
         selector: 'textarea',
         min_height: 200,
+        autoresize_max_height: 800,
+        autoresize_min_height: 200,
+        autoresize_bottom_margin: 10,
+        plugins: 'autoresize textcolor colorpicker lists advlist code codesample image autolink link fullscreen hr media paste preview toc visualblocks wordcount',
+        toolbar: "undo redo styleselect forecolor backcolor bold italic alignleft aligncenter alignright bullist numlist outdent indent hr code codesample link image media toc visualblocks",
+        link_context_toolbar: true,
+        image_title: true,
+        automatic_uploads: true,
+        images_upload_url: '/cms/pictures/tiny',
+        file_picker_types: 'image',
+
+        file_picker_callback: function (cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.onchange = function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var id = 'blobid' + (new Date()).getTime();
+                    var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                    var base64 = reader.result.split(',')[1];
+                    var blobInfo = blobCache.create(id, file, base64);
+                    blobCache.add(blobInfo);
+                    cb(blobInfo.blobUri(), { title: file.name });
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
     });
 
     // Translate with Google
