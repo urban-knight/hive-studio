@@ -591,7 +591,7 @@ label.switch-label {
     font-size: 13px;
 }
 
-.item-container {
+.item-container.project-items {
 	margin-bottom: 32px;
 }
 
@@ -631,4 +631,35 @@ label.switch-label {
 .item-text {
 	font-weight: 500 !important;
     line-height: 34px !important;
+}
+
+.search-bar {
+	width: 100%;
+	display: flex;
+}
+.search-bar > .search-box {
+	width: calc(100% - 40px);
+}
+.search-bar > .btn-primary-inversed {
+	width: 40px;
+	box-shadow: none !important;
+}
+
+.search-result-box {
+	position: absolute;
+	z-index: 7;
+	width: 100%;
+	padding-right: 70px;
+}
+.search-result-box > .result-list {
+	padding: 0px;
+}
+.search-result-box > .result-list > .tag-item {
+	list-style: none;
+	line-height: 21px;
+    font-size: 14px;
+    padding: 12px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+	background-color: #ffffff;
 }

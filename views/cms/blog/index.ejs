@@ -1,0 +1,59 @@
+<% include ../partials/header %>
+
+<style>
+	.item-container {
+    margin-bottom: 0px;
+}
+.item {
+	display: flex;
+}
+</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron dmcc-jumbo">
+					<h1>Hive Studio Blog</h1>
+					<p>Here you can create, modify or delete any category of the Studio Blog.</p>
+					<a href="/cms" class="btn btn-primary" style="float: left;"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+					<a class="btn btn-primary-inversed" href="/cms/blog/categories/new">Add a new Category</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>Tag Manager</h3>
+						<p>Here you can manage the list of tags, related to posts.</p>
+						<a href="/cms/blog/tags" class="btn btn-primary menu-btn" role="button">To Manager</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="thumbnail menu-card">
+					<div class="caption">
+						<h3>Featured Block</h3>
+						<p>Select any post to featured list via this menu.</p>
+						<a href="/cms/blog/featured" class="btn btn-primary menu-btn" role="button">To Featured</a>
+					</div>
+				</div>
+			</div>
+			<% for (category of categories){ %>
+				<div class="col-lg-12">
+					<div class="thumbnail menu-card">
+						<div class="caption">
+							<h3>
+								<%= category.en.name %>
+								<span class="badge counter"><%= category.posts.length %></span>
+							</h3>
+							<p>This category is strongly related to the Studio service: <strong><%- category.service.en.name %></strong></p>
+							<a href="/cms/blog/categories/<%= category.id %>" class="btn btn-primary menu-btn" role="button">To Category</a>
+						</div>
+					</div>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+	<% include ../partials/footer %>

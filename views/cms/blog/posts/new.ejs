@@ -1,0 +1,224 @@
+<% include ../../partials/header %>
+<% if (!activeCategory) activeCategory = categories[0]; %>
+
+<style>
+	.item-list {
+		padding: 0px 15px;
+		box-shadow: none;
+	}
+
+	.item-remove {
+		float: right;
+	}
+</style>
+
+	<link rel="stylesheet" href="/static/lib/bootstrap-select/css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/lib/slick-1.8.0/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/static/lib/slick-1.8.0/slick-theme.css" />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-sm-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="col-lg-6">
+							<h3 class="panel-title">Picture
+								<span class="label label-danger pic-warn-label">Required</span>
+								<span class="label label-success pic-done-label" style="display: none;">Selected</span>
+							</h3>
+						</div>
+						<div class="col-lg-6">
+							<form id="fileForm" action="/cms/pictures" method="POST" enctype="multipart/form-data" hidden>
+								<input class="file-input" type="file" name="image" accept="image/jpeg, image/png" multiple="true" hidden>
+							</form>
+							<button id="fileButton" class="btn btn-primary-inversed">Upload Picture</button>
+						</div>
+					</div>
+					<div class="panel-body item-container pic-panel">
+						<div class="col-lg-12">
+							<div id="pic-carousel" class="picture-carousel">
+								<% pictures.forEach(function(picture){ %>
+									<div class="picture-carousel-card" style="background-image:url('/pictures/<%= picture._id %>');" target="<%= picture._id %>">
+										<div class="selected-wrapper" hidden>Selected</div>
+									</div>
+									<% }) %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4>General information</h4>
+					</div>
+					<div class="panel-body">
+						<form action="/cms/blog/posts" method="POST" enctype="application/x-www-form-urlencoded">
+						<input type="text" id="picture" name="post[picture_id]" value="5a380d146f1aa412c07e7941" hidden>
+						<input type="text" id="picture" name="post[author]" value="<%= currentUser.id %>" hidden>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="data-params">Published: </label>
+								<input id="datePicker" class="form-control" type="date" name="post[published]" required>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label class="data-params">Category: </label>
+								<br>
+								<select class="selectpicker" name="post[category]" required>
+									<% for (category of categories){ %>
+										<option value="<%= category.id %>">
+											<%= category.en.name %>
+										</option>
+									<% } %>
+								</select>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<input type="text" id="post-tags" name="post[tags]" value="[]" hidden>
+							<div class="form-group">
+								<label class="data-params">Tags: </label>
+								<div class="search-bar">
+									<input class="form-control search-box" type="text" id="tagSearchBox" name="tag-name" placeholder="Search tag by english name here">
+									<a class="btn btn-primary-inversed item-add" href="/cms/blog/tags/new" target="_blank" style="float: right;">
+										<i class="glyphicon glyphicon-plus"></i>
+									</a>
+								</div>
+								<div class="search-result-box" hidden>
+									<ul class="result-list">
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="item-container row">
+							<div class="col-lg-12">
+								<ul class="list-group item-list"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="panel with-nav-tabs panel-default">
+					<ul class="nav nav-tabs nav-justified">
+						<li role="presentation" class="active">
+							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
+						</li>
+					</ul>
+					<div class="panel-body">
+						<div class="tab-content">
+							<div id="lang_en" class="tab-pane fade in active">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon" lang="en">
+											<strong>https://www.hive-studio.net/blog/<%= activeCategory.en.url %>/</strong>
+										</span>
+										<input class="form-control post-url" type="text" name="post[en][url]" lang="en" aria-describedby="url-addon" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Title: </label>
+									<a class="btn btn-primary btn-lang" target="post-title" lang="en">translate</a>
+									<input class="form-control post-title" type="text" name="post[en][title]" lang="en" required>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Description: </label>
+									<a class="btn btn-primary btn-lang" target="post-desc" lang="en">translate</a>
+									<textarea id="en-post-desc" class="form-control post-desc" type="text" name="post[en][desc]" lang="en" rows="6"></textarea>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Post Body: </label>
+									<a class="btn btn-primary btn-lang" target="post-body" lang="en">translate</a>
+									<textarea id="en-post-body" class="form-control post-body" type="text" name="post[en][body]" lang="en" rows="12"></textarea>
+								</div>
+							</div>
+							<div id="lang_ua" class="tab-pane fade in">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon" lang="ua">
+											<strong>https://www.ua.hive-studio.net/blog/<%= activeCategory.ua.url %>/</strong>
+										</span>
+										<input class="form-control post-url" type="text" name="post[ua][url]" lang="uk" aria-describedby="url-addon" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Title: </label>
+									<a class="btn btn-primary btn-lang" target="post-title" lang="uk">translate</a>
+									<input class="form-control post-title" type="text" name="post[ua][title]" lang="uk" required>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Description: </label>
+									<a class="btn btn-primary btn-lang" target="post-desc" lang="uk">translate</a>
+									<textarea id="uk-post-desc" class="form-control post-desc" type="text" name="post[ua][desc]" lang="uk" rows="6"></textarea>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Post Body: </label>
+									<a class="btn btn-primary btn-lang" target="post-body" lang="uk">translate</a>
+									<textarea id="uk-post-body" class="form-control post-body" type="text" name="post[ua][body]" lang="uk" rows="12"></textarea>
+								</div>
+							</div>
+							<div id="lang_ru" class="tab-pane fade in">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon" lang="ru">
+											<strong>https://www.ru.hive-studio.net/blog/<%= activeCategory.ru.url %>/</strong>
+										</span>
+										<input class="form-control post-url" type="text" name="post[ru][url]" lang="ru" aria-describedby="url-addon" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Title: </label>
+									<a class="btn btn-primary btn-lang" target="post-name" lang="ru">translate</a>
+									<input class="form-control post-title" type="text" name="post[ru][title]" lang="ru" required>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Description: </label>
+									<a class="btn btn-primary btn-lang" target="post-desc" lang="ru">translate</a>
+									<textarea id="ru-post-desc" class="form-control post-desc" type="text" name="post[ru][desc]" lang="ru" rows="6"></textarea>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Post Body: </label>
+									<a class="btn btn-primary btn-lang" target="post-body" lang="ru">translate</a>
+									<textarea id="ru-post-body" class="form-control post-body" type="text" name="post[ru][body]" lang="ru" rows="12"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input class="btn btn-primary btn-lg" type="submit" value="Save post" style="float: right;">
+						</div>
+						</form>
+						<% if (activeCategory){ %>
+							<a class="btn  btn-lg btn-primary-inversed btn-back-new" href="/cms/blog/categories/<%= activeCategory.id %>">
+						<% } else { %>
+							<a class="btn  btn-lg btn-primary-inversed btn-back-new" href="/cms/blog"></a>
+						<% } %>
+							<i class="glyphicon glyphicon-chevron-left"></i> Back
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<% include ../../partials/footer %>
+		<script>
+			var categories = <%- JSON.stringify(categories) %>;
+			var activeCategory = <%- JSON.stringify(activeCategory) %>;
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+		<script type="text/javascript" src="/static/lib/slick-1.8.0/slick.min.js"></script>
+		<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=cv1jk6lwz0h07mv2ifw3qvk32chw0tmbqe2hgti6gsm9ydo3"></script>
+		<script type="text/javascript" src="/static/lib/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="/static/lib/translate/translate.min.js"></script>
+		<script type="text/javascript" src="/static/cms/js/blog/posts/new.js"></script>

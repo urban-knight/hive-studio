@@ -1,7 +1,6 @@
 var mongoose = require("mongoose");
 
 var PostSchema = mongoose.Schema({
-    url: { type: String },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Category"
@@ -10,15 +9,34 @@ var PostSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Picture"
     },
-    title: { type: String },
-    description: { type: String },
-    body: { type: String },
-    published: { type: Date },
-    tags: [],
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    }
+    },
+    published: { type: Date },
+    en: {
+        url: { type: String },
+        title: { type: String },
+        desc: { type: String },
+        body: { type: String }
+    },
+    ua: {
+        url: { type: String },
+        title: { type: String },
+        desc: { type: String },
+        body: { type: String }
+    },
+    ru: {
+        url: { type: String },
+        title: { type: String },
+        desc: { type: String },
+        body: { type: String }
+        
+    },
+    tags: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag"
+    }]
 });
 
 module.exports = mongoose.model("Post", PostSchema);

@@ -1,0 +1,118 @@
+<% include ../../partials/header %>
+
+	<link rel="stylesheet" href="/static/lib/bootstrap-select/css/bootstrap-select.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/lib/slick-1.8.0/slick.css" />
+	<link rel="stylesheet" type="text/css" href="/static/lib/slick-1.8.0/slick-theme.css" />
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4>General information</h4>
+					</div>
+					<div class="panel-body">
+						<form action="/cms/blog/categories/<%= category.id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label class="data-params">Service: </label>
+									<br>
+									<select class="selectpicker" name="category[service]" required>
+										<% for (service of services){ %>
+											<option value="<%= service.id %>">
+												<%= service.en.name %>
+											</option>
+											<% } %>
+									</select>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12">
+				<div class="panel with-nav-tabs panel-default">
+					<ul class="nav nav-tabs nav-justified">
+						<li role="presentation" class="active">
+							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+						</li>
+						<li role="presentation">
+							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
+						</li>
+					</ul>
+					<div class="panel-body">
+						<div class="tab-content">
+							<div id="lang_en" class="tab-pane fade in active">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon">
+											<strong>https://www.hive-studio.net/blog/</strong>
+										</span>
+										<input class="form-control category-url" type="text" name="category[en][url]" lang="en" aria-describedby="url-addon" value="<%= category.en.url %>" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Name: </label>
+									<a class="btn btn-primary btn-lang" target="category-name" lang="en">translate</a>
+									<input class="form-control category-name" type="text" name="category[en][name]" lang="en" value="<%= category.en.name %>" required>
+								</div>
+							</div>
+							<div id="lang_ua" class="tab-pane fade in">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon">
+											<strong>https://www.ua.hive-studio.net/blog/</strong>
+										</span>
+										<input class="form-control category-url" type="text" name="category[ua][url]" lang="uk" aria-describedby="url-addon" value="<%= category.ua.url %>" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Name: </label>
+									<a class="btn btn-primary btn-lang" target="category-name" lang="uk">translate</a>
+									<input class="form-control category-name" type="text" name="category[ua][name]" lang="uk" value="<%= category.ua.name %>" required>
+								</div>
+							</div>
+							<div id="lang_ru" class="tab-pane fade in">
+								<div class="form-group">
+									<label>URL: </label>
+									<div class="input-group">
+										<span class="input-group-addon" id="url-addon">
+											<strong>https://www.ru.hive-studio.net/blog/</strong>
+										</span>
+										<input class="form-control category-url" type="text" name="category[ru][url]" lang="ru" aria-describedby="url-addon" value="<%= category.ru.url %>" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="data-params">Name: </label>
+									<a class="btn btn-primary btn-lang" target="category-name" lang="ru">translate</a>
+									<input class="form-control category-name" type="text" name="category[ru][name]" lang="ru" value="<%= category.ru.name %>" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<input class="btn btn-primary btn-lg" type="submit" value="Save category" style="float: right;">
+						</div>
+						</form>
+						<a class="btn  btn-lg btn-primary-inversed btn-back-new" href="/cms/blog/categories/<%= category.id %>">
+							<i class="glyphicon glyphicon-chevron-left"></i> Back
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<% include ../../partials/footer %>
+
+		<script> var serviceId = '<%= category.service %>';</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+		<script type="text/javascript" src="/static/lib/slick-1.8.0/slick.min.js"></script>
+		<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=cv1jk6lwz0h07mv2ifw3qvk32chw0tmbqe2hgti6gsm9ydo3"></script>
+		<script type="text/javascript" src="/static/lib/bootstrap-select/js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="/static/lib/translate/translate.min.js"></script>
+		<script type="text/javascript" src="/static/cms/js/blog/categories/edit.js"></script>

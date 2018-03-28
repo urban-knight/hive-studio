@@ -1,5 +1,6 @@
 var objects = {};
 
+objects.Blog = require("./blog");
 objects.Case = require("./cases");
 objects.Picture = require("./pictures");
 objects.Service = require("./services");

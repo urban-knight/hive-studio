@@ -1,22 +1,24 @@
 var mongoose = require("mongoose");
 
 var CategorySchema = mongoose.Schema({
-    url: { type: String },
     posts: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Post"
     }],
     service: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Post"
+        ref: "Service"
     },
     en: {
+        url: { type: String },
         name: { type: String }
     },
     ru: {
+        url: { type: String },
         name: { type: String }
     },
     ua: {
+        url: { type: String },
         name: { type: String }
     }
 });

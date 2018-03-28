@@ -55,6 +55,7 @@ router.get("/", wrap(async (req, res) => {
     res.render("cms/index", {counter: counter});
 }));
 
+router.use("/blog", routers.Blog);
 router.use("/services", routers.Service);
 router.use("/products", routers.Product);
 router.use("/pictures", routers.Picture);

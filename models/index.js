@@ -1,5 +1,6 @@
 var objects = {};
 
+objects.Tag = require("./tag");
 objects.User = require("./user");
 objects.Post = require("./post");
 objects.Case = require("./case");

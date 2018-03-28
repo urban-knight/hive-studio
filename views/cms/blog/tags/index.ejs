@@ -1,0 +1,57 @@
+<% include ../../partials/header %>
+
+<style>
+	.item-container {
+    margin-bottom: 0px;
+}
+.item {
+	display: flex;
+}
+</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron dmcc-jumbo">
+					<h1>Blog: Tag Manager</h1>
+					<p>Here you can create, modify or delete any tag on Blog.</p>
+					<a href="/cms/blog" class="btn btn-primary" style="float: left;"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+					<a class="btn btn-primary-inversed" href="/cms/blog/tags/new">Add a new Tag</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="col-lg-6">
+							<h3 class="panel-title">Tag List</h3>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="item-container row">
+							<div class="col-lg-12">
+								<ul class="list-group item-list">
+									<% for(tag of tags){ %>
+										<li class="list-group-item item">
+											<div class="item-text">
+												<%= tag.en.name %>
+											</div>
+											<a class="btn btn-primary-inversed item-remove" href="/cms/blog/tags/<%= tag.id %>/edit">
+												<i class="glyphicon glyphicon-pencil"></i>
+											</a>
+											<form action="/cms/blog/tags/<%= tag.id %>?_method=DELETE" method="POST">
+												<button class="btn btn-primary-inversed item-remove"><i class="glyphicon glyphicon-remove"></i></button>
+											</form>
+										</li>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<% include ../../partials/footer %>
