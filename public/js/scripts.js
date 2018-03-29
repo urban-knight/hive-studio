@@ -36,7 +36,7 @@ function fullPageInit() {
         logo.attr('src', logo.data('white'));
       }
     },
-    //dunamic languages-switcher links
+    //dynamic languages-switcher links
     afterLoad: function (anchorLink, index) {
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
@@ -297,3 +297,27 @@ $(".accordion").each(function () {
   });
 
 });
+
+// Accordion Portfolio      
+$(".accordion-portfolio").each(function () {
+  var allPanels = $(this).children("dd").hide();
+  $(this).children("dd").first().slideDown("easeOutExpo");
+  $(this).children("dt").children("a").first().addClass("active");
+
+  $(this).children("dt").children("a").click(function () {
+    var current = $(this).parent().next("dd");
+    $(".accordion-portfolio > dt > a").removeClass("active");
+    $(this).addClass("active");
+    allPanels.not(current).slideUp("easeInExpo");
+    $(this).parent().next().slideDown("easeOutExpo");
+    return false;
+  });
+
+});
+
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
