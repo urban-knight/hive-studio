@@ -21,244 +21,300 @@
     </div>
     <div class='fp-js white-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid"><%-langer.ABOUT_HEADING%>.</h2>
+        <h2 class="section-header container-fluid">
+          <%-langer.ABOUT_HEADING%>.</h2>
         <div class="row">
           <div class="col-xl-2 col-md-2 col-md-offset-1 col-sm-offset-2 col-xs-12">
             <p class="count">12</p>
-            <p class="count-descr"><%-langer.ABOUT_F1%></p>
+            <p class="count-descr">
+              <%-langer.ABOUT_F1%>
+            </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">5</p>
-            <p class="count-descr"><%-langer.ABOUT_F2%></p>
+            <p class="count-descr">
+              <%-langer.ABOUT_F2%>
+            </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
             <p class="count">4</p>
-            <p class="count-descr"><%-langer.ABOUT_F3%></p>
+            <p class="count-descr">
+              <%-langer.ABOUT_F3%>
+            </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">24<span>h</span></p>
-            <p class="count-descr"><%-langer.ABOUT_F4%></p>
+            <p class="count">24
+              <span>h</span>
+            </p>
+            <p class="count-descr">
+              <%-langer.ABOUT_F4%>
+            </p>
           </div>
           <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">100<span>%</span></p>
-            <p class="count-descr"><%-langer.ABOUT_F5%></p>
+            <p class="count">100
+              <span>%</span>
+            </p>
+            <p class="count-descr">
+              <%-langer.ABOUT_F5%>
+            </p>
           </div>
         </div>
-        <h3 class="section-header-2"><%=langer.ABOUT_TECH%>.</h3>
-        <div class="container-tech tech-stack">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <div class="row">
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/mongo.png">
-                </div>
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/express.png">
-                </div>
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/angular.png">
-                </div>
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/node.png">
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <div class="row">
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/linux.png">
-                </div>
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/apache.png">
-                </div>
-                <div class="col-xs-3 right-border">
-                  <img class="grey" src="/static/images/brands/mysql.png">
-                </div>
-                <div class="col-xs-3">
-                  <img class="grey" src="/static/images/brands/php.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="button-border button-border-white">
-          <a class="button button-white" href="/about"><%-langer.ABOUT_BTN%></a>
+        <div class="button-border-dark">
+          <a class="button-small-dark" href="/about">
+            <%-langer.ABOUT_BTN%>
+          </a>
         </div>
       </div>
     </div>
     <div class='fp-js dark-section'>
       <div class="section-content">
-        <h2 class="section-header container-fluid"><%=langer.SERVICES_HEADING%>.</h2>
+        <h2 class="section-header container-fluid">
+          <%=langer.SERVICES_HEADING%>.</h2>
         <div class="container-hive">
           <div class="row">
-            <% services.forEach(function(service, i){ %>
-              <div class="col-xl-3 col-md-3 col-sm-6 col-xs-12 slide-up four col">
-                <div class="box">
-                  <div class="original">
-                    <h3 class="num-service">#<%= i+1 %></h3>
-                    <h3 class="name-service"><%- service.name %></h3>
+              <div class="vertical-tab-wrap">
+                  <div class="vert-tabs">
+                      <button class="tablinks tabs-active" data-tab="tab-1" data-bind="click: backToTop">
+                          System Maintenance & Hosting
+                      </button>
+                      <button class="tablinks" data-tab="tab-2" data-bind="click: backToTop">
+                          Fullstack Web Development
+                      </button>
+                      <button class="tablinks" data-tab="tab-3" data-bind="click: backToTop">
+                          Identity Design & Branding
+                      </button>
+                      <button class="tablinks" data-tab="tab-4" data-bind="click: backToTop">
+                          SEO & Digital Marketing
+                      </button>
                   </div>
-                  <div class="overlay">
-                    <%- service.desc %>
-                    <div>
-                      <a class="card-button" href="/services/<%= service.url %>"><%=langer.SERVICE_BTN %></a>
-                    </div>
+                  <div id="tab-1" class="tab-content tabs-active">
+                      <div class="animated slideInDown">
+                          <p class="service-block-desc">Today’s informed consumer is able to quickly find your website and digital marketing
+                              presence to assess your credibility and whether you’re worthy of their time and money.
+                              Don’t lose conversions with a broken or vulnerable website. By partnering with Hive
+                              Studio, you can be calm for the stability and security of your information resource.
+                              Our team is always ready to provide a wide-range tech support including network,
+                              hosting and digital maintenance solutions.</p>
+                          <div class="btn-service-block">
+                              <a class="card-button btn-service" href="#">
+                                  See Detalis
+                              </a>
+                          </div>
+                      </div>
                   </div>
-                </div>
+                  <div id="tab-2" class="tab-content">
+                      <div class="animated slideInDown">
+                          <p class="service-block-desc">Stunning design is great for business. We specialises in creating custom web design that
+                              are crafted to meet your brand, design and functionality needs. Our websites are
+                              easy to edit, update and manage allowing you to keep your website content fresh and
+                              relevant encouraging repeat visits and increasing traffic to your website. We ensure
+                              our websites work well on desktop computers as well as on mobile devices such as
+                              smartphones and tablets.</p>
+                          <div class="btn-service-block">
+                              <a class="card-button btn-service" href="#">
+                                  See Detalis
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="tab-3" class="tab-content">
+                      <div class="animated slideInDown">
+                          <p class="service-block-desc">Your brand will help distinguish you from your competitors and should always be consistent
+                              with your website. Is your current brand looking a little bit tired? Are you ready
+                              to re-launch with a refreshing new look? We will implement your ideas in the best
+                              shape and shade, while creating an exquisite look that will surely please your customers.</p>
+                          <div class="btn-service-block">
+                              <a class="card-button btn-service" href="#">
+                                  See Detalis
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div id="tab-4" class="tab-content">
+                      <div class="animated slideInDown">
+                          <p class="service-block-desc">Having a great website is really nice, but if nobody sees it, it’s in vain to make you
+                              money. In today's competitive online environment, it is absolutely vital that your
+                              site appears near the top of search engine results. Search engines change the rules
+                              frequently, so we will work hard to get your site noticed, drive traffic and increase
+                              your return on investment. We can help your website search engine friendly, optimize
+                              content and even help you track conversions.</p>
+                          <div class="btn-service-block">
+                              <a class="card-button btn-service" href="#">
+                                  See Detalis
+                              </a>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            <% }) %>
           </div>
         </div>
       </div>
     </div>
     <% var chunks = []; %>
-    <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
-    <% chunks.forEach(function(chunk, i){ %>
-      <div class='fp-js <%= (i%2 == 0?"white-section":"dark-section") %>'>
-        <div class="container-hive">
-          <div class="row">
-            <% for (const [j, product] of chunk.entries()) { %>
-              <div class='col-xl-6 col-md-6 col-sm-12 col-xs-12 
+      <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
+        <% chunks.forEach(function(chunk, i){ %>
+          <div class='fp-js <%= (i%2 == 0?"white-section":"dark-section") %>'>
+            <div class="container-hive">
+              <div class="row">
+                <% for (const [j, product] of chunk.entries()) { %>
+                  <div class='col-xl-6 col-md-6 col-sm-12 col-xs-12 
                 <% if (j == 0) { %>
                   <%= (i%2 == 0?"right-border-black":"right-border") %>
                 <% } %>
               '>
-                <h2 class="head-product"><%= product.name %>.</h2>
-                <a class='price <%= (i%2 == 0?"":"price-white") %>'><%- product.price %></a>
-                <p class="info-product"><%- product.desc %></p>
-                <div class="view-product">
-                  <p class="view-mode"><%= langer.PRODUCT_MODE %>:</p>
-                  <a><img class="view-icon" src="/static/images/products/pc.svg"></a>
-                  <a><img class="view-icon" src="/static/images/products/pad.svg"></a>
-                  <a><img class="view-icon" src="/static/images/products/phone.svg"></a>
-                </div>
-                <div class="btn-price">
-                  <a class='card-button <%= (i%2 == 0?"card-button-black":"") %>' href="/products/<%= product.url %>"><%= langer.PRODUCT_BTN %></a>
-                </div>
+                    <h2 class="head-product">
+                      <%= product.name %>.</h2>
+                    <a class='price <%= (i%2 == 0?"":"price-white") %>'>
+                      <%- product.price %>
+                    </a>
+                    <p class="info-product">
+                      <%- product.desc %>
+                    </p>
+                    <div class="btn-price">
+                      <a class='card-button <%= (i%2 == 0?"card-button-black":"") %>' href="/products/<%= product.url %>">
+                        <%= langer.PRODUCT_BTN %>
+                      </a>
+                    </div>
+                  </div>
+                  <% } %>
               </div>
-            <% } %>
+            </div>
           </div>
-        </div>
-      </div>
-    <% }); %>
-    <div class='fp-js white-section'>
-    <div class="container-hive">
-      <div class="row">
-        <h2 class="section-header"><%= langer.PROJECTS_HEADING %></h2>
-        <p class="section-sub-header"><%= langer.PROJECTS_SUBHEAD %></p>
-        <div class="wrapper">
-          <div class="owl-carousel">
-            <div>
-              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                <a class="price">Landing</a>
-                <h2 class="portfolio-item-head">paktum</h2>
-                <p class="portfolio-item-sub-head">website for debt collection company</p>
-                <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
-                  sales on the Internet, an online store will cope with this task. This interactive website is
-                  designed to provide certain goods to your clients via account</p>
-                <div class="footer-social-links footer-social-black">
-                  <a href="#" title="Behance" target="_blank">
-                    <i class="fab fa-behance"></i>
+          <% }); %>
+            <div class='fp-js white-section'>
+              <div class="container-hive">
+                <div class="row">
+                  <h2 class="section-header">
+                    <%= langer.PROJECTS_HEADING %>
+                  </h2>
+                  <p class="section-sub-header">
+                    <%= langer.PROJECTS_SUBHEAD %>
+                  </p>
+                  <div class="wrapper">
+                    <div class="owl-carousel">
+                      <div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <a class="price">Landing</a>
+                          <h2 class="portfolio-item-head">paktum</h2>
+                          <p class="portfolio-item-sub-head">website for debt collection company</p>
+                          <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                            sales on the Internet, an online store will cope with this task. This interactive website is
+                            designed to provide certain goods to your clients via account</p>
+                          <div class="footer-social-links footer-social-black">
+                            <a href="#" title="Behance" target="_blank">
+                              <i class="fab fa-behance"></i>
+                            </a>
+                          </div>
+                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                        </div>
+                      </div>
+                      <div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <a class="price">Landing</a>
+                          <h2 class="portfolio-item-head">paktum</h2>
+                          <p class="portfolio-item-sub-head">website for debt collection company</p>
+                          <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
+                            sales on the Internet, an online store will cope with this task. This interactive website is
+                            designed to provide certain goods to your clients via account</p>
+                          <div class="footer-social-links footer-social-black">
+                            <a href="#" title="Behance" target="_blank">
+                              <i class="fab fa-behance"></i>
+                            </a>
+                          </div>
+                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-border-dark">
+                  <a class="button-small-dark" href="#">
+                    <%- langer.PROJECTS_BTN %>
                   </a>
                 </div>
-                <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
-              </div>
-              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
               </div>
             </div>
-            <div>
-              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                <a class="price">Landing</a>
-                <h2 class="portfolio-item-head">paktum</h2>
-                <p class="portfolio-item-sub-head">website for debt collection company</p>
-                <p class="portfolio-item-info">If you want a site that contains all the effective mechanisms for the product presentation and
-                  sales on the Internet, an online store will cope with this task. This interactive website is
-                  designed to provide certain goods to your clients via account</p>
-                <div class="footer-social-links footer-social-black">
-                  <a href="#" title="Behance" target="_blank">
-                    <i class="fab fa-behance"></i>
+            <div class='fp-js dark-section'>
+              <div class="container-hive">
+                <div class="row">
+                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
+                    <h2 class="section-header-cta">
+                      <%= langer.ORDER_HEADING %>
+                    </h2>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="button-presentation">
+                      <a class="btn-download" href="#">
+                        <%- langer.ORDER_DOWNLOAD %>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 order-btn-block">
+                    <div class="button-border-white">
+                      <a class="button-small-white" href="../">
+                        <%- langer.ORDER_BTN %>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='fp-js white-section'>
+              <div class="container-hive">
+                <h2 class="section-header-news">
+                  <%= langer.BLOG_HEADING %>
+                </h2>
+                <div class="row">
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
+                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
+                    <div class="blog-detalis">
+                      <p class="blog-date">Feb 07</p>
+                      <p class="blog-author">Dmytro Kuznets</p>
+                    </div>
+                    <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <div class="btn-price">
+                      <a class="btn-article" href="#">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-border-white">
+                  <a class="button-small-white" href="/blog">
+                    <%- langer.BLOG_BTN %>
                   </a>
                 </div>
-                <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
-              </div>
-              <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="button-border button-border-white">
-        <a class="button button-white" href="#"><%- langer.PROJECTS_BTN %></a>
-      </div>
-    </div>
-  </div>
-    <div class='fp-js dark-section'>
-      <div class="container-hive">
-        <div class="row">
-          <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
-            <h2 class="section-header-cta"><%= langer.ORDER_HEADING %></h2>
-          </div>
-          <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 sub-block-cta">
-            <div class="button-border button-border-dark">
-              <a class="button-order button-dark" href="../"><%- langer.ORDER_BTN %></a>
-            </div>
-          </div>
-          <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="button-presentation">
-              <a class="btn-download" href="#"><%- langer.ORDER_DOWNLOAD %></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class='fp-js white-section'>
-      <div class="container-hive">
-        <h2 class="section-header-news"><%= langer.BLOG_HEADING %></h2>
-        <div class="row">
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-            <div class="blog-detalis">
-              <p class="blog-date">Feb 07</p>
-              <p class="blog-author">Dmytro Kuznets</p>
-            </div>
-            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-            <p class="blog-info">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-            <div class="btn-price">
-              <a class="btn-article" href="#">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="button-border button-border-white">
-          <a class="button button-white" href="/blog"><%- langer.BLOG_BTN %></a>
-        </div>
-      </div>
-    </div>
 
 
-    <% include ./partials/footer %>
+            <% include ./partials/footer %>

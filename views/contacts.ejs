@@ -1,37 +1,66 @@
 <% include ./partials/header %>
     <div id='fp-js'>
-        <div class='fp-js dark-section'>
-            <h2 class="section-header contacts-page">Contacts.</h2>
-            <div class="container-hive">
-                <div class="row">
-                    <div class="col-xl-4 col-md-4 col-sm-4 col-xs-12">
-                        <div class="contacts-block">
-                            <h3 class="contacts-head">Call us now.</h3>
-                            <a class="contacts-data" href="tel:+380974092303">+380 (97) 409 23 03</a>
-                            <a class="contacts-data" href="mailto:sales@hive-studio.net">sales@hive-studio.net</a>
-                            <div class="adress-block">
-                                <p class="contacts-adress">6G, Hryhoriia Andriushchenka St.</p>
-                                <p class="contacts-adress">Kyiv, Ukraine</p>
+        <div class='fp-js white-section'>
+            <h2 class="section-header">Contacts.</h2>
+            <h3 class="section-sub-header about-sub-header">Want to collaborate with us?</h3>
+            <div class="container text-center">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-social-links footer-social-black">
+                    <a href="https://www.facebook.com/groups/875659312616598/" title="Facebook" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <p class="contacts-desc">
+                        <strong>Call us now.</strong>
+                        <br> +380 (97) 409 23 03
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-social-links footer-social-black">
+                    <a href="https://www.linkedin.com/company/18444275/" title="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <p class="contacts-desc">
+                        <strong>Email us.</strong>
+                        <br> info@hive-studio.net
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-social-links footer-social-black">
+                    <a href="#" title="Behance" target="_blank">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <p class="contacts-desc">
+                        <strong>Our address.</strong>
+                        <br> 63, Hryhoriia Andriushchenka St.
+                        <br> Kyiv, Ukraine
+                    </p>
+                </div>
+                <div class="col-xl-12 col-md-12 col-sm-8 col-xs-12 form-block">
+                    <form method="post" action="#" id="form" role="form" class="form">
+                        <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="prd-form-field">
+                                <input type="text" name="name" id="name" class="input-md form-control" placeholder="Name" maxlength="100">
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-social-links">
-                                <a href="https://www.facebook.com/groups/875659312616598/" title="Facebook" target="_blank">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/18444275/" title="LinkedIn" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="skype:fanatik113?chat" title="Skype" target="_blank">
-                                    <i class="fab fa-skype"></i>
-                                </a>
-                                <a href="#" title="Behance" target="_blank">
-                                    <i class="fab fa-behance"></i>
+                            <div class="prd-form-field">
+                                <input type="email" name="email" id="email" class="input-md form-control" placeholder="Email" maxlength="100">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="prd-form-field">
+                                <textarea name="text" id="text" class="input-md form-control" rows="3" placeholder="Text" maxlength="400"></textarea>
+                            </div>
+                            <div class="prd-btn-block">
+                                <a class="card-button srv-btn srv-btn-black">
+                                    Submit message
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-8 col-md-8 col-sm-8 col-xs-12">
-                        <div id="map"></div>
-                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class='fp-js dark-section'>
+            <h2 class="section-header">Location.</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
