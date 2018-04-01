@@ -1325,7 +1325,7 @@ hr {
 /*-----------------------------------------*/
 /*---------STYLE REASSIGN---------------*/
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
-  background: #fffff2; 
+  background-color: #fffff2; 
 }
 #fp-nav ul li a.active span, #fp-nav ul li a span{
   border-radius: 0 !important;
@@ -1333,6 +1333,29 @@ hr {
 .iScrollVerticalScrollbar, .iScrollLoneScrollbar{
   display: none;
 }
+
+/*slider arrows */
+.fp-controlArrow.fp-prev {
+  left: 70px;
+  width: 0;
+  border: solid #171615;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 25px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.fp-controlArrow.fp-next {
+  right: 70px;
+  width: 0;
+  border: solid #171615;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 25px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
 
 /*-----------------------------------------*/
 

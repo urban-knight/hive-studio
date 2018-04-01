@@ -1,6 +1,6 @@
 <% include ./partials/header %>
   <div id='fp-js'>
-    <div class='fp-js dark-section npddng'>
+    <div class='fp-js dark-section npddng' data-fp-js="home">
       <canvas id="main-bg"></canvas>
       <div class="site_title">
         <h1>
@@ -19,7 +19,7 @@
         </a>
       </div>
     </div>
-    <div class='fp-js white-section'>
+    <div class='fp-js white-section' data-fp-js="about">
       <div class="section-content">
         <h2 class="section-header container-fluid">
           <%-langer.ABOUT_HEADING%>.</h2>
@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div class='fp-js dark-section'>
+    <div class='fp-js dark-section' data-fp-js="services">
       <div class="section-content">
         <h2 class="section-header container-fluid">
           <%=langer.SERVICES_HEADING%>.</h2>
@@ -150,7 +150,7 @@
     <% var chunks = []; %>
       <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
         <% chunks.forEach(function(chunk, i){ %>
-          <div class='fp-js <%= (i%2 == 0?"white-section":"dark-section") %>'>
+          <div class='fp-js <%= (i%2 == 0?"white-section":"dark-section") %>' data-fp-js="portfolio_<%=i%>">
             <div class="container-hive">
               <div class="row">
                 <% for (const [j, product] of chunk.entries()) { %>
@@ -178,7 +178,7 @@
             </div>
           </div>
           <% }); %>
-            <div class='fp-js white-section'>
+            <div class='fp-js white-section' data-fp-js="key_projects">
               <div class="container-hive">
                 <div class="row">
                   <h2 class="section-header">
@@ -237,7 +237,7 @@
                 </div>
               </div>
             </div>
-            <div class='fp-js dark-section'>
+            <div class='fp-js dark-section' data-fp-js="order">
               <div class="container-hive">
                 <div class="row">
                   <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
@@ -261,8 +261,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class='fp-js white-section'>
+            </div>      
+            <div class='fp-js white-section' data-fp-js="blog">
               <div class="container-hive">
                 <h2 class="section-header-news">
                   <%= langer.BLOG_HEADING %>
