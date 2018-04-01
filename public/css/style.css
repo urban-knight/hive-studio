@@ -82,7 +82,7 @@ h1,h2,h3,h4,h5,h6{
 .button-medium-dark,
 .button-large-dark{
   margin: 0 10px;
-  padding: 2px 10px;
+  padding: 3px 10px;
   border: none;
   font-weight: 100;
   -webkit-transition: all 0.3s ease-out;
@@ -97,6 +97,7 @@ h1,h2,h3,h4,h5,h6{
 .button-small-dark:hover,
 .button-medium-dark:hover,
 .button-large-dark:hover{
+  padding: 3px 14px;
   -webkit-transition: all 0.3s ease-in;
   -moz-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
@@ -1766,11 +1767,70 @@ img.portfolio-show-img{
   font-weight: 400;
   padding: 2vh 0 10vh 0;
 }
-.
+.guarantees-text{
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: left;
+  padding: 2vh 0;
+}
+.guarantees-24-7{
+  font-size: 9rem;
+  font-weight: 300;
+}
+.text-cta{
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+.cli-support{
+  font-size: 2rem;
+  background: #fffff2;
+  color: #191716;
+  padding: 1vh 2vh;
+  -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
+  -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+.cli-support:hover{
+  background: #191716;
+  color: #fffff2;
+  border: 1px solid #fffff2;
+  -webkit-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
+  -moz-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  -o-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+  -ms-transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
+  transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
 /*-----------------------------------------*/
 
 /*---------SERVICES SHOW PAGE--------------*/
-
+.serv-img {
+  height: 20vh;
+}
+.serv-desc{
+  display: inline-block;
+  width: 80%;
+  font-size: 1.8rem;
+  padding: 5vh 0;
+}
+.pre-button-text{
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 2vh 0;
+}
+.serv-num{
+  font-weight: bold;
+  font-size: 3rem;
+}
+.serv-text{
+  font-weight: 300;
+  font-size: 1.8rem;
+}
+.serv-block{
+  padding: 8vh 2vh;
+}
 /*-----------------------------------------*/
 
 /*---------PRODUCTS PAGE--------------*/
