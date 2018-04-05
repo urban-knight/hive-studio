@@ -45,6 +45,7 @@ router.put("/settings", wrap(async (req, res) => {
 
 router.get("/", wrap(async (req, res) => {
     var counter = {
+        pages: await models.Page.find({}).count(),
         services: await models.Service.find({}).count(),
         products: await models.Product.find({}).count(),
         projects: await models.Project.find({}).count(),
@@ -61,5 +62,6 @@ router.use("/products", routers.Product);
 router.use("/pictures", routers.Picture);
 router.use("/projects", routers.Project);
 router.use("/business-cases", routers.Case);
+router.use("/pages", routers.Page);
 
 module.exports = router;

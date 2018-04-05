@@ -4,6 +4,7 @@ objects.Tag = require("./tag");
 objects.User = require("./user");
 objects.Post = require("./post");
 objects.Case = require("./case");
+objects.Page = require("./page");
 objects.Service = require("./service");
 objects.Product = require("./product");
 objects.Project = require("./project");
