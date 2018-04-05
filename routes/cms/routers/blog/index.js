@@ -12,6 +12,7 @@ router.get("/", wrap(async (req, res) => {
 
 router.use("/tags", require("./tags"));
 router.use("/posts", require("./posts"));
+router.use("/featured", require("./featured"));
 router.use("/categories", require("./categories"));
 
 module.exports = router;

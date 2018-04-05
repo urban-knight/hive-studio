@@ -384,8 +384,8 @@ span.badge {
 .cat-card {
 	padding: 21px;
 	margin-bottom: 42px;
-	border-radius: 6px;
-	background-color: #fbfbfb;
+	border-radius: 0;
+	background-color: #fffff2;
 }
 .cat-card-name {
 	font-size: 28px;
@@ -417,13 +417,13 @@ span.badge {
 }
 .card-btn-delete {
 	right: -40px;
-	border: 1px solid #aa0060;
-    color: #aa0060;
+	border: 1px solid #191715;
+    color: #191715;
     background-color: #8686860f;
 }
 .card-btn-delete:hover{
-	border: 1px solid #5e0135;
-    color: #5e0135;	
+	border: 1px solid #090806;
+    color: #090806;	
 }
 .card-btn-delete > i.glyphicon{
 	left: -1px;
@@ -662,4 +662,25 @@ label.switch-label {
 	border: 1px solid #ccc;
 	border-top: none;
 	background-color: #ffffff;
+}
+.search-result-box > .result-list > .tag-item:hover {
+	cursor: pointer;
+}
+
+.post-list-item {
+	border-radius: 0 !important;
+}
+
+.jumbotron > .form-group > .search-bar > .search-box {
+	width: 100%;
+	height: 42px;
+	line-height: 21px;
+    font-size: 14px;
+    padding: 12px 12px;
+} 
+.jumbotron > .form-group > .search-result-box {
+	padding-right: 150px;
+} 
+.jumbotron > .form-group > .search-result-box > .result-list > .tag-item {
+	color: #191715;
 }

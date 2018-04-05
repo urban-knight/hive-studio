@@ -9,5 +9,6 @@ objects.Product = require("./product");
 objects.Project = require("./project");
 objects.Picture = require("./picture");
 objects.Category = require("./category");
+objects.Container = require("./container");
 
 module.exports = objects;

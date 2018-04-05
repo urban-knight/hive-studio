@@ -1,0 +1,41 @@
+<% include ../../partials/header %>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="jumbotron dmcc-jumbo">
+					<h1>Featured Block</h1>
+					<p>This container represents the most important posts on Hive Blog</p>
+                    <div class="form-group">
+						<div class="search-bar">
+							<input class="form-control search-box" type="text" id="SearchBox" name="post-title" placeholder="Search post by english title here">
+						</div>
+						<div class="search-result-box" hidden>
+							<ul class="result-list"></ul>
+						</div>
+					</div>
+                    <a href="/cms/blog" class="btn btn-primary" style="float: left;"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+            <div class="col-lg-12">
+                <div class="cat-card">
+                    <h3 class="cat-card-name">Featured Post List</h3>
+                    <ul id="sortable" class="list-group">
+                        <% for (post of posts){ %>
+                            <li class="list-group-item post-list-item ui-state-default" target="<%= page.id %>">
+                                <h4><%= post.en.title %></h4>
+                                <form action="/cms/blog/featured/<%= post._id %>?_method=DELETE" method="POST">
+                                    <button class="btn cat-card-btn card-btn-sm card-btn-delete"><i class="glyphicon glyphicon-remove"></i></button>
+                                </form>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+		</div>
+	</div>
+
+	<% include ../../partials/footer %>
+    <script type="text/javascript" src="/static/cms/js/blog/featured/index.js"></script>
