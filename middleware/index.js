@@ -1,17 +1,15 @@
-var middlewareObj = {};
+const middlewares = [
+    require('./engines'),
+    require('./filesystem'),
+    require('./cookie-session'),
+    require('./passport'),
+    require('./authentication'),
+    require('./routes'),
+    require('./errors'),
+]
 
-middlewareObj.isLoggedIn = function (req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } else {
-        req.session.returnTo = "/cms" + req.url;
-        res.redirect("/cms/login");
+module.exports = {
+    apply(app) {
+        middlewares.forEach(m=>m.apply(app));
     }
-}
-
-middlewareObj.error = function (err, req, res, next) {
-    console.warn(err.toString());
-    res.status(500).send();
-}
-
-module.exports = middlewareObj;
+};

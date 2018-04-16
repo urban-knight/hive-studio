@@ -1,53 +1,31 @@
 const dotenv = require('dotenv').config({ path: './config/.env' });
-const fs = require('fs');
+
 const path = require('path');
-const multer = require('multer');
+
 const express = require('express');
-const models = require("./models");
+
 const db = require('./utils/db.js');
-const passport = require('passport');
+
 const langer = require("./utils/langer");
-const bodyParser = require('body-parser');
-const { error } = require("./middleware");
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-const storage = require("./utils/storage.js");
-const LocalStrategy = require('passport-local');
-const methodOverride = require('method-override');
+
+let http_port = process.env.APP_HTTP_PORT || 80;
+let host = process.env.APP_HOST || "localhost";
+
 
 global.appRoot = path.resolve(__dirname);
 const builder = require("./utils/builder.js");
 const config = require("./config/app.json");
 const { promisifyAll } = require('bluebird');
 
+const { apply: applyRoutes } = require('./routes');
+const { apply: applyMiddlewares } = require('./middleware');
+
 const Controller = require("./routes/controller");
 const CMSController = require("./routes/cms");
 
 // --- App Config --- //
 app = express();
-app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/static', express.static(__dirname + "/public"));
-app.use('/', express.static(__dirname + "/files"));
-app.use(methodOverride("_method"));
-app.use(cookieParser("hive-studio"));
-app.use(session({
-    secret: "hive-studio",
-    resave: false,
-    saveUninitialized: false,
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use(new LocalStrategy(models.User.authenticate()));
-passport.serializeUser(models.User.serializeUser());
-passport.deserializeUser(models.User.deserializeUser());
-app.use(async (req, res, next) => {
-    res.locals.currentUser = req.user;
-    next();
-});
 
-// --- Multer module config --- //
-app.use(multer({ storage: storage }).any());
 
 var pages = builder.extractPages(config.pages);
 var indexes = builder.extractIndexes(config.indexes, config.indexTarget);
@@ -70,6 +48,12 @@ app.get("/*", async (req, res) => {
     return res.status(404).render("404");
 });
 
-app.use(error);
+applyMiddlewares(app);
+
+applyRoutes(app).then(() => {
+    app.listen(http_port, () => {
+        console.log("Application is listening on: http://" + host + ":" + http_port);
+    });
+});
 
 module.exports = app;
