@@ -1865,6 +1865,10 @@ img.portfolio-show-img{
 }
 
 .tablinks.tabs-active{
+  -webkit-transition: font-size 0.5s;
+  -moz-transition: font-size 0.5s;
+    -o-transition: font-size 0.5s;
+       transition: font-size 0.5s;
   font-weight: bold;
   font-size: 2.5rem;
   margin-left: 5vh;
@@ -2126,11 +2130,11 @@ img.portfolio-show-img{
    .form input[type="date"].input-md,
    .form input[type="color"].input-md,
    .form select.input-md{
-       padding: 2vh 2vh;
-       font-size: 1.7rem;
-       width: 100%;
-       font-weight: 500;
-       color: #191716;
+    padding: 0.5vh 0.5vh;
+    font-size: 1.4rem;
+    width: 40%;
+    font-weight: 500;
+    color: #191716;
    }
    .form input[type="text"].input-sm,
    .form input[type="email"].input-sm,
@@ -2198,7 +2202,63 @@ img.portfolio-show-img{
    .form-tip .fa{
        font-size: 12px;
    }
-   
+
+   /* vertical progress bar */
+   .vert-pb {
+    width: 65px;
+    height: 140px;
+    margin: auto;
+    transform: rotate(180deg);
+    display: inline-block;
+  }
+  
+  .bar {
+    width: 65px;
+    height: 0px;
+    background-color: #fffff2;
+  }
+  .block-inline{
+    display: inline-block;
+  }
+  /*-------------*/
+
+
+    
+  .site-type{
+    background: #fffff2;
+    color: #191716;
+    display: inline;
+    padding: 0 2px;
+  }
+.inline-flex{
+ display: inline-flex;
+}
+.f-right{
+ float: right;
+}
+.f-left{
+ float: left;
+}
+.projects-index-block{
+ width: 95%;
+ padding: 10px 0;
+}
+.site-name{
+ padding: 0 10px;
+}
+
+.carousel-image img{
+width: 150px !important;
+margin: 0 auto;
+}
+.container-carousel{
+ padding: 0 80px;
+}
+.text-block-cta{
+ padding: 3vh 0 1vh 0;
+}
+
+  
    
 
 

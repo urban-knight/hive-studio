@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 var langSwitcher = $('.lang-switcher a');
 var siteLogo = $('div.site-logo a img');
-var navBar = $('.nav a ');
+var navBar = $('.nav a');
 var fpjsNav = $('#fp-nav ul li a span');
 
 function fullPageScrollInit() {
@@ -26,7 +26,7 @@ function fullPageScrollInit() {
         anchors.push($(this).data('fp-js'));
       }
     });
-    
+
     if (firstSectionColor != 'rgb(25, 23, 22)') {
       fpjsNav.css('background', '#191716');
       langSwitcher.addClass('dark');
@@ -36,6 +36,16 @@ function fullPageScrollInit() {
     fullPageJS(firstSectionColor, anchors);
   }
 }
+var h = 0;
+var x;
+  function pb_run(elem) {
+    h += 2;
+    elem.css('height', h + 'px');
+    if (elem.height() == elem.data('height')) {
+      clearInterval(x);
+    }
+  }
+
 
 // fullPage.js plugin options
 function fullPageJS(firstSectionColor, anchors) {
@@ -46,7 +56,6 @@ function fullPageJS(firstSectionColor, anchors) {
     scrollOverflow: true,
     paddingTop: '75px',
     scrollingSpeed: 500,
-
     onLeave: function (index, nextIndex, direction) {
       var fpjsNav = $('#fp-nav ul li a span');
       if (firstSectionColor == "rgb(25, 23, 22)") {
@@ -76,6 +85,12 @@ function fullPageJS(firstSectionColor, anchors) {
     },
     //dynamic languages-switcher links
     afterLoad: function (anchorLink, index) {
+      if (index == 3) {
+        $('.vert-pb .bar').each(function () {
+          setInterval(function () { pb_run($(this)); }, 5);
+          
+        });
+      }
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
         $('.lang-switcher a.lang-trigger[lang="en"]').attr('href', "https://www.hive-studio.net/" + '#' + anchorLink);
