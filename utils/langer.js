@@ -136,14 +136,9 @@ exports = module.exports = function (opts) {
 
         _lang = _lang.toLowerCase();
 
-        // var reqPath = getScenario(req, pageURLs, indexURLs);
-        // var langPath = path.join(translationsPath, reqPath, _lang + ".json");
         var path404 = path.join(translationsPath, "404", _lang + ".json");
-
-        // res.locals[textsVarName]  = loadLangJSONFile(langPath);
         res.locals.page404 = loadLangJSONFile(path404);
         res.locals.lang = _lang;
-
         next();
     }
 };

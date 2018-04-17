@@ -25,7 +25,7 @@ router.post("/login", passport.authenticate("local",
         failureRedirect: "/cms/login"
     }),  wrap(async (req, res) => {
 }));
-router.use(middleware.isLoggedIn);
+router.use(require("../../middleware/authentication"));
 router.get("/logout", function(req, res){
     req.logout();
     res.redirect("/cms/login");

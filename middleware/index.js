@@ -2,9 +2,9 @@ const middlewares = [
     require('./engines'),
     require('./filesystem'),
     require('./cookie-session'),
+    require('./langer'),
     require('./passport'),
-    require('./authentication'),
-    require('./routes'),
+    require('../routes'),
     require('./errors'),
 ]
 

@@ -6,6 +6,30 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+var collectURLs = (objArr) => {
+    var urls = [];
+
+    for (obj of objArr) {
+        for (lang of conf.langs) {
+            urls.push("/" + obj[lang].url);
+        }
+    }
+
+    return urls;
+}
+
+var collectURLsWithParameter = (objArr, param) => {
+    var urls = [];
+
+    for (obj of objArr) {
+        for (lang of conf.langs) {
+            urls.push("/" + obj[lang].url + "/:" + param);
+        }
+    }
+
+    return urls;
+}
+
 var extractPages = (pages) => {
     var _pages = [
         {
@@ -59,5 +83,7 @@ var extractIndexes = (indexes, indexTarget) => {
 
 module.exports = {
     extractPages: extractPages,
-    extractIndexes: extractIndexes
+    extractIndexes: extractIndexes,
+    collectURLs: collectURLs,
+    collectURLsWithParameter: collectURLsWithParameter
 }

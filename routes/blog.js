@@ -15,41 +15,45 @@ router.get('/', wrap(async (req, res) => {
 }));
 
 // Category
-router.get('/:category_url', wrap(async (req, res)=> {
+router.get('/:category_url', wrap(async (req, res) => {
     var perPage = 3;
     var page = req.query.page || 1;
     var url = req.params.category_url;
     var target = res.locals.lang + ".url";
-    var category = await models.Category.findOne({[target]: url});
-    
+    var category = await models.Category.findOne({ [target]: url });
 
-    models.Post.find({"category": category._id})
-        .sort({ published: -1 })
-        .skip((perPage * page) - perPage)
-        .limit(perPage)
-        .populate("category")
-        .exec(function(err, posts) {
-            models.Post.count().exec(function(err, count) {
+    if (category) {
+        models.Post.find({ "category": category._id })
+            .sort({ published: -1 })
+            .skip((perPage * page) - perPage)
+            .limit(perPage)
+            .populate("category")
+            .exec(function (err, posts) {
+                models.Post.count().exec(function (err, count) {
 
-                res.render('blog/category/show', {
-                    posts: posts,
-                    current: page,
-                    pages: Math.ceil(count / perPage),
-                    category: category,
-                    langer: require("../lang/blog/category/show/" + res.locals.lang + ".json")
+                    res.render('blog/category/show', {
+                        posts: posts,
+                        current: page,
+                        pages: Math.ceil(count / perPage),
+                        category: category,
+                        langer: require("../lang/blog/category/show/" + res.locals.lang + ".json")
+                    });
                 });
             });
-        });
+    } else {
+        return res.status(404).render("404");
+    }
+
 }));
 
 // Blog view
 router.get("/:category_url/:post_url", wrap(async (req, res) => {
-    var post = await models.Post.findOne({url: req.params.post_url}).populate("category");
-    return res.render("blog/post/show", 
-    { 
-        post: post,
-        langer: require("../lang/blog/post/show/" + res.locals.lang + ".json")
-     });
+    var post = await models.Post.findOne({ url: req.params.post_url }).populate("category");
+    return res.render("blog/post/show",
+        {
+            post: post,
+            langer: require("../lang/blog/post/show/" + res.locals.lang + ".json")
+        });
 }));
 
 module.exports = router;

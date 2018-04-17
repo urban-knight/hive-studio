@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var PageSchema = mongoose.Schema({
+var DatasetSchema = mongoose.Schema({
     en: {
         url: { type: String },
         name: { type: String },
@@ -27,7 +27,8 @@ var PageSchema = mongoose.Schema({
         
     },
     view: { type: String },
-    objects: []
+    model: { type: String },
+    objects: { type: String }
 });
 
-module.exports = mongoose.model("Page", PageSchema);
+module.exports = mongoose.model("Dataset", DatasetSchema);
