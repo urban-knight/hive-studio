@@ -7,12 +7,6 @@ const wrap = require("../../middleware/async-wrapper.js");
 const models = require("../../models");
 const routers = require("./routers");
 
-const builder = require("../../utils/builder.js");
-const config = require("../../config/app.json");
-
-var pages = builder.extractPages(config.pages);
-var indexes = builder.extractIndexes(config.indexes, config.indexTarget);
-
 var router  = express.Router();
 
 // --- CMS LOGIN SYSTEM --- //
@@ -25,7 +19,9 @@ router.post("/login", passport.authenticate("local",
         failureRedirect: "/cms/login"
     }),  wrap(async (req, res) => {
 }));
+
 router.use(require("../../middleware/authentication"));
+
 router.get("/logout", function(req, res){
     req.logout();
     res.redirect("/cms/login");

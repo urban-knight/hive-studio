@@ -2,10 +2,12 @@
   <div class="container-footer">
     <div class="row site-map">
       <div class="col-md-2 col-md-offset-1">
+        <% for (page of pages){ %>
+          <h3 class="site-map-head">
+            <a href="<%= page[lang].url %>" style="text-transform:capitalize"><%= page[lang].name %></a>
+          </h3>          
+        <% } %>
 
-        <h3 class="site-map-head">
-          <a href="<%= page.url %>" style="text-transform:capitalize">Page</a>
-        </h3>
       </div>
       <div class="col-md-2">
         <h3 class="site-map-head-2">#Services</h3>

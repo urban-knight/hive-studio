@@ -24,7 +24,7 @@
                     <h3 class="cat-card-name">Featured Post List</h3>
                     <ul id="sortable" class="list-group">
                         <% for (post of posts){ %>
-                            <li class="list-group-item post-list-item ui-state-default" target="<%= page.id %>">
+                            <li class="list-group-item post-list-item ui-state-default" target="<%= post.id %>">
                                 <h4><%= post.en.title %></h4>
                                 <form action="/cms/blog/featured/<%= post._id %>?_method=DELETE" method="POST">
                                     <button class="btn cat-card-btn card-btn-sm card-btn-delete"><i class="glyphicon glyphicon-remove"></i></button>

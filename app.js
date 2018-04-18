@@ -1,6 +1,6 @@
 const dotenv = require('dotenv').config({ path: './config/.env' });
 const path = require('path');
-const express = require('express');
+const app = require('express')();
 const db = require('./utils/db.js');
 
 let http_port = process.env.APP_HTTP_PORT || 80;
@@ -10,8 +10,6 @@ global.appRoot = path.resolve(__dirname);
 
 const { apply: applyRoutes } = require('./routes');
 const { apply: applyMiddlewares } = require('./middleware');
-
-app = express();
 
 applyMiddlewares(app);
 
