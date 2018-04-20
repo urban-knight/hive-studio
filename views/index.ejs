@@ -23,40 +23,42 @@
       <div class="section-content">
         <h2 class="section-header container-fluid">
           <%-langer.ABOUT_HEADING%>.</h2>
-        <div class="row">
-          <div class="col-xl-2 col-md-2 col-md-offset-1 col-sm-offset-2 col-xs-12">
-            <p class="count">12</p>
-            <p class="count-descr">
+        <div class="row justify-content-center">
+          <div class="col-xl-4 col-md-5 col-sm-4 col-xs-12">
+            <p class="count right main-count">12</p>
+            <p class="count-descr count-descr-2">
               <%-langer.ABOUT_F1%>
             </p>
           </div>
-          <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">5</p>
-            <p class="count-descr">
-              <%-langer.ABOUT_F2%>
-            </p>
-          </div>
-          <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">4</p>
-            <p class="count-descr">
-              <%-langer.ABOUT_F3%>
-            </p>
-          </div>
-          <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">24
-              <span>h</span>
-            </p>
-            <p class="count-descr">
-              <%-langer.ABOUT_F4%>
-            </p>
-          </div>
-          <div class="col-xl-2 col-md-2 col-sm-4 col-xs-12">
-            <p class="count">100
-              <span>%</span>
-            </p>
-            <p class="count-descr">
-              <%-langer.ABOUT_F5%>
-            </p>
+          <div class="col-xl-4 col-md-5 col-sm-4 col-xs-12">
+            <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="count">5</p>
+              <p class="count-descr">
+                <%-langer.ABOUT_F2%>
+              </p>
+            </div>
+            <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="count">4</p>
+              <p class="count-descr">
+                <%-langer.ABOUT_F3%>
+              </p>
+            </div>
+            <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="count">24
+                <span>h</span>
+              </p>
+              <p class="count-descr">
+                <%-langer.ABOUT_F4%>
+              </p>
+            </div>
+            <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
+              <p class="count">100
+                <span>%</span>
+              </p>
+              <p class="count-descr">
+                <%-langer.ABOUT_F5%>
+              </p>
+            </div>
           </div>
         </div>
         <div class="button-border-dark">
@@ -151,7 +153,7 @@
       <% for (i=0,j=products.length; i<j; i+=2) { chunks.push(products.slice(i,i+2)); } %>
         <% chunks.forEach(function(chunk, i){ %>
           <div class='fp-js <%= (i%2 == 0?"white-section":"dark-section") %>' data-fp-js="portfolio_<%=i%>">
-            <div class="container-hive">
+            <div class="container">
               <div class="row">
                 <% for (const [j, product] of chunk.entries()) { %>
                   <div class='col-xl-6 col-md-6 col-sm-12 col-xs-12 
@@ -161,14 +163,14 @@
               '>
                     <h2 class="head-product">
                       <%= product.name %>.</h2>
-                    <a class='price <%= (i%2 == 0?"":"price-white") %>'>
+                    <a class='bb-text <%= (i%2 == 0?"":"wb-text") %>'>
                       <%- product.price %>
                     </a>
-                    <p class="info-product">
+                    <div class="sm-300 p-desc">
                       <%- product.desc %>
-                    </p>
-                    <div class="btn-price">
-                      <a class='card-button <%= (i%2 == 0?"card-button-black":"") %>' href="/products/<%= product.url %>">
+                    </div>
+                    <div class="left padding-tb-2">
+                      <a class='card-button-2 <%= (i%2 == 0?"":"card-button-black-p") %>' href="/products/<%= product.url %>">
                         <%= langer.PRODUCT_BTN %>
                       </a>
                     </div>
@@ -179,7 +181,7 @@
           </div>
           <% }); %>
             <div class='fp-js white-section' data-fp-js="key_projects">
-              <div class="container-hive">
+              <div class="container">
                 <div class="row">
                   <h2 class="section-header">
                     <%= langer.PROJECTS_HEADING %>
@@ -191,18 +193,18 @@
                     <div class="owl-carousel">
                       <div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <a class="price">Landing</a>
-                          <h2 class="uppercase lg">paktum</h2>
-                          <p class="md-300">website for debt collection company</p>
-                          <p class="justify sm-300 padding-tb-2">If you want a site that contains all the effective mechanisms for the product presentation and
+                          <a class="bb-text x-sm-bold">Landing</a>
+                          <h2 class="lg-bold">Paktum</h2>
+                          <p class="s-md-300">website for debt collection company</p>
+                          <p class="justify x-sm-300 padding-tb-1">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
-                          <div class="footer-social-links footer-social-black">
-                            <a href="#" title="Behance" target="_blank">
-                              <i class="fab fa-behance"></i>
+                          <div class="left padding-tb-4">
+                            <a class="card-button card-button-black-2" href="#">
+                              See Detalis
                             </a>
                           </div>
-                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                          <br>
                         </div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
                           <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
@@ -210,18 +212,18 @@
                       </div>
                       <div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <a class="price">Landing</a>
-                          <h2 class="uppercase lg">paktum</h2>
-                          <p class="md-300">website for debt collection company</p>
-                          <p class="justify sm-300 padding-tb-2">If you want a site that contains all the effective mechanisms for the product presentation and
+                          <a class="bb-text x-sm-bold">Landing</a>
+                          <h2 class="lg-bold">Paktum</h2>
+                          <p class="s-md-300">website for debt collection company</p>
+                          <p class="justify x-sm-300 padding-tb-1">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
-                          <div class="footer-social-links footer-social-black">
-                            <a href="#" title="Behance" target="_blank">
-                              <i class="fab fa-behance"></i>
+                          <div class="left padding-tb-4">
+                            <a class="card-button card-button-black-2" href="#">
+                              See Detalis
                             </a>
                           </div>
-                          <a class="portfolio-link" href="https://debtcollection.com.ua">www.debtcollection.com.ua</a>
+                          <br>
                         </div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
                           <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
@@ -261,7 +263,7 @@
                   </div>
                 </div>
               </div>
-            </div>      
+            </div>
             <div class='fp-js white-section' data-fp-js="blog">
               <div class="container-hive">
                 <h2 class="section-header-news">
@@ -305,8 +307,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="button-border-white">
-                  <a class="button-small-white" href="/blog">
+                <div class="button-border-dark">
+                  <a class="button-small-dark" href="/blog">
                     <%- langer.BLOG_BTN %>
                   </a>
                 </div>

@@ -334,7 +334,7 @@ function owlCarouselInit() {
     nav: true,
     autoplayTimeout: 8500,
     smartSpeed: 450,
-    navText: ['<img width="70" src="/static/images/left-arrow.svg">', '<img width="70" src="/static/images/right-arrow.svg">']
+    navText: ['<img width="90" src="/static/images/left-arrow.svg">', '<img width="90" src="/static/images/right-arrow.svg">']
   });
 }
 
@@ -360,4 +360,8 @@ $(".vert-tabs button").click(function () {
   $(".tab-content").removeClass('tabs-active');
   $(this).addClass("tabs-active");
   $("#" + vert_tab_id).addClass("tabs-active");
+});
+
+$('.upload input[type="file"]').on('change', function() {
+  $('.upload-path').val(this.value.replace('C:\\fakepath\\', ''));
 });

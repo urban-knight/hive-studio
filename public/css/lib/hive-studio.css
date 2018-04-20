@@ -1,0 +1,205 @@
+/*-------------------
+Author: Hive-Studio
+Year: 2018
+Content: init styles
+--------------------*/
+
+/*----------------------------
+        Common styles
+----------------------------*/
+
+/*----------------------------
+     Font Size and Weight
+----------------------------*/
+
+.font-1-100,
+.font-1-300,
+.font-1-500,
+.font-1-700,
+.font-1-bold{
+    font-size: 1rem;
+}
+.font-2-100,
+.font-2-300,
+.font-2-500,
+.font-2-700,
+.font-2-bold{
+    font-size: 2rem;
+}
+.font-3-100,
+.font-3-300,
+.font-3-500,
+.font-3-700,
+.font-3-bold{
+    font-size: 3rem;
+}
+.font-4-100,
+.font-4-300,
+.font-4-500,
+.font-4-700,
+.font-4-bold{
+    font-size: 4rem;
+}
+.font-5-100,
+.font-5-300,
+.font-5-500,
+.font-5-700,
+.font-5-bold{
+    font-size: 5rem;
+}
+.font-6-100,
+.font-6-300,
+.font-6-500,
+.font-6-700,
+.font-6-bold{
+    font-size: 6rem;
+}
+.font-7-100,
+.font-7-300,
+.font-7-500,
+.font-7-700,
+.font-7-bold{
+    font-size: 7rem;
+}
+.font-8-100,
+.font-8-300,
+.font-8-500,
+.font-8-700,
+.font-8-bold{
+    font-size: 8rem;
+}
+.font-1-100,
+.font-1-300,
+.font-1-500,
+.font-1-700,
+.font-1-bold{
+    font-size: 1rem;
+}
+.font-9-100,
+.font-9-300,
+.font-9-500,
+.font-9-700,
+.font-9-bold{
+    font-size: 9rem;
+}
+.font-10-100,
+.font-10-300,
+.font-10-500,
+.font-10-700,
+.font-10-bold{
+    font-size: 10rem;
+}
+.font-1-100,
+.font-2-100,
+.font-3-100,
+.font-4-100,
+.font-5-100,
+.font-6-100,
+.font-7-100,
+.font-8-100,
+.font-9-100,
+.font-10-100{
+    font-weight: 100;
+}
+.font-1-300,
+.font-2-300,
+.font-3-300,
+.font-4-300,
+.font-5-300,
+.font-6-300,
+.font-7-300,
+.font-8-300,
+.font-9-300,
+.font-10-300{
+    font-weight: 300;
+}
+.font-1-500,
+.font-2-500,
+.font-3-500,
+.font-4-500,
+.font-5-500,
+.font-6-500,
+.font-7-500,
+.font-8-500,
+.font-9-500,
+.font-10-500{
+    font-weight: 500;
+}
+.font-1-700,
+.font-2-700,
+.font-3-700,
+.font-4-700,
+.font-5-700,
+.font-6-700,
+.font-7-700,
+.font-8-700,
+.font-9-700,
+.font-10-700{
+    font-weight: 700;
+}
+.font-1-bold,
+.font-2-bold,
+.font-3-bold,
+.font-4-bold,
+.font-5-bold,
+.font-6-bold,
+.font-7-bold,
+.font-8-bold,
+.font-9-bold,
+.font-10-bold{
+    font-weight: bold;
+}
+
+/*----------------------------
+    Text align, transform
+----------------------------*/
+
+.center{
+     text-align: center;
+}
+.right{
+     text-align: right;
+}
+.left{
+     text-align: left;
+}
+.justify{
+     text-align: justify;
+}
+.uppercase{
+     text-transform: uppercase;
+}
+.lowercase{
+     text-transform: lowercase;
+}
+.capitalize{
+     text-transform: capitalize;
+}
+
+/*----------------------------
+             Float
+----------------------------*/
+
+.f-right{
+     float: right;
+}
+.f-left{
+     float: left;
+}
+
+/*----------------------------
+             Display
+----------------------------*/
+
+.none{
+     display: none;
+}
+.block{
+     display: block;
+}
+.inline{
+     display: inline;
+}
+.inline-block{
+     display: inline-block;
+}
