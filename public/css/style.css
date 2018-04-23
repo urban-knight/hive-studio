@@ -32,6 +32,12 @@ h1,h2,h3,h4,h5,h6{
 /*-----------------------------------------------
                         Strong CONSTANTS
 -------------------------------------------------*/
+.white-txt{
+  color: #fffff2 !important;
+}
+.dark-txt{
+  color: #191716 !important;
+}
 .x-lg,
 .x-lg-bold,
 .x-lg-300,
@@ -724,6 +730,9 @@ img.grey:hover  {
   -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
   transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); 
 }
+.scroll-down-black:before{
+  background: #191716 !important;
+}
 .scroll-down:before{
   display: block;
   content: "";
@@ -873,6 +882,12 @@ img.grey:hover  {
   -moz-transition: all 0.5s ease;
   color: #191716;
   background-color: #fffff2;
+}
+.card-button-sm {
+  font-size: 1.2rem;
+}
+.card-button-xs {
+  font-size: 1rem;
 }
 .card-button:hover{
   -webkit-transition: all 0.5s ease;
@@ -1740,6 +1755,9 @@ a.search-head{
 .popular-img{
   width: 100%;
 }
+.pop-block{
+  width: 80%;
+}
 .blog-index-page{
   font-size: 7.5vh;
   font-weight: bold;
@@ -1768,6 +1786,9 @@ a.btn-white{
 }
 .show-post-img{
   width: 100%;
+}
+.post-info-block{
+  padding-right: 13vh;
 }
 .title-block-show h3{
   text-align: center;
@@ -2525,4 +2546,20 @@ div.p-desc p{
 }
 .padding-author{
   padding: 1vh 4vh 0 0;
+}
+.padding-b-4{
+  padding-bottom: 4vh;
+}
+.padding-b-2{
+  padding-bottom: 2vh;
+}
+.padding-b-1{
+  padding-bottom: 1vh;
+}
+.padding-l-2{
+  padding-left: 2vh;
+}
+.border-bot-black{
+  border-bottom: 4px solid #191716;
+  padding-top: 5vh;
 }
