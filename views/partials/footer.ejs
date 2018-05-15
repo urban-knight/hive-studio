@@ -2,10 +2,12 @@
   <div class="container-footer">
     <div class="row site-map">
       <div class="col-md-2 col-md-offset-1">
-
+        <% for (page of pages) { %>
           <h3 class="x-md-bold padding-tb-1">
             <a href="<%= page[lang].url %>" target="_blank" class="capitalize"><%= page[lang].name %></a>
-          </h3>          
+          </h3>  
+        <% } %>
+        
 
 
       </div>
