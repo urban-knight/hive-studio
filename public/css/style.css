@@ -22,16 +22,20 @@ body{
   color: #191716;
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;    
+  line-height: 1.4;    
   -webkit-font-smoothing: antialiased;
 }
 h1,h2,h3,h4,h5,h6{
   font-weight: 500;
   margin: 0;
 }
+.container{
+  width: 80% !important;
+}
 /*-----------------------------------------------
                         Strong CONSTANTS
 -------------------------------------------------*/
+
 .white-txt{
   color: #fffff2 !important;
 }
@@ -42,55 +46,64 @@ h1,h2,h3,h4,h5,h6{
 .x-lg-bold,
 .x-lg-300,
 .x-lg-100{
-  font-size: 5rem;
+  font-size: 8vh;
+  line-height: 15vh;
 }
 .lg,
 .lg-bold,
 .lg-300,
 .lg-100{
-  font-size: 4rem;
+  font-size: 7vh;
+  line-height: 12vh;
 }
 .s-lg,
 .s-lg-bold,
 .s-lg-300,
 .s-lg-100{
-  font-size: 3rem;
+  font-size: 6vh;
+  line-height: 10vh;
 }
 .x-md,
 .x-md-bold,
 .x-md-300,
 .x-md-100{
-  font-size: 2.6rem;
+  font-size: 5vh;
+  line-height: 8vh;
 }
 .md,
 .md-bold,
 .md-300,
 .md-100{
-  font-size: 2.3rem;
+  font-size: 4vh;
+  line-height: 7vh;
 }
 .s-md,
 .s-md-bold,
 .s-md-300,
 .s-md-100{
-  font-size: 2rem !important;
+  font-size: 2.5vh !important;
+  line-height: 4.5vh;
 }
 .sm,
 .sm-bold,
 .sm-300,
 .sm-100{
-  font-size: 1.75rem;
+  font-size: 2vh;
+  line-height: 4vh;
 }
 .x-sm,
 .x-sm-bold,
 .x-sm-300,
 .x-sm-100{
-  font-size: 1.4rem;
+  font-size: 1vh;
+  line-height: 3vh;
 }
 .xs,
 .xs-bold,
 .xs-300,
 .xs-100{
-  font-size: 1.1rem;
+  font-size: 0.5vh;
+  line-height: 2.5vh;
 }
 .x-lg-bold,
 .lg-bold,
@@ -698,6 +711,7 @@ img.grey:hover  {
 }
 .right-border{
   border-right: 2px solid #fffff2;
+  height: max-content;
 }
 .right-border-black{
   border-right: 2px solid #191716;
@@ -916,7 +930,7 @@ img.grey:hover  {
 }
 .card-button-black-p{
   padding: 5px 15px;
-  border: 2px solid #fffff2 !important;
+  border: 1px solid #fffff2 !important;
   color: #fffff2 !important;
 }
 .card-button-black-p:hover{
@@ -925,7 +939,7 @@ img.grey:hover  {
 }
 .card-button-2 {
   padding: 5px 15px;
-  border: 2px solid #191716;
+  border: 1px solid #191716;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -1041,7 +1055,7 @@ img.grey:hover  {
 .button-presentation{
   text-align: center;
   line-height: 2.5vh;
-  padding-top: 25vh;
+  padding-top: 35vh;
   font-size: 4vh;
 }
 a.btn-download{
@@ -1983,8 +1997,9 @@ img.portfolio-show-img{
   outline: none;
   text-align: right;
   transition: 0.3s;
-  font-size: 2.2rem;
+  font-size: 3vh;
   font-weight: 100;
+  white-space: nowrap;
 }
 .tab-content {
   width: 50%;
@@ -2002,19 +2017,21 @@ img.portfolio-show-img{
 }
 
 .tablinks.tabs-active{
+  white-space: nowrap;
   -webkit-transition: font-size 0.5s;
   -moz-transition: font-size 0.5s;
     -o-transition: font-size 0.5s;
        transition: font-size 0.5s;
   font-weight: bold;
-  font-size: 2.5rem;
-  margin-left: 5vh;
+  font-size: 3.5vh;
+  margin-left: 1vh;
 }
 
 .tablinks.tabs-active:after{
+  white-space: nowrap;
   content: "\276D" !important;
   padding: 0 0 0 2vh;
-  font-size: 3rem;
+  font-size: 3.5vh;
 }
 .testimonial-logo{
   height: 15vh;
