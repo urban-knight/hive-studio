@@ -2,14 +2,13 @@
     <div id='fp-js'>
         <div class='fp-js white-section'>
             <h2 class="section-header">Contacts.</h2>
-            <h3 class="section-sub-header about-sub-header">Want to collaborate with us?</h3>
             <div class="container center">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-social-links footer-social-black">
                     <a href="https://www.facebook.com/groups/875659312616598/" title="Facebook" target="_blank">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <p class="contacts-desc">
-                        <strong>Call us now.</strong>
+                    <p class="s-sm-500">
+                        <span class="md-bold">Call us now.</span>
                         <br> +380 (97) 409 23 03
                     </p>
                 </div>
@@ -17,8 +16,8 @@
                     <a href="https://www.linkedin.com/company/18444275/" title="LinkedIn" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <p class="contacts-desc">
-                        <strong>Email us.</strong>
+                    <p class="s-sm-500">
+                        <span class="md-bold">Email.</span>
                         <br> info@hive-studio.net
                     </p>
                 </div>
@@ -26,30 +25,38 @@
                     <a href="#" title="Behance" target="_blank">
                         <i class="fab fa-behance"></i>
                     </a>
-                    <p class="contacts-desc">
-                        <strong>Our address.</strong>
-                        <br> 63, Hryhoriia Andriushchenka St.
-                        <br> Kyiv, Ukraine
+                    <p class="s-sm-500">
+                        <span class="md-bold">Our address.</span>
+                        <br>
+                        <span class="s-md">63, Hryhoriia Andriushchenka St.</span>
+                        <br>
+                        <span class="s-md">Kyiv, Ukraine</span>
                     </p>
                 </div>
                 <div class="col-xl-12 col-md-12 col-sm-8 col-xs-12 form-block">
                     <form method="post" action="#" id="form" role="form" class="form">
                         <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="prd-form-field">
-                                <input type="text" name="name" id="name" class="input-md form-control" placeholder="Name" maxlength="100">
+                            <div class="padding-tb-1">
+                                <input type="text" name="name" id="name" class="input-md form-control" placeholder="First Name" maxlength="100">
                             </div>
-                            <div class="prd-form-field">
+                            <div class="padding-tb-1">
+                                <input type="email" name="email" id="email" class="input-md form-control" placeholder="Last Name" maxlength="100">
+                            </div>
+                            <div class="padding-tb-1">
                                 <input type="email" name="email" id="email" class="input-md form-control" placeholder="Email" maxlength="100">
+                            </div>
+                            <div class="padding-tb-1">
+                                <input type="tel" name="tel" id="tel" class="input-md form-control" placeholder="Phone" maxlength="100">
+                            </div>
+                            <div class="f-left padding-tb-2">
+                                <a class="card-button card-button-black">
+                                    Submit message
+                                </a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="prd-form-field">
+                            <div class="padding-tb-1">
                                 <textarea name="text" id="text" class="input-md form-control" rows="3" placeholder="Text" maxlength="400"></textarea>
-                            </div>
-                            <div class="prd-btn-block">
-                                <a class="card-button srv-btn srv-btn-black">
-                                    Submit message
-                                </a>
                             </div>
                         </div>
                     </form>
@@ -57,10 +64,12 @@
             </div>
         </div>
         <div class='fp-js dark-section'>
-            <h2 class="section-header">Location.</h2>
+            <h2 class="section-header padding-tb-2">Location.</h2>
             <div class="container">
                 <div class="row">
-                    <div id="map"></div>
+                    <div class="border-box-map">
+                        <div id="map"></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -32,6 +32,9 @@ h1,h2,h3,h4,h5,h6{
 .container{
   width: 80% !important;
 }
+a:hover{
+  color: #fffff2;
+}
 /*-----------------------------------------------
                         Strong CONSTANTS
 -------------------------------------------------*/
@@ -75,7 +78,7 @@ h1,h2,h3,h4,h5,h6{
 .md-300,
 .md-100{
   font-size: 4vh;
-  line-height: 7vh;
+  line-height: 6vh;
 }
 .s-md,
 .s-md-bold,
@@ -346,7 +349,9 @@ h1,h2,h3,h4,h5,h6{
 .underline{
   text-decoration:underline;
 }
-
+.padding-t-5{
+  padding: 5vh 0 0 0;
+}
 /*-----------------------------------------------
                         END CONSTANTS
 -------------------------------------------------*/
@@ -458,7 +463,9 @@ p span{
   font-weight: bold;
 }
 .count-descr{
-  line-height: 2rem;
+  margin-top: -30px;
+  line-height: 4vh;
+  font-size: 3vh;
 }
 
 /*----------Scrollbar fixes--------------------*/
@@ -677,7 +684,7 @@ ul#navmenu > li > a:hover:before {
 }
 .section-header{
   padding-top: 2vh;
-  font-size: 5rem;
+  font-size: 8vh;
   font-weight: bold;
   text-align: center;
 }
@@ -695,8 +702,7 @@ ul#navmenu > li > a:hover:before {
   font-weight: 300;
 }
 p.count{
-  font-size: 9rem;
-  margin-bottom: -15px;
+  font-size: 14vh;
 }
 img.grey {
   width: 85%;
@@ -715,6 +721,12 @@ img.grey:hover  {
 }
 .right-border-black{
   border-right: 2px solid #191716;
+}
+.left-border-black{
+  border-left: 2px solid #191716;
+}
+.about-us-border{
+  padding: 0 3vh;
 }
 .block-pad{
   padding: 0 10vh;
@@ -1055,7 +1067,7 @@ img.grey:hover  {
 .button-presentation{
   text-align: center;
   line-height: 2.5vh;
-  padding-top: 35vh;
+  padding-top: 30vh;
   font-size: 4vh;
 }
 a.btn-download{
@@ -1387,15 +1399,7 @@ hr {
   text-align: center;
   padding: 2vh 0;
 }
-.about-sub-header{
-  font-size: 2.5rem;
-  font-weight: 300; 
-}
 .about-cta-sub{
-  padding: 6vh 0 0 0;
-  font-size: 2.5rem;
-  font-weight: 300; 
-  line-height: 2.7rem;
   width: 60%;
   display: inline-block;
 }
@@ -1425,18 +1429,16 @@ hr {
 
 /*-----------------------------------------*/
 /*---------CONTACTS PAGE---------------*/
-
+.border-box-map{
+  border-left: 1px solid #fffff2;
+  border-right: 1px solid #fffff2;
+  padding: 0 5vh;
+}
 .container-contacts{
   padding: 0 10vh !important;
 }
 .contacts-page{
   padding: 5vh 0;
-}
-.contacts-desc > strong{
-  font-size: 2.5rem;
-}
-.contacts-desc{
-  font-size: 1.8rem;
 }
 #map{
   height: 60vh;
@@ -2037,11 +2039,15 @@ img.portfolio-show-img{
   height: 15vh;
 }
 .guarantees-24-7{
-  font-size: 9rem !important;
+  font-size: 12vh;
   font-weight: 300;
 }
 .guarantees-01{
   padding: 2vh 5vh;
+}
+.guarantees-num{
+  font-size: 17vh;
+  padding: 0 5vh !important;
 }
 .cli-support{
   background: #fffff2;
@@ -2082,8 +2088,10 @@ img.portfolio-show-img{
   font-weight: 300;
   font-size: 1.8rem;
 }
-.serv-block{
-  padding: 8vh 2vh;
+.serv-content{
+  padding: 10vh 5vh;
+  background: #191716;
+  color: #fffff2;
 }
 /*-----------------------------------------*/
 
@@ -2128,9 +2136,6 @@ img.portfolio-show-img{
 }
 .prd-desc-block{
   padding: 0;
-}
-.prd-form-field{
-  padding: 1.5vh 0;
 }
 .form-block{
   padding: 3vh 10vh;
@@ -2244,188 +2249,7 @@ img.portfolio-show-img{
 /*-----------------------------------------*/
 
 
-/* ==============================
-   Forms fields
-   ============================== */
 
-   .form input[type="text"],
-   .form input[type="email"],
-   .form input[type="number"],
-   .form input[type="url"],
-   .form input[type="search"],
-   .form input[type="tel"],
-   .form input[type="password"],
-   .form input[type="date"],
-   .form input[type="color"],
-   .form select{
-       display: inline-block;
-       vertical-align: middle;
-       font-size: 1.8rem;
-       color: #fffff2;
-       border: 1px solid #777;
-       padding: 3vh 1vh;
-       font-weight: 100;
-
-       -webkit-border-radius: 0;
-       -moz-border-radius: 0;
-       border-radius: 0;
-       -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-       box-shadow: none;
-       -moz-box-sizing: border-box;
-       -webkit-box-sizing: border-box;
-       box-sizing: border-box;
-       -webkit-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);  
-       -moz-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-       -o-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-       -ms-transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-       transition: all 0.2s cubic-bezier(0.000, 0.000, 0.580, 1.000);
-   }
-   .form select{
-       font-size: 2rem;
-   }
-   .form select[multiple]{
-       height: auto;
-   }
-   .form input[type="text"]:hover,
-   .form input[type="email"]:hover,
-   .form input[type="number"]:hover,
-   .form input[type="url"]:hover,
-   .form input[type="search"]:hover,
-   .form input[type="tel"]:hover,
-   .form input[type="password"]:hover,
-   .form input[type="date"]:hover,
-   .form input[type="color"]:hover,
-   .form select:hover{
-       border-color: #191716;
-   }
-   .form input[type="text"]:focus,
-   .form input[type="email"]:focus,
-   .form input[type="number"]:focus,
-   .form input[type="url"]:focus,
-   .form input[type="search"]:focus,
-   .form input[type="tel"]:focus,
-   .form input[type="password"]:focus,
-   .form input[type="date"]:focus,
-   .form input[type="color"]:focus,
-   .form select:focus{
-       color: #111;
-       border-color: #191716;
-       outline: none;
-   }
-   .form input[type="text"].input-lg,
-   .form input[type="email"].input-lg,
-   .form input[type="number"].input-lg,
-   .form input[type="url"].input-lg,
-   .form input[type="search"].input-lg,
-   .form input[type="tel"].input-lg,
-   .form input[type="password"].input-lg,
-   .form input[type="date"].input-lg,
-   .form input[type="color"].input-lg,
-   .form select.input-lg{
-       height: 46px;
-       padding-left: 15px;
-       padding-right: 15px;
-       font-size: 13px;
-   }
-   .form input[type="text"].input-md,
-   .form input[type="email"].input-md,
-   .form input[type="number"].input-md,
-   .form input[type="url"].input-md,
-   .form input[type="search"].input-md,
-   .form input[type="tel"].input-md,
-   .form input[type="password"].input-md,
-   .form input[type="date"].input-md,
-   .form input[type="color"].input-md,
-   .form select.input-md{
-    padding: 0.5vh 0.5vh;
-    font-size: 1.4rem;
-    width: 40%;
-    font-weight: 500;
-    color: #191716;
-   }
-   .form input[type="text"].input-md-2,
-   .form input[type="email"].input-md-2,
-   .form input[type="number"].input-md-2,
-   .form input[type="url"].input-md-2,
-   .form input[type="search"].input-md-2,
-   .form input[type="tel"].input-md-2,
-   .form input[type="password"].input-md-2,
-   .form input[type="date"].input-md-2,
-   .form input[type="color"].input-md-2,
-   .form select.input-md-2{
-    padding: 0.5vh 0.5vh;
-    font-size: 1.4rem;
-    width: 90%;
-    font-weight: 500;
-    color: #191716;
-   }
-   .form input[type="text"].input-sm,
-   .form input[type="email"].input-sm,
-   .form input[type="number"].input-sm,
-   .form input[type="url"].input-sm,
-   .form input[type="search"].input-sm,
-   .form input[type="tel"].input-sm,
-   .form input[type="password"].input-sm,
-   .form input[type="date"].input-sm,
-   .form input[type="color"].input-sm,
-   .form select.input-sm{
-       height: 31px;
-       padding-left: 10px;
-       padding-right: 10px;
-   }
-   .form textarea{
-     height: 20vh;
-     padding: 0.5vh 0.5vh;
-     font-size: 1.4rem;
-    width: 95% !important;
-    font-weight: 500;
-    color: #191716;
-       border-color: #777;
-       outline: none;
-       width: 100%;
-       -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-       box-shadow: none;
-       
-       -webkit-border-radius: 0;
-       -moz-border-radius: 0;
-       border-radius: 0;
-   }
-   .form textarea:hover{
-    border-color: #191716;
-   }
-   .form textarea:focus{
-       color: #191716;
-       border-color: #191716;
-   }
-   .form .form-group{
-       margin-bottom: 10px;
-   }
-   .form input.error{
-       border-color: #e41919;
-   }
-   .form div.error{
-       margin-top: 20px;
-       padding: 13px 20px;
-       text-align: center;
-       background: rgba(228,25,25, .75);
-       color: #fffff2;
-   }
-   .form div.success{
-       margin-top: 20px;
-       padding: 13px 20px;
-       text-align: center;
-       background: rgba(50,178,95, .75);
-       color: #fffff2;
-   }
-   .form-tip{
-       font-size: 11px;
-       color: #fffff2;
-   }
-   .form-tip .fa{
-       font-size: 12px;
-   }
 
    /* vertical progress bar */
    .vert-pb {
@@ -2483,15 +2307,15 @@ margin: 0 auto;
 }
 
 .count-descr-2{
+  margin-top: -30px;
   float: right;
   padding: 0px 50px;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 5vh;
+  line-height: 5vh;
 }
 .main-count{
   padding: 0 30px;
-  font-size: 18rem !important;
-  line-height: 25rem;
+  font-size: 28vh !important;
 }
 div.p-desc p{
   padding: 5px 35px 5px 0;
