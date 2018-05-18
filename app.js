@@ -8,12 +8,9 @@ let host = process.env.APP_HOST || "localhost";
 
 global.appRoot = path.resolve(__dirname);
 
-const { apply: applyRoutes } = require('./routes');
 const { apply: applyMiddlewares } = require('./middleware');
 
-applyMiddlewares(app);
-
-applyRoutes(app).then(() => {
+applyMiddlewares(app).then(() => {
     app.listen(http_port, () => {
         console.log("Application is listening on: http://" + host + ":" + http_port);
     });

@@ -13,13 +13,15 @@ module.exports = {
         var pages = await models.Page.findAsync({});
         var pageURLs = builder.collectURLs(pages);
 
+        var datasets = await models.Dataset.findAsync({});
+        var indexURLs = builder.collectURLs(datasets);
+
         router.get(pageURLs, wrap(async (req, res) => {
             var url = req.originalUrl.split("/")[1];
             var page = await models.Page.findOneAsync({ [`${res.locals.lang}.url`]: url });
 
             if (page) {
                 var data = {
-                    pages: pages,
                     langer: require("../lang/" + page.view + "/" + res.locals.lang + ".json")
                 };
 
@@ -35,9 +37,6 @@ module.exports = {
             }
 
         }));
-
-        var datasets = await models.Dataset.findAsync({});
-        var indexURLs = builder.collectURLs(datasets);
 
         router.get(indexURLs, wrap(async (req, res) => {
             var url = req.originalUrl.split("/")[1];
@@ -65,7 +64,6 @@ module.exports = {
 
             var data = {
                 index: index,
-                pages: pages,
                 [index.model.toLowerCase()]:obj,
                 langer: require("../lang/" + index.view + "/show/" + res.locals.lang + ".json")
             }

@@ -4,12 +4,16 @@ const middlewares = [
     require('./cookie-session'),
     require('./langer'),
     require('./passport'),
+    require('./footer'),
     require('../routes'),
-    require('./errors'),
+    require('./errors')
 ]
 
 module.exports = {
-    apply(app) {
-        middlewares.forEach(m=>m.apply(app));
+    apply: async (app) => {
+        for (m of middlewares) {
+            await m.apply(app);
+        }
+        //middlewares.forEach(m=>m.apply(app));
     }
 };

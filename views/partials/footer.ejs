@@ -2,33 +2,20 @@
   <div class="container-footer">
     <div class="row site-map">
       <div class="col-md-2 col-md-offset-1">
-        <% for (page of pages) { %>
+        <% for (page of footer.pages) { %>
           <h3 class="md-bold padding-tb-1">
             <a href="<%= page[lang].url %>" target="_blank" class="capitalize"><%= page[lang].name %></a>
           </h3>  
         <% } %>
       </div>
+      <% for (const index of footer.indexes) { %>
       <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1">#Services</h3>
-          <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-          <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-          <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-          <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
+        <h3 class="md-bold padding-tb-1"> <a href="/<%= index[lang].url %>">#<%= index[lang].name %></a></h3>
+          <% for (object of index.objects) { %>
+          <p><a class="sm-300 padding-tb-1" href="/<%= index[lang].url %>/<%= object[lang].url %>"><%= object[lang].name %></a></p>
+          <% } %>
       </div>
-      <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1">#Products</h3>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-      </div>
-      <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1">#Portfolio</h3>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-      </div>
+      <% } %>
       <div class="col-md-2">
         <h3 class="md-bold padding-tb-1">#Blog</h3>
         <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
