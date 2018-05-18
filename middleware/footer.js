@@ -14,10 +14,13 @@ module.exports = {
             indexes.push(i);
         }
 
+        var categories = await models.Category.findAsync({});
+
         app.use(async (req, res, next) => {
             res.locals.footer = {
                 pages: pages,
-                indexes: indexes
+                indexes: indexes,
+                categories: categories
             }
             next();
         })

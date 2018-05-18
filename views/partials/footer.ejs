@@ -17,11 +17,10 @@
       </div>
       <% } %>
       <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1">#Blog</h3>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
-        <p><a class="sm-300 padding-tb-1" href="#">System Maintenance & Hosting</a></p>
+        <h3 class="md-bold padding-tb-1"><a href="/blog">#<%= (lang=="en"?"Blog":"Блог") %></a></h3>
+        <% for (category of footer.categories) { %>
+          <p><a class="sm-300 padding-tb-1" href="/blog/<%= category[lang].url %>"><%= category[lang].name %></a></p>
+        <% } %>
       </div>
     </div>
     <div class="contacts-block">
