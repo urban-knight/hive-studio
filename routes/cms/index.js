@@ -3,6 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const middleware = require("../../middleware");
 const wrap = require("../../middleware/async-wrapper.js");
+const cmd = require('node-cmd');
  
 const models = require("../../models");
 const routers = require("./routers");
@@ -59,5 +60,17 @@ router.use("/pictures", routers.Picture);
 router.use("/projects", routers.Project);
 router.use("/business-cases", routers.Case);
 router.use("/pages", routers.Page);
+
+router.all("/reboot", wrap(async (req, res)=>{
+    var stage = process.env.APP_STAGE;
+
+    if (stage == "prod") {
+        cmd.run("pm2 restart hive-studio");
+    } else {
+
+    }
+
+    return res.redirect("/cms");
+}));
 
 module.exports = router;
