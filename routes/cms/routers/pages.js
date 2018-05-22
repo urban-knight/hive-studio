@@ -16,6 +16,14 @@ router.get("/new", wrap(async (req, res) => {
 }));
 router.post("/", wrap(async (req, res) => {
     var page = req.body.page;
+
+    var langs = ["en", "ua", "ru"];
+    for (lang of langs) {
+        if (typeof page[lang].keywords == "string") {
+            page[lang].keywords = JSON.parse(page[lang].keywords);
+        }
+    }
+
     var created = await models.Page.create(page);
 
     return res.redirect("/cms/pages");
@@ -31,6 +39,14 @@ router.get("/:id/edit", wrap(async (req, res) => {
 router.put("/:id", wrap(async (req, res) => {
     var id = req.params.id;
     var page = req.body.page;
+
+    var langs = ["en", "ua", "ru"];
+    for (lang of langs) {
+        if (typeof page[lang].keywords == "string") {
+            page[lang].keywords = JSON.parse(page[lang].keywords);
+        }
+    }
+
     var updated = await models.Page.findByIdAndUpdateAsync(id, page);
 
     return res.redirect("/cms/pages");
