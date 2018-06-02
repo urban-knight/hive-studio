@@ -87,6 +87,13 @@ a:hover{
   font-size: 2.5vh !important;
   line-height: 4.5vh;
 }
+.x-sm,
+.x-sm-bold,
+.x-sm-300,
+.x-sm-100{
+  font-size: 2.25vh;
+  line-height: 3.5vh;
+}
 .sm,
 .sm-bold,
 .sm-300,
@@ -94,10 +101,10 @@ a:hover{
   font-size: 2vh;
   line-height: 4vh;
 }
-.x-sm,
-.x-sm-bold,
-.x-sm-300,
-.x-sm-100{
+.s-sm,
+.s-sm-bold,
+.s-sm-300,
+.s-sm-100{
   font-size: 1vh;
   line-height: 3vh;
 }
@@ -114,8 +121,9 @@ a:hover{
 .x-md-bold,
 .md-bold,
 .s-md-bold,
-.sm-bold,
 .x-sm-bold,
+.sm-bold,
+.s-sm-bold,
 .xs-bold{
   font-weight: bold;
 }
@@ -125,8 +133,9 @@ a:hover{
 .x-md,
 .md,
 .s-md,
-.sm,
 .x-sm,
+.sm,
+.s-sm,
 .xs{
   font-weight: 500;
 }
@@ -136,8 +145,9 @@ a:hover{
 .x-md-300,
 .md-300,
 .s-md-300,
-.sm-300,
 .x-sm-300,
+.sm-300,
+.s-sm-300,
 .xs-300{
   font-weight: 300;
 }
@@ -147,8 +157,9 @@ a:hover{
 .x-md-100,
 .md-100,
 .s-md-100,
-.sm-100,
 .x-sm-100,
+.sm-100,
+.s-sm-100,
 .xs-100{
   font-weight: 100;
 }
@@ -351,6 +362,18 @@ a:hover{
 }
 .padding-t-5{
   padding: 5vh 0 0 0;
+}
+.padding-t-15{
+  padding: 15vh 0 0 0;
+}
+.padding-lr-8 {
+  padding: 0 8vh;
+}
+.padding-rtb {
+  padding: 10vh 2vh 10vh 0;
+}
+.padding-rtb-2{
+  padding: 17vh 0;
 }
 /*-----------------------------------------------
                         END CONSTANTS
@@ -899,7 +922,6 @@ img.grey:hover  {
   text-align: center;
 }
 .card-button {
-  font-size: 1.75rem;
   text-align: center;
   padding: 5px;
   border: 2px solid #fffff2;
@@ -908,12 +930,6 @@ img.grey:hover  {
   -moz-transition: all 0.5s ease;
   color: #191716;
   background-color: #fffff2;
-}
-.card-button-sm {
-  font-size: 1.2rem;
-}
-.card-button-xs {
-  font-size: 1rem;
 }
 .card-button:hover{
   -webkit-transition: all 0.5s ease;
@@ -964,8 +980,8 @@ img.grey:hover  {
   color: #fffff2;
   background: #191716;
 }
-.btn-article{
-  font-size: 2.5vh;
+.blog-title{
+  line-height: 3vh !important;
 }
 
 /*---------PRODUCTS SECTION---------------*/
@@ -990,9 +1006,6 @@ img.grey:hover  {
 }
 .view-product{
   display: inline-flex;
-  padding: 2vh 0;
-}
-.btn-price{
   padding: 2vh 0;
 }
 .view-icon{
@@ -1058,18 +1071,7 @@ img.grey:hover  {
 
 /*----------------------------------------*/
 /*---------CTA SECTION---------------*/
-.section-header-cta{
-  font-size: 6vh;
-  line-height: 9.5vh;
-  font-weight: bold;
-  padding: 20vh 0;
-}
-.button-presentation{
-  text-align: center;
-  line-height: 2.5vh;
-  padding-top: 30vh;
-  font-size: 4vh;
-}
+
 a.btn-download{
   padding: 1vh 0;
   border-bottom: 2px solid #fffff2;
@@ -1106,7 +1108,7 @@ a.btn-download{
   font-weight: bold;
 }
 .blog-card{
-  padding: 3vh 2vh 0 2vh;
+  padding: 3vh 5vh 0 2vh;
 }
 .blog-img {
   width: 100%;
@@ -1116,14 +1118,11 @@ a.btn-download{
   display: inline-flex; 
 }
 .blog-date{
-  font-size: 2.5vh;
-  font-weight: 500;
   padding: 0 1.2vh;
   background-color: #191716;
   color: #fffff2;
 }
 .blog-author{
-  font-size: 2.5vh;
   padding-left: 3vh;
 }
 .blog-head{
@@ -1480,7 +1479,12 @@ hr {
 .iScrollVerticalScrollbar, .iScrollLoneScrollbar{
   display: none;
 }
-
+.centered-cards{
+  padding: 0 15%;
+}
+.serv-form-block{
+  padding: 0 10% 0 5%;
+}
 /*slider arrows */
 .fp-controlArrow.fp-prev {
   left: 70px;
@@ -2138,7 +2142,10 @@ img.portfolio-show-img{
   padding: 0;
 }
 .form-block{
-  padding: 3vh 10vh;
+  padding: 0 30%;
+}
+.form-block-2{
+  padding: 0 15%;
 }
 .btn-prd-block{
   padding: 10vh 0;
@@ -2276,7 +2283,17 @@ img.portfolio-show-img{
     background: #fffff2;
     color: #191716;
     display: inline;
-    padding: 0 2px;
+    padding: 0 4px;
+  }
+  .site-type-w{
+    background: #191716;
+    color: #fffff2;
+    display: inline;
+    padding: 0 4px;
+  }
+  .owl-prev img,
+  .owl-next img{
+    background: #fffff2;
   }
 .inline-flex{
  display: inline-flex;
@@ -2288,7 +2305,7 @@ img.portfolio-show-img{
  float: left;
 }
 .projects-index-block{
- width: 95%;
+ width: 100%;
  padding: 10px 0;
 }
 .site-name{
@@ -2359,8 +2376,8 @@ div.p-desc p{
   padding-top: 8vh;
 }
 .border-left-strong{
-  border-left: 5px #191716 solid;
-  padding-left: 2vh;
+  border-left: 10px #191716 solid;
+  padding-left: 5vh;
 }
 .key-obj-list{
   list-style-type: none;
@@ -2377,7 +2394,10 @@ div.p-desc p{
   padding: 0 0 0 4vh;
 }
 .pad-container{
-  padding: 0 5vh;
+  padding: 0 10%;
+}
+.a-z{
+  line-height: 5vh;
 }
 .design-pack img{
   width: 60%;
