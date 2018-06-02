@@ -13,6 +13,7 @@ $(document).ready(function () {
         automatic_uploads: true,
         images_upload_url: '/cms/pictures/tiny',
         file_picker_types: 'image',
+        forced_root_block: "",
 
         file_picker_callback: function (cb, value, meta) {
             var input = document.createElement('input');
