@@ -1,20 +1,58 @@
 const fs = require('fs');
 const path = require('path');
+const urljoin = require('url-join');
+const Url = require('url');
 const conf = require('../config/app.json');
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-var collectURLs = (objArr) => {
-    var urls = [];
+function escapeRegExp(string) {
+    return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
 
-    for (obj of objArr) {
+var joinURL = async (options)=>{
+    var url = "/";
+    if (options.prefix && !options.postfix){
+        url = urljoin("/:" + options.prefix, options.main);
+    } else if (!options.prefix && options.postfix){
+        url = urljoin("/", options.main, "/:" + options.postfix);
+    } else if (options.prefix && options.postfix){
+        url = urljoin("/:" + options.prefix, options.main, "/:" + options.postfix);
+    } else {
+        url = urljoin("/", options.main);
+    }
+    console.log(url);
+    return url;
+}
+
+var collectURLs = async (options) => {
+    var urls = [];
+    for (obj of options.array) {
         for (lang of conf.langs) {
-            urls.push("/" + obj[lang].url);
+            let main = obj[lang].url;
+            let prefix = options.prefix;
+            let postfix = options.postfix;
+            let _url = await joinURL({prefix, main, postfix});
+            if (urls.indexOf(_url)===-1){
+                urls.push(_url);
+            }
         }
     }
+    return urls;
+}
 
+var collectURLsWithPrefix = async (arr, prefix) => {
+    var urls = [];
+    for (obj of arr) {
+        for (lang of conf.langs) {
+            var _url = path.join("/:" + prefix, obj[lang].url);
+            if (urls.indexOf(_url) == -1) {
+                await urls.push(_url);
+            }
+        }
+    }
     return urls;
 }
 
@@ -34,7 +72,7 @@ var extractPages = (pages) => {
     var _pages = [
         {
             url: "/",
-            name: "index", 
+            name: "index",
             data: ["services", "products", "projects"],
             models: ["Service", "Product", "Project"]
         }];
@@ -85,5 +123,6 @@ module.exports = {
     extractPages: extractPages,
     extractIndexes: extractIndexes,
     collectURLs: collectURLs,
-    collectURLsWithParameter: collectURLsWithParameter
+    collectURLsWithParameter: collectURLsWithParameter,
+    collectURLsWithPrefix: collectURLsWithPrefix
 }
