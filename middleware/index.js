@@ -2,6 +2,7 @@ const middlewares = [
     require('./engines'),
     require('./filesystem'),
     require('./cookie-session'),
+    require('./langer'),
     require('./passport'),
     require('./footer'),
     require('../routes'),

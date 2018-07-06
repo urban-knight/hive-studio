@@ -1,29 +1,24 @@
-const fs = require('fs');
 const path = require('path');
 const urljoin = require('url-join');
-const Url = require('url');
 const conf = require('../config/app.json');
+const express = require('express');
+const wrap = require("../middleware/async-wrapper.js");
 
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function escapeRegExp(string) {
-    return string.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-}
-
-var joinURL = async (options)=>{
+var joinURL = async (options) => {
     var url = "/";
-    if (options.prefix && !options.postfix){
+    if (options.prefix && !options.postfix) {
         url = urljoin("/:" + options.prefix, options.main);
-    } else if (!options.prefix && options.postfix){
+    } else if (!options.prefix && options.postfix) {
         url = urljoin("/", options.main, "/:" + options.postfix);
-    } else if (options.prefix && options.postfix){
+    } else if (options.prefix && options.postfix) {
         url = urljoin("/:" + options.prefix, options.main, "/:" + options.postfix);
     } else {
-        url = urljoin("/", options.main);
+        if (options.main == "") {
+            url = "/";
+        } else {
+            url = urljoin("/", options.main);
+        }
     }
-    console.log(url);
     return url;
 }
 
@@ -34,8 +29,8 @@ var collectURLs = async (options) => {
             let main = obj[lang].url;
             let prefix = options.prefix;
             let postfix = options.postfix;
-            let _url = await joinURL({prefix, main, postfix});
-            if (urls.indexOf(_url)===-1){
+            let _url = await joinURL({ prefix, main, postfix });
+            if (urls.indexOf(_url) === -1) {
                 urls.push(_url);
             }
         }
@@ -43,86 +38,83 @@ var collectURLs = async (options) => {
     return urls;
 }
 
-var collectURLsWithPrefix = async (arr, prefix) => {
-    var urls = [];
-    for (obj of arr) {
-        for (lang of conf.langs) {
-            var _url = path.join("/:" + prefix, obj[lang].url);
-            if (urls.indexOf(_url) == -1) {
-                await urls.push(_url);
+var collectLangSubdirs = async (defaultLang, langs) => {
+    var subdirs = [];
+    for (lang of langs) {
+        if (lang !== defaultLang) {
+            subdirs.push(await joinURL({ main: lang }));
+        }
+    }
+    return subdirs;
+}
+
+var baseRouter = async (config, models) => {
+    var router = express.Router();
+    var pages = await models.Page.findAsync({});
+    var datasets = await models.Dataset.findAsync({});
+    var pageURLs = await collectURLs({ array: pages });
+    var indexURLs = await collectURLs({ array: datasets });
+    var indexSubURLs = await collectURLs({ array: datasets, postfix: "url" });
+
+    router.use("/blog", require("../routes/blog"));
+
+    router.get(pageURLs, wrap(async (req, res) => {
+        var url = req.path.split("/")[1];
+        var page = await models.Page.findOneAsync({ [`${res.locals.lang}.url`]: url });
+        if (page) {
+            var data = {
+                langer: require("../lang/" + page.view + "/" + res.locals.lang + ".json")
+            };
+            if (page.objects) {
+                for (object of page.objects) {
+                    data[object.name] = await models[object.model].findAsync({}).map(a => a[res.locals.lang]);
+                }
             }
+            return res.render(page.view, data);
+        } else {
+            return res.status(404).render("404");
         }
-    }
-    return urls;
-}
+    }));
+    router.get(indexURLs, wrap(async (req, res) => {
+        var url = req.path.split("/")[1];
+        var index = await models.Dataset.findOneAsync({ [`${res.locals.lang}.url`]: url });
 
-var collectURLsWithParameter = (objArr, param) => {
-    var urls = [];
+        if (index) {
+            var data = {
+                pages: pages,
+                langer: require("../lang/" + index.view + "/index/" + res.locals.lang + ".json")
+            };
+            data[index.objects] = await models[index.model].findAsync({}).map(a => a[res.locals.lang]);
 
-    for (obj of objArr) {
-        for (lang of conf.langs) {
-            urls.push("/" + obj[lang].url + "/:" + param);
+            return res.render(path.join(index.view, "index"), data);
+        } else {
+            return res.status(404).render("404");
         }
-    }
-
-    return urls;
-}
-
-var extractPages = (pages) => {
-    var _pages = [
-        {
-            url: "/",
-            name: "index",
-            data: ["services", "products", "projects"],
-            models: ["Service", "Product", "Project"]
-        }];
-
-    for (page of pages) {
-        var _page = {
-            url: page["url"] ? page["url"] : "/" + page,
-            name: page["name"] ? page["name"] : page
-        }
-
-        if (page.data && page.data.length > 0) {
-            for (d of data) {
-                _page.models = [];
-                _page.models.push(capitalize(d).slice(0, -1));
+    }));
+    router.get(indexSubURLs, wrap(async (req, res) => {
+        var indexURL = req.path.split("/")[1];
+        var index = await models.Dataset.findOneAsync({ [`${res.locals.lang}.url`]: indexURL });
+        if (index) {
+            var obj = await models[index.model].findOneAsync({ [`${res.locals.lang}.url`]: req.params.url });
+            if (obj) {
+                var data = {
+                    index: index,
+                    [index.model.toLowerCase()]: obj,
+                    langer: require("../lang/" + index.view + "/show/" + res.locals.lang + ".json")
+                }
+                return res.render(path.join(index.view, "show"), data);
+            } else {
+                return res.status(404).render("404");
             }
+        } else {
+            return res.status(404).render("404");
         }
+    }));
 
-        _pages.push(_page);
-
-        var _view = path.join(appRoot, "views", (page["name"] ? page["name"] : page) + ".ejs");
-        if (!fs.existsSync(_view)) {
-            var demoHTML = "<h1>" + capitalize((page["name"] ? page["name"] : page)) + " Page</h1>"
-            fs.writeFileSync(_view, demoHTML);
-        }
-    }
-
-    return _pages;
-}
-
-var extractIndexes = (indexes, indexTarget) => {
-    var _indexes = [];
-
-    for (index of indexes) {
-        var _index = {
-            url: index["url"] ? index["url"] : "/" + index,
-            cmsUrl: index["url"] ? index["url"] : "/cms/" + index,
-            name: index["name"] ? index["name"] : index,
-            model: index["model"] ? index["model"] : capitalize(index.slice(0, -1)),
-            target: "/" + index + "/:" + (index["target"] ? index["target"] : indexTarget)
-        }
-        _indexes.push(_index);
-    }
-
-    return _indexes;
+    return router;
 }
 
 module.exports = {
-    extractPages: extractPages,
-    extractIndexes: extractIndexes,
-    collectURLs: collectURLs,
-    collectURLsWithParameter: collectURLsWithParameter,
-    collectURLsWithPrefix: collectURLsWithPrefix
+    baseRouter: baseRouter,
+    collectLangSubdirs: collectLangSubdirs
 }
