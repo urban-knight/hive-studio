@@ -1,16 +1,17 @@
 <% include ../partials/header %>
+
     <div id='fp-js'>
         <div class="fp-js dark-section">
-            <h2 class="section-header">Hive-Blog.</h2>
-            <div class="container padding-tb-2">
+            <h2 class="section__main-title">Hive-Blog.</h2>
+            <div class="container">
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12">
                         <form method="post" class="form">
-                            <div class="search-wrap">
-                                <button class="search-button animate" type="submit" title="Start Search">
+                            <div class="blog__search-wrap">
+                                <button class="blog__search-btn" type="submit" title="Start Search">
                                     <i class="fa fa-search"></i>
                                 </button>
-                                <input type="text" class="form-control search-field" placeholder="Search...">
+                                <input type="text" class="blog__search-field" placeholder="Search...">
                             </div>
                         </form>
                         <div class="widget">
@@ -27,37 +28,29 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="left x-md">
+                        <div class="blog__news-subtitle">
                             <strong>Popular</strong> News
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="popular-img" src="/static/images/blog/post-1.jpg">
-                        <p class="popular-blog">1 mln $ have been invested in Ukrainian web production</p>
-                        <div class="btn-price btn-pop">
-                            <a class="btn-article btn-pop-in" href="#">Read More ></a>
-                        </div>
+                        <img class="blog__popular-img" src="/static/images/blog/post-1.jpg">
+                        <p class="blog__popular-title">1 mln $ have been invested in Ukrainian web production</p>
+                        <a class="blog__popular-btn" href="#">Read More</a>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="popular-img" src="/static/images/blog/post-1.jpg">
-                        <p class="popular-blog">1 mln $ have been invested in Ukrainian web production</p>
-                        <div class="btn-price btn-pop">
-                            <a class="btn-article btn-pop-in" href="#">Read More ></a>
-                        </div>
+                        <img class="blog__popular-img" src="/static/images/blog/post-1.jpg">
+                        <p class="blog__popular-title">1 mln $ have been invested in Ukrainian web production</p>
+                        <a class="blog__popular-btn" href="#">Read More</a>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="popular-img" src="/static/images/blog/post-1.jpg">
-                        <p class="popular-blog">1 mln $ have been invested in Ukrainian web production</p>
-                        <div class="btn-price btn-pop">
-                            <a class="btn-article btn-pop-in" href="#">Read More ></a>
-                        </div>
+                        <img class="blog__popular-img" src="/static/images/blog/post-1.jpg">
+                        <p class="blog__popular-title">1 mln $ have been invested in Ukrainian web production</p>
+                        <a class="blog__popular-btn" href="#">Read More</a>
                     </div>
                     <div class="col-xl-3 col-md-3 col-sm-4 col-xs-6">
-                        <img class="popular-img" src="/static/images/blog/post-1.jpg">
-                        <p class="popular-blog">1 mln $ have been invested in Ukrainian web production</p>
-                        <div class="btn-price btn-pop">
-                            <a class="btn-article btn-pop-in" href="#">Read More ></a>
-                        </div>
+                        <img class="blog__popular-img" src="/static/images/blog/post-1.jpg">
+                        <p class="blog__popular-title">1 mln $ have been invested in Ukrainian web production</p>
+                        <a class="blog__popular-btn" href="#">Read More</a>
                     </div>
                     <div>
                         <a href="#about" class="scroll-down">
@@ -67,113 +60,112 @@
                 </div>
             </div>
         </div>
+
         <div class="fp-js white-section">
             <div class="container">
                 <div class="row">
-                    <h2 class="section-header">System Maintenance & Hosting.</h2>
-                    <div class="category-block">
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
+                    <h2 class="section__main-title">System Maintenance & Hosting.</h2>
+                    <div class="blog__news-block">
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-main">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
                             </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article" href="#">Read More ></a>
-                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-main" href="#">Read More</a>
                         </div>
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-main">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
                             </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article" href="#">Read More ></a>
-                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-main" href="#">Read More</a>
                         </div>
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-main">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
                             </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article" href="#">Read More ></a>
-                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-main" href="#">Read More</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="button-border-dark">
-                <a class="button-small-dark" href="#">
-                    Choose
-                    <strong>service</strong>.
-                </a>
-            </div>
-        </div>
-        <div class="fp-js dark-section">
-            <div class="container">
-                <div class="row">
-                    <h2 class="section-header">SEO.</h2>
-                    <div class="category-block">
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date blog-date-ind">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
-                            </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article btn-pop-in btn-white-pop" href="#">Read More ></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date blog-date-ind">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
-                            </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article btn-pop-in btn-white-pop" href="#">Read More ></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                            <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                            <div class="blog-detalis">
-                                <p class="blog-date blog-date-ind">Feb 07</p>
-                                <p class="blog-author">Dmytro Kuznets</p>
-                            </div>
-                            <h3 class="blog-head">1 mln $ have been invested in Ukrainian web production</h3>
-                            <div class="btn-price">
-                                <a class="btn-article btn-pop-in btn-white-pop" href="#">Read More ></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="button-border-white">
-                <a class="button-small-white" href="#">
-                    Choose
-                    <strong>service</strong>.
-                </a>
-            </div>
-        </div>
-        <div class='fp-js white-section'>
-            <div class="container">
-                <h2 class="section-header support-page">We invite you to immerse in the world of Web Technologies.</h2>
-                <div class="hr-sub-cta"></div>
-                <div class="button-border-dark">
-                    <a class="button-medium-dark" href="#">
-                        About
-                        <strong>Us</strong>.
+                <div class="btn-main__border-dark">
+                    <a class="btn-main__lg-dark" href="/blog">
+                        Choose
+                        <strong>service</strong>.
                     </a>
                 </div>
             </div>
         </div>
 
+        <div class="fp-js dark-section">
+            <div class="container">
+                <div class="row">
+                    <h2 class="section__main-title">SEO.</h2>
+                    <div class="blog__news-block">
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-inv">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
+                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-inv" href="#">Read More</a>
+                        </div>
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-inv">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
+                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-inv" href="#">Read More</a>
+                        </div>
+                        <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                            <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                            <div class="news__block-main">
+                                <p class="news__date-inv">Feb 07</p>
+                                <p class="news__author-main">Dmytro Kuznets</p>
+                            </div>
+                            <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                            <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                            <a class="btn__news-inv" href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-main__border-white">
+                    <a class="btn-main__sm-white" href="/blog">
+                        Choose
+                        <strong>service</strong>.
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class='fp-js white-section'>
+            <div class="container">
+                <h2 class="section__main-title">We invite you to immerse in the world of Web Technologies.</h2>
+                <div class="blog__cta-block">
+                    <div class="btn-main__border-dark">
+                        <a class="btn-main__lg-dark" href="/blog">
+                            About
+                            <strong>us</strong>.
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <% include ../partials/footer %>
+        

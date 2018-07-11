@@ -10,7 +10,7 @@ $(document).ready(function () {
   owlCarouselInit();
 });
 
-var langSwitcher = $('.lang-switcher a');
+var langSwitcher = $('.navbar__lang-switcher a');
 var siteLogo = $('div.site-logo a img');
 var navBar = $('.nav a');
 var fpjsNav = $('#fp-nav ul li a span');
@@ -93,11 +93,11 @@ function fullPageJS(firstSectionColor, anchors) {
       }
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
-        $('.lang-switcher a.lang-trigger[lang="en"]').attr('href', "https://www.hive-studio.net/" + '#' + anchorLink);
-        $('.lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.ua.hive-studio.net/" + '#' + anchorLink);
-        $('.lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.ru.hive-studio.net/" + '#' + anchorLink);
+        $('.navbar__lang-switcher a.lang-trigger[lang="en"]').attr('href', "https://www.hive-studio.net/" + '#' + anchorLink);
+        $('.navbar__lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.ua.hive-studio.net/" + '#' + anchorLink);
+        $('.navbar__lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.ru.hive-studio.net/" + '#' + anchorLink);
       } else {
-        $('.lang-switcher a.lang-trigger').each(function () {
+        $('.navbar__lang-switcher a.lang-trigger').each(function () {
           var url = "http://localhost" + '#' + anchorLink;
           $(this).attr('href', url);
         });
@@ -159,12 +159,12 @@ function navBarInit() {
       $(this).addClass("parent");
     };
   })
-  $(".toggleMenu").click(function (e) {
+  $(".navbar__toggle-menu").click(function (e) {
     e.preventDefault();
     $(this).toggleClass("active");
     $(".nav").toggle();
   });
-  $(".hamburger").click(function () {
+  $(".navbar__btn-burger").click(function () {
     $(this).toggleClass("is-active");
   });
   adjustMenu();
@@ -177,8 +177,8 @@ $(window).bind('resize orientationchange', function () {
 
 var adjustMenu = function () {
   if (ww <= 860) {
-    $(".toggleMenu").css("display", "inline-block");
-    if (!$(".toggleMenu").hasClass("active")) {
+    $(".navbar__toggle-menu").css("display", "inline-block");
+    if (!$(".navbar__toggle-menu").hasClass("active")) {
       $(".nav").hide();
     } else {
       $(".nav").show();
@@ -190,7 +190,7 @@ var adjustMenu = function () {
     });
   }
   else if (ww >= 768) {
-    $(".toggleMenu").css("display", "none");
+    $(".navbar__toggle-menu").css("display", "none");
     $(".nav").show();
     $(".nav li").removeClass("hover");
     $(".nav li a").unbind('click');
@@ -363,5 +363,5 @@ $(".vert-tabs button").click(function () {
 });
 
 $('.upload input[type="file"]').on('change', function() {
-  $('.upload-path').val(this.value.replace('C:\\fakepath\\', ''));
+  $('.upload__field-path').val(this.value.replace('C:\\fakepath\\', ''));
 });

@@ -21,11 +21,11 @@
   <link rel="stylesheet" href="/static/css/lib/grid-system.min.css">
   <link rel="stylesheet" href="/static/css/lib/jquery.fullpage.min.css">
   <link rel="stylesheet" href="/static/css/lib/fontawesome-all.min.css">
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/responsive.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
   <link rel="stylesheet" href="/static/css/lib/owl.carousel.min.css">
   <link rel="stylesheet" href="/static/css/lib/owl.theme.default.min.css">
-  <link rel="stylesheet" href="/static/css/lib/forms.css">
-
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113086520-1"></script>
   <script>
@@ -44,19 +44,19 @@
 </head>
 
 <body>
-  <div class="toggleMenu">
+  <div class="navbar__toggle-menu">
     <div class="mobile-logo">
       <a href="">
         <img src="/static/images/logo.svg" alt="Hive logo" width="150">
       </a>
     </div>
-    <div class="hamburger">
+    <div class="navbar__btn-burger">
       <span class="line"></span>
       <span class="line"></span>
       <span class="line"></span>
     </div>
   </div>
-  <div class="lang-switcher">
+  <div class="navbar__lang-switcher">
     <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net">EN</a>
     <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net">UA</a>
     <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net">RU</a>
@@ -100,7 +100,7 @@
         </a>
       </div>
     </li>
-    <li class="lang-switcher-mobile">
+    <li class="navbar__lang-mobile">
       <a class="lang-trigger <%=(lang==" en "?"active ":" ")%>" lang="en" href="https://hive-studio.net/">EN</a>
       <a class="lang-trigger <%=(lang==" ua "?"active ":" ")%>" lang="ua" href="https://ua.hive-studio.net/">UA</a>
       <a class="lang-trigger <%=(lang==" ru "?"active ":" ")%>" lang="ru" href="https://ru.hive-studio.net/">RU</a>
