@@ -1,84 +1,32 @@
 <% include ../partials/header %>
+
     <div id='fp-js'>
-        <div class='fp-js dark-section'>
+        <div class='fp-js dark-section' data-fp-js="services">
             <div class="section-content">
-                <h1 class="section-header">
-                    Hive creates a website of any complexity.</h1>
+                <h2 class="section__main-title">
+                    Hive creates a website of any complexity.</h2>
                 <div class="container">
                     <div class="row">
                         <div class="vertical-tab-wrap">
                             <div class="vert-tabs">
-                                <button class="tablinks tabs-active" data-tab="tab-1" data-bind="click: backToTop">
-                                    System Maintenance & Hosting
-                                </button>
-                                <button class="tablinks" data-tab="tab-2" data-bind="click: backToTop">
-                                    Fullstack Web Development
-                                </button>
-                                <button class="tablinks" data-tab="tab-3" data-bind="click: backToTop">
-                                    Identity Design & Branding
-                                </button>
-                                <button class="tablinks" data-tab="tab-4" data-bind="click: backToTop">
-                                    SEO & Digital Marketing
-                                </button>
+                                <% for (var [i, service] of services.entries()) { %>
+                                    <button class="tablinks tabs-active" data-tab="tab-<%= i %>" data-bind="click: backToTop">
+                                        <%= service.name %>
+                                    </button>
+                                    <% } %>
                             </div>
-                            <div id="tab-1" class="tab-content tabs-active">
-                                <div class="animated slideInDown">
-                                    <p class="s-md-100 justify">Today’s informed consumer is able to quickly find your website and digital marketing
-                                        presence to assess your credibility and whether you’re worthy of their time and money.
-                                        Don’t lose conversions with a broken or vulnerable website. By partnering with Hive
-                                        Studio, you can be calm for the stability and security of your information resource.
-                                        Our team is always ready to provide a wide-range tech support including network,
-                                        hosting and digital maintenance solutions.</p>
-                                    <div class="left padding-tb-2">
-                                        <a class="s-md card-button" href="#">
+                            <% for (var [i, service] of services.entries()) { %>
+                                <div id="tab-<%= i %>" class="tab-content <%=(i==0?" tabs-active ":" ")%>">
+                                    <div class="animated slideInDown">
+                                        <p class="services__desc-main">
+                                            <%= service.ext_desc %>
+                                        </p>
+                                        <a class="btn__services-main" href="/services/<%= service.url %>">
                                             See Detalis
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div id="tab-2" class="tab-content">
-                                <div class="animated slideInDown">
-                                    <p class="s-md-100 justify">Stunning design is great for business. We specialises in creating custom web design that
-                                        are crafted to meet your brand, design and functionality needs. Our websites are
-                                        easy to edit, update and manage allowing you to keep your website content fresh and
-                                        relevant encouraging repeat visits and increasing traffic to your website. We ensure
-                                        our websites work well on desktop computers as well as on mobile devices such as
-                                        smartphones and tablets.</p>
-                                    <div class="left padding-tb-2">
-                                        <a class="s-md card-button" href="#">
-                                            See Detalis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="tab-3" class="tab-content">
-                                <div class="animated slideInDown">
-                                    <p class="s-md-100 justify">Your brand will help distinguish you from your competitors and should always be consistent
-                                        with your website. Is your current brand looking a little bit tired? Are you ready
-                                        to re-launch with a refreshing new look? We will implement your ideas in the best
-                                        shape and shade, while creating an exquisite look that will surely please your customers.</p>
-                                    <div class="left padding-tb-2">
-                                        <a class="s-md card-button" href="#">
-                                            See Detalis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="tab-4" class="tab-content">
-                                <div class="animated slideInDown">
-                                    <p class="s-md-100 justify">Having a great website is really nice, but if nobody sees it, it’s in vain to make you
-                                        money. In today's competitive online environment, it is absolutely vital that your
-                                        site appears near the top of search engine results. Search engines change the rules
-                                        frequently, so we will work hard to get your site noticed, drive traffic and increase
-                                        your return on investment. We can help your website search engine friendly, optimize
-                                        content and even help you track conversions.</p>
-                                    <div class="left padding-tb-2">
-                                        <a class="s-md card-button" href="#">
-                                            See Detalis
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                                <% } %>
                         </div>
                     </div>
                 </div>
@@ -89,40 +37,34 @@
             <div class="section-content">
                 <div class="container">
                     <div class="row">
-                        <h2 class="section-header padding-tb-2">
+                        <h2 class="section__main-title">
                             Customer testimonials.
                         </h2>
-                        <div class="wrapper">
-                            <div class="owl-carousel">
-                                <div>
-                                    <div class="padding-tb-4">
+                        <div class="services__carousel-block">
+                            <div class="wrapper">
+                                <div class="owl-carousel">
+                                    <div>
                                         <div>
-                                            <img class="testimonial-logo padding-tb-2" src="/static/images/logo-dark.svg">
+                                            <img class="services__testimonial-logo" src="/static/images/logo-dark.svg">
                                         </div>
-                                        <p class="md padding-tb-2 center-80">"We want to express our gratitude for the advice in business endeavors. Individual
+                                        <p class="services__testimonial-desc">"We want to express our gratitude for the advice in business endeavors. Individual
                                             and slightly non-standart approach to the customers."</p>
-                                        <p class="padding-tb-2">
-                                            <a class="bb-text s-md">Serhio Van Tareljo-De-Salatto.</a>
-                                        </p>
+                                        <a class="services__testimonial-author">Serhio Van Tareljo-De-Salatto.</a>
                                     </div>
-                                </div>
-                                <div>
-                                    <div class="padding-tb-4">
+                                    <div>
                                         <div>
-                                            <img class="testimonial-logo padding-tb-2" src="/static/images/logo-dark.svg">
+                                            <img class="services__testimonial-logo" src="/static/images/logo-dark.svg">
                                         </div>
-                                        <p class="md padding-tb-2 center-80">"We want to express our gratitude for the advice in business endeavors. Individual
+                                        <p class="services__testimonial-desc">"We want to express our gratitude for the advice in business endeavors. Individual
                                             and slightly non-standart approach to the customers."</p>
-                                        <p class="padding-tb-2">
-                                            <a class="bb-text s-md">Serhio Van Tareljo-De-Salatto.</a>
-                                        </p>
+                                        <a class="services__testimonial-author">Serhio Van Tareljo-De-Salatto.</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="button-border-dark ">
-                        <a class="button-small-dark" href="#">
+                    <div class="btn-main__border-dark">
+                        <a class="btn-main__sm-dark" href="#">
                             See full
                             <strong>portfolio</strong>.
                         </a>
@@ -133,33 +75,33 @@
 
         <div class='fp-js dark-section'>
             <div class="section-content">
-                <h2 class="section-header padding-tb-2-5">
+                <h2 class="section__main-title">
                     Guarantees.
                 </h2>
                 <div class="container">
                     <div class="row">
-                        <div class=" padding-tb-4">
+                        <div class="services__guarantees-block">
                             <div class="col-md-3">
-                                <a class="wb-text guarantees-num">A.</a>
-                                <p class="s-md">pure & perfect code</p>
+                                <a class="services__guarantees-index">A.</a>
+                                <p class="services__guarantees-info">pure & perfect code</p>
                             </div>
                             <div class="col-md-3">
-                                <a class="wb-text guarantees-num">B.</a>
-                                <p class="s-md">correct optimization</p>
+                                <a class="services__guarantees-index">B.</a>
+                                <p class="services__guarantees-info">correct optimization</p>
                             </div>
                             <div class="col-md-3">
-                                <a class="wb-text guarantees-num">C.</a>
-                                <p class="s-md">creative design & usability</p>
+                                <a class="services__guarantees-index">C.</a>
+                                <p class="services__guarantees-info">creative design & usability</p>
                             </div>
                             <div class="col-md-3">
-                                <a class="wb-text guarantees-num">D.</a>
-                                <p class="s-md">stability & speed</p>
+                                <a class="services__guarantees-index">D.</a>
+                                <p class="services__guarantees-info">stability & speed</p>
                             </div>
                         </div>
-                        <div class="col-md-12 padding-t-5">
-                            <p class="guarantees-24-7">24/7</p>
+                        <div class="col-md-12 services__support-block">
+                            <p class="services__guarantees-time">24/7</p>
                             <div>
-                                <a class="cli-support s-md">
+                                <a class="services__guarantees-support">
                                     <strong>client's support</strong>
                                 </a>
                             </div>
@@ -171,19 +113,19 @@
 
         <div class='fp-js white-section'>
             <div class="section-content">
-                <h2 class="section-header padding-tb-4">
+                <h2 class="section__main-title">
                     Improve your business.
                 </h2>
                 <div class="container">
-                    <div class="row">
-                        <p class="md-300 center">
+                    <div class="row services__cta-block">
+                        <p class="services__cta-subtitle">
                             <strong>Do you need some help with the choice?</strong>
                         </p>
-                        <p class="md-300 center">You can use our service matcher</p>
+                        <p class="services__cta-info">You can use our service matcher</p>
                         <br>
                         <br>
-                        <div class="button-border-dark">
-                            <a class="button-small-dark" href="#">
+                        <div class="btn-main__border-dark">
+                            <a class="btn-main__sm-dark" href="#">
                                 Choose
                                 <strong>service</strong>.
                             </a>
@@ -194,3 +136,4 @@
         </div>
 
         <% include ../partials/footer %>
+        

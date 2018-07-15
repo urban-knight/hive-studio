@@ -1,10 +1,11 @@
 <% include ./partials/header %>
+
   <div id='fp-js'>
     <div class='fp-js dark-section npddng' data-fp-js="home">
       <canvas id="main-bg"></canvas>
-      <div class="site_title">
+      <div class="hive__site-title">
         <h1>
-          <span>HIVE</span>
+          <span class="hive__title-main">HIVE</span>
           <br>
           <strong>
             <span id="title"></span>
@@ -19,58 +20,60 @@
         </a>
       </div>
     </div>
+
     <div class='fp-js white-section' data-fp-js="about">
       <div class="section-content">
-        <h2 class="section-header">
+        <h2 class="section__main-title">
           <%-langer.ABOUT_HEADING%>.</h2>
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
-            <p class="count right main-count">12</p>
-            <p class="count-descr count-descr-2">
+            <p class="num__main-about right">12</p>
+            <p class="txt__main-about right">
               <%-langer.ABOUT_F1%>
             </p>
           </div>
           <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <p class="count">5</p>
-              <p class="count-descr">
+              <p class="num__secondary-about">5</p>
+              <p class="txt__secondary-about">
                 <%-langer.ABOUT_F2%>
               </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <p class="count">4</p>
-              <p class="count-descr">
+              <p class="num__secondary-about">4</p>
+              <p class="txt__secondary-about">
                 <%-langer.ABOUT_F3%>
               </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <p class="count">24
-                <span>h</span>
+              <p class="num__secondary-about">24
+                <span class="subtxt__secondary-about">h</span>
               </p>
-              <p class="count-descr">
+              <p class="txt__secondary-about">
                 <%-langer.ABOUT_F4%>
               </p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <p class="count">100
-                <span>%</span>
+              <p class="num__secondary-about">100
+                <span class="subtxt__secondary-about">%</span>
               </p>
-              <p class="count-descr">
+              <p class="txt__secondary-about">
                 <%-langer.ABOUT_F5%>
               </p>
             </div>
           </div>
         </div>
-        <div class="button-border-dark">
-          <a class="button-small-dark" href="/about">
+        <div class="btn-main__border-dark">
+          <a class="btn-main__sm-dark" href="/about">
             <%-langer.ABOUT_BTN%>
           </a>
         </div>
       </div>
     </div>
+
     <div class='fp-js dark-section' data-fp-js="services">
       <div class="section-content">
-        <h2 class="section-header container">
+        <h2 class="section__main-title">
           <%=langer.SERVICES_HEADING%>.</h2>
         <div class="container">
           <div class="row">
@@ -80,20 +83,20 @@
                   <button class="tablinks tabs-active" data-tab="tab-<%= i %>" data-bind="click: backToTop">
                     <%= service.name %>
                   </button>
-                <% } %>
+                  <% } %>
               </div>
               <% for (var [i, service] of services.entries()) { %>
-                <div id="tab-<%= i %>" class="tab-content <%=(i==0?" tabs-active ":"")%>">
+                <div id="tab-<%= i %>" class="tab-content <%=(i==0?" tabs-active ":" ")%>">
                   <div class="animated slideInDown">
-                    <p class="s-md-100 justify"><%= service.ext_desc %></p>
-                    <div class="left padding-tb-2">
-                      <a class="s-md card-button" href="/services/<%= service.url %>">
-                        See Detalis
-                      </a>
-                    </div>
+                    <p class="services__desc-main">
+                      <%= service.ext_desc %>
+                    </p>
+                    <a class="btn__services-main" href="/services/<%= service.url %>">
+                      See Detalis
+                    </a>
                   </div>
                 </div>
-              <% } %>
+                <% } %>
             </div>
           </div>
         </div>
@@ -106,26 +109,24 @@
             <div class="container">
               <div class="row">
                 <% for (const [j, product] of chunk.entries()) { %>
-                  <div class='col-xl-6 col-md-6 col-sm-12 col-xs-12 padding-lr-8 
+                  <div class='col-xl-6 col-md-6 col-sm-12 col-xs-12 
                 <% if (j == 0) { %>
                   <%= (i%2 == 0?"right-border-black":"right-border") %>
                 <% } %>
               '>
-                    <h2 class="lg-bold">
+                    <h2 class="products__title-main">
                       <%= product.name %>.</h2>
-                    <p class="padding-tb-1">
-                      <a class='bb-text s-md <%= (i%2 == 0?"":"wb-text s-md") %>'>
+                    <div class="products__block-main">
+                      <a class='dark__painted-txt <%= (i%2 == 0?"":"white__painted-txt s-md") %>'>
                         <%- product.price %>
                       </a>
-                    </p>
-                    <div class="s-md-300 p-desc">
+                    </div>
+                    <div class="products__desc-main">
                       <%- product.desc %>
                     </div>
-                    <div class="s-md left padding-tb-2">
-                      <a class='card-button-2 <%= (i%2 == 0?"":"card-button-black-p") %>' href="/products/<%= product.url %>">
-                        <%= langer.PRODUCT_BTN %>
-                      </a>
-                    </div>
+                    <a class='products__btn-main <%= (i%2 == 0?"":"products__btn2-main") %>' href="/products/<%= product.url %>">
+                      <%= langer.PRODUCT_BTN %>
+                    </a>
                   </div>
                   <% } %>
               </div>
@@ -135,77 +136,72 @@
             <div class='fp-js white-section' data-fp-js="key_projects">
               <div class="container">
                 <div class="row">
-                  <h2 class="section-header padding-tb-4">
+                  <h2 class="projects__head-main">
                     <%= langer.PROJECTS_HEADING %>
                   </h2>
                   <div class="wrapper">
                     <div class="owl-carousel">
                       <div>
-                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <a class="bb-text s-md-bold">Landing</a>
-                          <p class="x-md-bold">Paktum</p>
-                          <p class="s-md">website for debt collection company</p>
-                          <p class="justify s-md-300 padding-tb-1">If you want a site that contains all the effective mechanisms for the product presentation and
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 projects__block-main">
+                          <a class="projects__tab-main">Landing</a>
+                          <p class="projects__title-main">Paktum</p>
+                          <p class="projects__subtitle-main">website for debt collection company</p>
+                          <p class="projects__desc-main">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
-                          <div class="left padding-tb-1">
-                            <a class="s-md card-button card-button-black-2" href="#">
-                              See Detalis
-                            </a>
-                          </div>
+                          <a class="btn__projects-main" href="#">
+                            See Detalis
+                          </a>
                         </div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                          <img class="projects__img-main" src="/static/images/portfolio/paktum.jpg">
                         </div>
                       </div>
                       <div>
-                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <a class="bb-text s-md-bold">Landing</a>
-                          <p class="x-md-bold">Paktum</p>
-                          <p class="s-md">website for debt collection company</p>
-                          <p class="justify s-md-300 padding-tb-1">If you want a site that contains all the effective mechanisms for the product presentation and
+                        <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12 projects__block-main">
+                          <a class="projects__tab-main">Landing</a>
+                          <p class="projects__title-main">Paktum</p>
+                          <p class="projects__subtitle-main">website for debt collection company</p>
+                          <p class="projects__desc-main">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
-                          <div class="left padding-tb-1">
-                            <a class="s-md card-button card-button-black-2" href="#">
-                              See Detalis
-                            </a>
-                          </div>
+                          <a class="btn__projects-main" href="#">
+                            See Detalis
+                          </a>
                         </div>
                         <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12">
-                          <img class="blog-img" src="/static/images/portfolio/paktum.jpg">
+                          <img class="projects__img-main" src="/static/images/portfolio/paktum.jpg">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="padding-tb-2">
-                  <div class="button-border-dark">
-                    <a class="button-small-dark" href="#">
-                      <%- langer.PROJECTS_BTN %>
-                    </a>
-                  </div>
+                <div class="btn-main__border-dark">
+                  <a class="btn-main__sm-dark" href="#">
+                    <%- langer.PROJECTS_BTN %>
+                  </a>
                 </div>
               </div>
             </div>
+
             <div class='fp-js dark-section' data-fp-js="order">
               <div class="container">
                 <div class="row">
                   <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
-                    <h2 class="x-md-bold padding-rtb">
+                    <h2 class="cta__title-main">
                       <%= langer.ORDER_HEADING %>
                     </h2>
                   </div>
                   <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="center md padding-rtb padding-rtb-2">
-                      <a class="btn-download" href="#">
+                    <div class="cta__block-main">
+                      <a class="cta__btn-main" href="#">
                         <%- langer.ORDER_DOWNLOAD %>
                       </a>
                     </div>
                   </div>
-                  <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 padding-t-15">
-                    <div class="button-border-white">
-                      <a class="button-small-white" href="../">
+                  <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 cta__padding-main">
+                    <div class="btn-main__border-white">
+                      <a class="btn-main__lg-white" href="#">
                         <%- langer.ORDER_BTN %>
                       </a>
                     </div>
@@ -215,49 +211,43 @@
             </div>
             <div class='fp-js white-section' data-fp-js="blog">
               <div class="container">
-                <h2 class="section-header-news">
+                <h2 class="section__main-title">
                   <%= langer.BLOG_HEADING %>
                 </h2>
                 <div class="row">
-                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                    <div class="blog-detalis">
-                      <p class="blog-date s-md">Feb 07</p>
-                      <p class="blog-author s-md">Dmytro Kuznets</p>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                    <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                    <div class="news__block-main">
+                      <p class="news__date-main">Feb 07</p>
+                      <p class="news__author-main">Dmytro Kuznets</p>
                     </div>
-                    <h3 class="s-md-bold justify blog-title padding-tb-1">1 mln $ have been invested in Ukrainian web production</h3>
-                    <p class="sm-300 justify">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-                    <div class="padding-tb-2">
-                      <a class="btn-article sm" href="#">Read More</a>
-                    </div>
+                    <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <a class="btn__news-main" href="#">Read More</a>
                   </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                    <div class="blog-detalis">
-                      <p class="blog-date s-md">Feb 07</p>
-                      <p class="blog-author s-md">Dmytro Kuznets</p>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                    <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                    <div class="news__block-main">
+                      <p class="news__date-main">Feb 07</p>
+                      <p class="news__author-main">Dmytro Kuznets</p>
                     </div>
-                    <h3 class="s-md-bold justify blog-title padding-tb-1">1 mln $ have been invested in Ukrainian web production</h3>
-                    <p class="sm-300 justify">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-                    <div class="padding-tb-2">
-                      <a class="btn-article sm" href="#">Read More</a>
-                    </div>
+                    <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <a class="btn__news-main" href="#">Read More</a>
                   </div>
-                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 blog-card">
-                    <img class="blog-img" src="/static/images/blog/post-1.jpg">
-                    <div class="blog-detalis">
-                      <p class="blog-date s-md">Feb 07</p>
-                      <p class="blog-author s-md">Dmytro Kuznets</p>
+                  <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
+                    <img class="news__img-main" src="/static/images/blog/post-1.jpg">
+                    <div class="news__block-main">
+                      <p class="news__date-main">Feb 07</p>
+                      <p class="news__author-main">Dmytro Kuznets</p>
                     </div>
-                    <h3 class="s-md-bold justify blog-title padding-tb-1">1 mln $ have been invested in Ukrainian web production</h3>
-                    <p class="sm-300 justify">The stability and speed of any web resource is based, first of all, on its technical component.</p>
-                    <div class="padding-tb-2">
-                      <a class="btn-article sm" href="#">Read More</a>
-                    </div>
+                    <h3 class="news__title-main">1 mln $ have been invested in Ukrainian web production</h3>
+                    <p class="news__desc-main">The stability and speed of any web resource is based, first of all, on its technical component.</p>
+                    <a class="btn__news-main" href="#">Read More</a>
                   </div>
                 </div>
-                <div class="button-border-dark">
-                  <a class="button-small-dark" href="/blog">
+                <div class="btn-main__border-dark">
+                  <a class="btn-main__sm-dark" href="/blog">
                     <%- langer.BLOG_BTN %>
                   </a>
                 </div>
