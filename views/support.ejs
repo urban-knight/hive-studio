@@ -1,19 +1,20 @@
 <% include ./partials/header %>
+
     <div id='fp-js'>
         <div class='fp-js dark-section'>
-            <h2 class="section-header support-page">Support.</h2>
+            <h2 class="section__main-title">Support.</h2>
             <div class="container">
                 <div class="row">
-                    <h3 class="support-sub-header">
+                    <h3 class="support__subtitle-txt">
                         <strong>FAQ.</strong> find the answer right here right now
                     </h3>
-                    <div class="accordion-block">
+                    <div class="accordion__block">
                         <dl class="accordion">
                             <dt>
                                 <a href="#">How to order one of the Hive services/products?</a>
                             </dt>
                             <dd>
-                                <ul class="answ-support">
+                                <ul class="accordion__key-txt">
                                     <li>
                                         To order a new Hive product, please go to the
                                         <a href="#">
@@ -35,7 +36,7 @@
                                 <a href="#">How much does it cost?</a>
                             </dt>
                             <dd>
-                                <ul class="answ-support">
+                                <ul class="accordion__key-txt">
                                     <li>
                                         To order a new Hive product, please go to the
                                         <a href="#">
@@ -57,7 +58,7 @@
                                 <a href="#">In which way can I connect with you?</a>
                             </dt>
                             <dd>
-                                <ul class="answ-support">
+                                <ul class="accordion__key-txt">
                                     <li>
                                         To order a new Hive product, please go to the
                                         <a href="#">
@@ -79,7 +80,7 @@
                                 <a href="#">How can I post my article on your site?</a>
                             </dt>
                             <dd>
-                                <ul class="answ-support">
+                                <ul class="accordion__key-txt">
                                     <li>
                                         To order a new Hive product, please go to the
                                         <a href="#">
@@ -99,11 +100,11 @@
                             </dd>
                         </dl>
                     </div>
-                    <p class="redirect-info">Find more information in Hive-Blog.</p>
-                    <div class="button-border-white">
-                        <a class="button-small-white" href="/about">
+                    <p class="support__redirect-info">Find more information in Hive-Blog.</p>
+                    <div class="btn-main__border-white">
+                        <a class="btn-main__sm-white" href="#">
                             Go to
-                            <strong>Blog</strong>.
+                            <strong>blog</strong>.
                         </a>
                     </div>
                 </div>
@@ -111,45 +112,47 @@
         </div>
 
         <div class='fp-js white-section'>
-            <h2 class="section-header">
+            <h2 class="section__main-title">
                 Tech Stack.</h2>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-border-black">
-                        <div class="row tech-size f-right">
-                            <h3 class="x-md-bold uppercase left stack-name">mean</h3>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tech__block">
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">M.</a>
+                            <span class="support__tech-txt">mongo</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">E.</a>
+                            <span class="support__tech-txt">express</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">A.</a>
+                            <span class="support__tech-txt">angular</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">N.</a>
+                            <span class="support__tech-txt">node</span>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <div class="row tech-size-2 f-left">
-                            <h3 class="x-md-bold uppercase left stack-name">lamp</h3>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                <img class="grey" src="/static/images/brands/angular.png">
-                            </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tech__block">
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">L.</a>
+                            <span class="support__tech-txt">linux</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">A.</a>
+                            <span class="support__tech-txt">apache</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">M.</a>
+                            <span class="support__tech-txt">mysql</span>
+                        </div>
+                        <div class="col-md-3 support__tech-block">
+                            <a class="support__tech-letter">P.</a>
+                            <span class="support__tech-txt">php</span>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="row center tech-size-mini">
                             <div class="col-xs-4 col-sm-2 col-md-offset-3 col-lg-1">
                                 <img class="grey" src="/static/images/brands/angular.png">
@@ -170,9 +173,10 @@
                                 <img class="grey" src="/static/images/brands/angular.png">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
 
         <% include ./partials/footer %>
+        

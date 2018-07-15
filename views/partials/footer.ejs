@@ -1,60 +1,78 @@
 <footer class="fp-js dark-section" data-fp-js="contacts">
-  <div class="container-footer">
-    <div class="row site-map">
-      <div class="col-md-2 col-md-offset-1">
-        <% for (page of footer.pages) { %>
-          <h3 class="md-bold padding-tb-1">
-            <a href="<%= page[lang].url %>" target="_blank" class="capitalize"><%= page[lang].name %></a>
-          </h3>  
+
+  <div class="row footer__site-map">
+    <div class="col-md-2 col-md-offset-1">
+      <% for (page of footer.pages) { %>
+        <h3 class="footer__main-title">
+          <a href="<%= page[lang].url %>" target="_blank" class="capitalize">
+            <%= page[lang].name %>
+          </a>
+        </h3>
         <% } %>
-      </div>
-      <% for (const index of footer.indexes) { %>
+    </div>
+    <% for (const index of footer.indexes) { %>
       <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1"> <a href="/<%= index[lang].url %>">#<%= index[lang].name %></a></h3>
-          <% for (object of index.objects) { %>
-          <p><a class="sm-300 padding-tb-1" href="/<%= index[lang].url %>/<%= object[lang].url %>"><%= object[lang].name %></a></p>
+        <h3 class="footer__main-title">
+          <a href="/<%= index[lang].url %>">#
+            <%= index[lang].name %>
+          </a>
+        </h3>
+        <% for (object of index.objects) { %>
+          <p>
+            <a class="footer__sub-title" href="/<%= index[lang].url %>/<%= object[lang].url %>">
+              <%= object[lang].name %>
+            </a>
+          </p>
           <% } %>
       </div>
       <% } %>
-      <div class="col-md-2">
-        <h3 class="md-bold padding-tb-1"><a href="/blog">#<%= (lang=="en"?"Blog":"Блог") %></a></h3>
-        <% for (category of footer.categories) { %>
-          <p><a class="sm-300 padding-tb-1" href="/blog/<%= category[lang].url %>"><%= category[lang].name %></a></p>
-        <% } %>
-      </div>
-    </div>
-    <div class="contacts-block">
-      <h3 class="contacts-head">
-        <%= langer.FTR_CALL %>
-      </h3>
-      <a class="contacts-data" href="tel:+380974092303">+380 (97) 409 23 03</a>
-      <a class="contacts-data" href="mailto:sales@hive-studio.net">sales@hive-studio.net</a>
-      <div class="adress-block">
-        <p class="contacts-adress">
-          <%= langer.FTR_ADDRESS_P1 %>
-        </p>
-        <p class="contacts-adress">
-          <%= langer.FTR_ADDRESS_P2 %>
-        </p>
-      </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-social-links">
-        <a href="https://www.facebook.com/groups/875659312616598/" title="Facebook" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/18444275/" title="LinkedIn" target="_blank">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="skype:fanatik113?chat" title="Skype" target="_blank">
-          <i class="fab fa-skype"></i>
-        </a>
-        <a href="#" title="Behance" target="_blank">
-          <i class="fab fa-behance"></i>
-        </a>
-      </div>
-      <p class="copyright">&copy 2018 Hive Studio |
-        <%= langer.FTR_COPYRIGHT %>
+        <div class="col-md-2">
+          <h3 class="footer__main-title">
+            <a href="/blog">#
+              <%= (lang=="en"?"Blog":"Блог") %>
+            </a>
+          </h3>
+          <% for (category of footer.categories) { %>
+            <p>
+              <a class="footer__sub-title" href="/blog/<%= category[lang].url %>">
+                <%= category[lang].name %>
+              </a>
+            </p>
+            <% } %>
+        </div>
+  </div>
+  <div class="footer__contacts-block">
+    <h3 class="footer__contacts-title">
+      <%= langer.FTR_CALL %>
+    </h3>
+    <a class="footer__contacts-data" href="tel:+380974092303">+380 (97) 409 23 03</a>
+    <a class="footer__contacts-data" href="mailto:sales@hive-studio.net">sales@hive-studio.net</a>
+    <div class="footer__address-block">
+      <p class="footer__contacts-address">
+        <%= langer.FTR_ADDRESS_P1 %>
+      </p>
+      <p class="footer__contacts-address">
+        <%= langer.FTR_ADDRESS_P2 %>
       </p>
     </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer__social-icons">
+      <a href="https://www.facebook.com/groups/875659312616598/" title="Facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/18444275/" title="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="skype:fanatik113?chat" title="Skype" target="_blank">
+        <i class="fab fa-skype"></i>
+      </a>
+      <a href="#" title="Behance" target="_blank">
+        <i class="fab fa-behance"></i>
+      </a>
+    </div>
+    <p class="footer__title-copyright">&copy 2018 Hive Studio |
+      <%= langer.FTR_COPYRIGHT %>
+    </p>
+  </div>
 </footer>
 </div>
 <script type="text/javascript" src="/static/js/jquery-1.11.2.min.js"></script>

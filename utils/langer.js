@@ -1,5 +1,17 @@
 const path = require('path');
-var fs = require('fs');
+
+function getLangFromSubdirectory(req, siteLangs, defaultLang) {
+    var _lang = '';
+    var _url = req.originalUrl.split("/")[1];
+    
+    if (siteLangs.includes(_url)) {
+        _lang = _url;
+    } else {
+        _lang = defaultLang;
+    }
+
+    return _lang;
+}
 
 function getLangFromSubdomain(req) {
     var _lang = '';
@@ -52,35 +64,6 @@ function getLangFromHeaders(req, siteLangs) {
     return _lang;
 }
 
-function getScenario(req, pageURLs, indexURLs) {
-    var reqPath = path.parse(req.originalUrl);
-    var _path = "";
-
-    if (reqPath.ext === "") {
-        var pathArr = req.originalUrl.split('/');
-        var _length = pathArr.length;
-
-        if (_length == 2) {
-            var dir = "/" + pathArr[1];
-
-            if (pageURLs.includes(dir)) {
-                _path = pathArr[1];
-            } else if (indexURLs.includes(dir)) {
-                _path = path.join(pathArr[1], "index");
-            }
-
-        } else if (_length == 3) {
-            var dir = "/" + pathArr[1];
-
-            if (indexURLs.includes(dir)) {
-                _path = path.join(pathArr[1], "show");
-            }
-        }
-    }
-
-    return _path;
-}
-
 function loadLangJSONFile(langPath) {
     if (path.parse(langPath).ext !== ".json") {
         console.log('Incorrect lang-file path: missing json extension.');
@@ -98,25 +81,23 @@ function loadLangJSONFile(langPath) {
 
 exports = module.exports = function (opts) {
 
-    var i18nTranslations = [];
     var translationsPath = opts.translationsPath || 'langer';
     var cookieLangName = opts.cookieLangName || 'lang';
     var defaultLang = opts.defaultLang || 'en';
     var siteLangs = opts.siteLangs || ['en'];
-    var textsVarName = opts.textsVarName || 'langer';
-    var pageURLs = opts.pageURLs || ['/'];
-    var indexURLs = opts.indexURLs || ['/'];
 
     if (siteLangs.constructor !== Array) {
         throw new Error('Langer error: siteLangs must be an Array with supported langs.');
     }
-
     
-
     return function langer(req, res, next) {
         var _lang = '';
 
-        _lang = getLangFromSubdomain(req);
+        _lang = getLangFromSubdirectory(req, siteLangs, defaultLang);
+
+        if (_lang == '') {
+            _lang = getLangFromSubdomain(req);
+        }
 
         if (_lang == '') {
             _lang = getLangFromCookie(req, cookieLangName);

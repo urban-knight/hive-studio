@@ -14,6 +14,5 @@ module.exports = {
         for (m of middlewares) {
             await m.apply(app);
         }
-        //middlewares.forEach(m=>m.apply(app));
     }
 };
