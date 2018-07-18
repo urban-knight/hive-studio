@@ -21,7 +21,7 @@ var ProjectSchema = mongoose.Schema({
         desc: { type: String },
         scope: []
     },
-    ua: {
+    uk: {
         url: { type: String },
         name: { type: String },
         desc: { type: String },
