@@ -37,8 +37,8 @@ function fullPageInit() {
       var hostname = window.location.hostname;
       if (hostname !== 'localhost') {
         $('.lang-switcher a.lang-trigger[lang="en"]').attr('href', "https://www.hive-studio.net/" + '#' + anchorLink);
-        $('.lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.ua.hive-studio.net/" + '#' + anchorLink);
-        $('.lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.ru.hive-studio.net/" + '#' + anchorLink);
+        $('.lang-switcher a.lang-trigger[lang="ua"]').attr('href', "https://www.hive-studio.net/ua/" + '#' + anchorLink);
+        $('.lang-switcher a.lang-trigger[lang="ru"]').attr('href', "https://www.hive-studio.net/ru/" + '#' + anchorLink);
       } else {
         $('.lang-switcher a.lang-trigger').each(function () {
           var url = "http://localhost" + '#' + anchorLink;
