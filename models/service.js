@@ -7,7 +7,7 @@ var ServiceSchema = mongoose.Schema({
         desc: {type: String},
         ext_desc: {type: String}
     },
-    ua: {
+    uk: {
         url: {type: String},
         name: {type: String},
         desc: {type: String},
