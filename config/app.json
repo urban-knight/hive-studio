@@ -1,6 +1,6 @@
 {
     "domain": "hive-studio.net",
-    "langs": ["en", "ua", "ru"],
+    "langs": ["en", "uk", "ru"],
     "defaultLang": "en",
     "langPath": "lang",
     "langVar": "langer",

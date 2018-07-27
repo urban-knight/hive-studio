@@ -20,7 +20,7 @@ var PostSchema = mongoose.Schema({
         desc: { type: String },
         body: { type: String }
     },
-    ua: {
+    uk: {
         url: { type: String },
         title: { type: String },
         desc: { type: String },

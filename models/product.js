@@ -5,6 +5,7 @@ var ProductSchema = mongoose.Schema({
         url: { type: String },
         name: { type: String },
         price: { type: String },
+        term: { type: String },
         desc: { type: String },
         ext_desc: {type: String}
     },
@@ -12,13 +13,15 @@ var ProductSchema = mongoose.Schema({
         url: { type: String },
         name: { type: String },
         price: { type: String },
+        term: { type: String },
         desc: { type: String },
         ext_desc: {type: String}
     },
-    ua: {
+    uk: {
         url: { type: String },
         name: { type: String },
         price: { type: String },
+        term: { type: String },
         desc: { type: String },
         ext_desc: {type: String}
     },

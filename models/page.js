@@ -9,7 +9,7 @@ var PageSchema = mongoose.Schema({
         page_context: { type: String },
         keywords: []
     },
-    ua: {
+    uk: {
         url: { type: String },
         name: { type: String },
         desc: { type: String },

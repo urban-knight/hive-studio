@@ -17,7 +17,7 @@ var CategorySchema = mongoose.Schema({
         url: { type: String },
         name: { type: String }
     },
-    ua: {
+    uk: {
         url: { type: String },
         name: { type: String }
     }
