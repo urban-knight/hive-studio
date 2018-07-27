@@ -54,20 +54,21 @@ $width: 100%;
 
 //responsive sizes
 $break-small: 768px;
-$break-large: 1200px;
+$break-medium: 1024px;
+$break-large: 1600px;
 
 //mixins
 @mixin respond-to($media) {
   @if $media == sm-screen {
-    @media only screen and (max-width: $break-small) {
+    @media only screen and (max-width: $break-small - 1) {
       @content;
     }
   } @else if $media == md-screen {
-    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) {
+    @media only screen and (max-width: $break-medium - 1) {
       @content;
     }
   } @else if $media == lg-screen {
-    @media only screen and (min-width: $break-large) {
+    @media only screen and (min-width: $break-large - 1) {
       @content;
     }
   }
@@ -103,15 +104,29 @@ $break-large: 1200px;
     @include transition(all, 0.3s, ease-in);
   }
 }
-@mixin btn-secondary($color, $bg, $hv-bg, $hv-color) {
+@mixin btn-secondary($color, $bg, $hv-bg, $hv-color, $border, $hv-border) {
   text-align: center;
   padding: $padding - 5px;
   color: $color !important;
   background-color: $bg !important;
+  border: 2px solid $border;
+  @include transition(all, 0.3s, ease-out);
+  &:hover {
+    background-color: $hv-bg !important;
+    color: $hv-color !important;
+    @include transition(all, 0.3s, ease-in);
+    border: 1px solid $hv-border;
+  }
+}
+@mixin btn-secondary-bg($color, $bg, $hv-bg, $hv-color) {
+  text-align: center;
+  padding: $padding - 5px;
+  color: $color !important;
+  background-color: $bg !important;
+  padding: 5px 15px;
   @include border(transparent);
   @include transition(all, 0.3s, ease-out);
   &:hover {
-    padding: $padding - 5px;
     background-color: $hv-bg !important;
     color: $hv-color !important;
     @include transition(all, 0.3s, ease-in);
@@ -176,7 +191,7 @@ body {
   margin: $margin * 0;
   padding: $padding * 0;
   color: $dark;
-  font-size: $small;
+  font-size: 18px;
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
 }
@@ -237,6 +252,11 @@ p {
   margin: 0 auto;
 }
 .section__main-title {
+  @include respond-to(lg-screen) {
+    font-size: $large + 1rem;
+    line-height: $large + 9.5rem;
+    padding: 15px 0;
+  }
   padding: 5px 0;
   text-align: center;
   font-weight: $bold;
@@ -275,34 +295,79 @@ p {
 }
 .btn-main__sm-white {
   @include btn-main($dark, $white, $dark, $white, $white);
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.6;
+  }
 }
 .btn-main__sm-dark {
   @include btn-main($white, $dark, $white, $dark, $dark);
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.6;
+  }
 }
 .btn-main__md-white {
   @include btn-main($dark, $white, $dark, $white, $white);
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.8;
+  }
   font-size: $small + 0.2;
 }
 .btn-main__md-dark {
   @include btn-main($white, $dark, $white, $dark, $dark);
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.8;
+  }
   font-size: $small + 0.2;
 }
 .btn-main__lg-white {
   @include btn-main($dark, $white, $dark, $white, $white);
+  @include respond-to(lg-screen) {
+    font-size: $small + 1;
+  }
   font-size: $small + 0.5;
 }
 .btn-main__lg-dark {
   @include btn-main($white, $dark, $white, $dark, $dark);
+  @include respond-to(lg-screen) {
+    font-size: $small + 1;
+  }
   font-size: $small + 0.5;
 }
 .btn__secondary-white {
-  @include btn-secondary($dark, $white, $dark, $white);
+  @include btn-secondary(
+    $white,
+    transparent,
+    $white,
+    $dark,
+    $white,
+    transparent
+  );
+  @include respond-to(lg-screen) {
+    font-size: $small !important;
+  }
+  padding: 8px 30px;
   &:hover {
     @include border($white);
   }
 }
 .btn__secondary-dark {
-  @include btn-secondary($white, $dark, $white, $dark);
+  @include btn-secondary($dark, transparent, $dark, $white, $dark, transparent);
+  @include respond-to(lg-screen) {
+    font-size: $small !important;
+  }
+  padding: 8px 30px;
+  &:hover {
+    @include border($dark);
+  }
+}
+.btn__secondarybg-white {
+  @include btn-secondary-bg($dark, $white, $dark, $white);
+  &:hover {
+    @include border($white);
+  }
+}
+.btn__secondarybg-dark {
+  @include btn-secondary-bg($white, $dark, $white, $dark);
   &:hover {
     @include border($dark);
   }
@@ -318,9 +383,7 @@ p {
 .btn__underline-common {
   border-bottom: 2px solid $white;
 }
-
-//fpJS Setup
-
+// fpJS Setup
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background-color: $white;
@@ -353,9 +416,7 @@ p {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
-
-//Sections
-
+// Sections
 .dark-section {
   color: $white;
   background-color: $dark;
@@ -369,13 +430,14 @@ a:hover {
 }
 .row {
   margin-bottom: 3rem;
+  @include respond-to(lg-screen) {
+    margin-bottom: 8rem;
+  }
 }
 .npddng {
   padding-top: 0 !important;
 }
-
-//Scroll Down Item
-
+// Scroll Down Item
 .scroll-down {
   width: 40px;
   height: 40px;
@@ -459,9 +521,7 @@ a:hover {
     bottom: 2px;
   }
 }
-
-//Accordion
-
+// Accordion
 .accordion__block {
   padding: 0 50px;
   .accordion {
@@ -499,6 +559,9 @@ a:hover {
         }
       }
       a.active {
+        @include respond-to(md-screen) {
+          display: block;
+        }
         color: $dark;
         border-color: $white;
         background-color: $white;
@@ -519,9 +582,7 @@ a:hover {
     }
   }
 }
-
-//Owl Setup
-
+// Owl Setup
 .owl-carousel .owl-nav [class*="owl-"] {
   transition: all 0.3s ease;
 }
@@ -550,9 +611,7 @@ a:hover {
 .owl-next img {
   background: $white;
 }
-
-//Tab Widget
-
+// Tab Widget
 .widget {
   padding: 10px 0;
   .widget-body {
@@ -606,9 +665,7 @@ a:hover {
     }
   }
 }
-
-//Forms
-
+// Forms
 .form {
   input,
   select {
@@ -689,9 +746,7 @@ a:hover {
     font-size: 12px;
   }
 }
-
-//Upload
-
+// Upload
 .upload {
   display: inline-block;
   padding: 1px 5px;
@@ -729,9 +784,13 @@ a:hover {
   color: $dark;
   padding: 2px 0;
 }
-
-//Navbar
-
+// Navbar
+@include respond-to(md-screen) {
+  text-align: center !important;
+  .mobile-logo {
+    float: left;
+  }
+}
 ul {
   li > a {
     position: relative;
@@ -741,6 +800,14 @@ ul {
       color: $white;
       text-decoration: none;
     }
+  }
+  @include respond-to(md-screen) {
+    text-align: center;
+  }
+}
+ul > li {
+  @include respond-to(md-screen) {
+    float: none;
   }
 }
 ul#navmenu > li {
@@ -812,9 +879,17 @@ ul#navmenu > li {
   width: 100%;
   list-style: none;
   padding-left: 100px;
+  @include respond-to(md-screen) {
+    margin-top: 80px;
+    padding-left: 0;
+    background: #000000f2;
+  }
   ul {
     list-style: none;
     width: 9em;
+    @include respond-to(md-screen) {
+      display: block;
+    }
   }
   li {
     float: left;
@@ -837,6 +912,9 @@ ul#navmenu > li {
   }
 }
 .navbar__lang-switcher {
+  @include respond-to(md-screen) {
+    display: none;
+  }
   position: absolute;
   top: 10px;
   z-index: 1001;
@@ -852,6 +930,9 @@ ul#navmenu > li {
 }
 .navbar__lang-mobile {
   display: none;
+  @include respond-to(md-screen) {
+    display: inline-flex;
+  }
   a {
     margin: 10px !important;
     padding: 10px !important;
@@ -890,6 +971,9 @@ ul#navmenu > li {
   }
 }
 .logo {
+  @include respond-to(md-screen) {
+    display: none;
+  }
   float: right !important;
   a {
     &:before {
@@ -910,9 +994,7 @@ ul#navmenu > li {
     }
   }
 }
-
-//Footer
-
+// Footer
 .footer__site-map {
   padding-bottom: 10px;
   margin: 0 auto;
@@ -920,11 +1002,19 @@ ul#navmenu > li {
     font-size: $small + 0.8;
     font-weight: $bold;
     padding: 5px 0;
+    @include respond-to(lg-screen) {
+      font-size: $medium + 0.2;
+      padding: 10px 0;
+    }
   }
   .footer__sub-title {
-    font-size: $small - 0.4;
+    font-size: $small - 0.6;
     font-weight: $light;
     padding: 10px 0;
+    @include respond-to(lg-screen) {
+      font-size: $small;
+      line-height: $medium;
+    }
   }
 }
 .footer__contacts-block {
@@ -934,11 +1024,17 @@ ul#navmenu > li {
     font-size: $small + 0.2;
     font-weight: bold;
     padding: 15px 0;
+    @include respond-to(lg-screen) {
+      font-size: $small + 1.2;
+    }
   }
   .footer__contacts-data {
     font-size: $small - 0.4;
     color: inherit;
     padding: 3px 0;
+    @include respond-to(lg-screen) {
+      font-size: $small + 0.4;
+    }
   }
   .footer__address-block {
     padding: 5px 0;
@@ -949,6 +1045,10 @@ ul#navmenu > li {
   .footer__title-copyright {
     font-size: $small - 0.8;
     font-weight: $thin;
+    @include respond-to(lg-screen) {
+      font-size: $small - 0.2;
+      padding: 10px 0;
+    }
   }
 }
 .footer__social-icons a {
@@ -962,6 +1062,12 @@ ul#navmenu > li {
   display: inline-block;
   color: $white;
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+  @include respond-to(lg-screen) {
+    width: 45px;
+    height: 45px;
+    margin: 18px;
+    padding-top: 10px;
+  }
   &:before {
     content: "";
     display: inline-block;
@@ -974,6 +1080,12 @@ ul#navmenu > li {
     border-radius: 5px;
     transform: rotate(45deg);
     transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+    @include respond-to(lg-screen) {
+      width: 50px;
+      height: 50px;
+      top: -5px;
+      left: -3px;
+    }
   }
   &:hover:before {
     background: $white;
@@ -987,6 +1099,9 @@ ul#navmenu > li {
     top: 0;
     left: 0;
     font-size: 16px;
+    @include respond-to(lg-screen) {
+      font-size: 20px;
+    }
   }
 }
 .footer__social-black a {
@@ -1000,6 +1115,12 @@ ul#navmenu > li {
   display: inline-block;
   color: $white;
   transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+  @include respond-to(lg-screen) {
+    width: 45px;
+    height: 45px;
+    margin: 18px;
+    padding-top: 10px;
+  }
   &:before {
     content: "";
     display: inline-block;
@@ -1013,6 +1134,12 @@ ul#navmenu > li {
     transform: rotate(45deg);
     transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
     background: $dark;
+    @include respond-to(lg-screen) {
+      width: 50px;
+      height: 50px;
+      top: -5px;
+      left: -3px;
+    }
   }
   &:hover:before {
     background: $white;
@@ -1026,15 +1153,15 @@ ul#navmenu > li {
     top: 0;
     left: 0;
     font-size: 16px;
+    @include respond-to(lg-screen) {
+      font-size: 20px;
+    }
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//------------------------------------------main page-----------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ------------------------------------------main page-----------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .hive__site-title {
   top: 30vh;
   left: 10%;
@@ -1056,9 +1183,7 @@ canvas {
 .subtitle {
   font-size: $medium;
 }
-
-//Section 2
-
+// Section 2
 .num__main-about,
 .txt__main-about {
   @include respond-to(sm-screen) {
@@ -1071,27 +1196,47 @@ canvas {
 .num__main-about {
   padding: $padding + 15px $padding + 35px 0 $padding + 35px;
   font-size: $large + 10rem;
+  @include respond-to(lg-screen) {
+    padding: $padding + 15px $padding + 35px 0 $padding + 35px;
+    font-size: $large + 16rem;
+    line-height: $large + 22rem;
+  }
 }
 .txt__main-about {
   padding: 0 $padding + 35px 0 $padding + 35px !important;
   font-size: $medium;
   line-height: $line-height + 4rem;
+  @include respond-to(lg-screen) {
+    padding: 0 $padding + 35px 0 $padding + 35px !important;
+    font-size: $medium + 1;
+    line-height: $medium + 1.4rem;
+  }
 }
 .num__secondary-about {
   font-size: $large + 4rem;
   line-height: $line-height + 13rem;
+  @include respond-to(lg-screen) {
+    font-size: $large + 7rem;
+    line-height: $large + 10.4rem;
+  }
 }
 .txt__secondary-about {
   font-size: $small;
   line-height: $line-height + 1rem;
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.5;
+    line-height: $small + 1rem;
+  }
 }
 .subtxt__secondary-about {
   font-size: $small + 1rem;
   line-height: $line-height + 1rem;
+  @include respond-to(lg-screen) {
+    font-size: $small + 1rem;
+    line-height: $line-height + 1rem;
+  }
 }
-
-//Section 3
-
+// Section 3
 .vertical-tab-wrap {
   display: flex;
   padding: 35px 0;
@@ -1103,7 +1248,7 @@ canvas {
   button {
     display: block;
     background: inherit;
-    padding: 10px 50px;
+    padding: 0.8rem 6.5rem;
     width: 100%;
     border: none;
     outline: none;
@@ -1111,25 +1256,56 @@ canvas {
     transition: 0.3s;
     font-size: $small;
     font-weight: $thin;
+    @include respond-to(lg-screen) {
+      padding: 1.4rem 10rem;
+    }
   }
 }
 .tab-content {
   width: 50%;
   padding: 10px 40px;
-  border-left: 3px solid $white;
+  border-left: 1px solid $white;
   overflow-y: scroll;
   display: none;
   height: max-content;
 }
+.services__desc-block {
+  padding: 0 20px;
+}
 .services__desc-main {
-  font-size: $small - 0.2;
+  font-size: $small - 0.4;
   font-weight: $light;
-  line-height: $medium - 0.8;
+  line-height: $medium - 1.5;
+  padding: 2px 0;
+  p {
+    font-size: $small - 0.4;
+    font-weight: $light;
+    line-height: $medium - 1.5;
+    padding: 2px 0;
+  }
+  @include respond-to(lg-screen) {
+    p {
+      font-size: $small + 0.2;
+      font-weight: $light;
+      line-height: $small + 1.2;
+      padding: 15px 0;
+    }
+    font-size: $small + 0.2;
+    font-weight: $light;
+    line-height: $small + 1.2;
+    padding: 15px 0;
+  }
+}
+.services__btn-block {
+  padding: 10px 0;
 }
 .btn__services-main {
-  @extend .btn__secondary-white;
-  font-size: $small - 0.3;
+  @extend .btn__secondarybg-white;
+  font-size: $small - 0.6 !important;
   font-weight: $regular;
+  @include respond-to(lg-screen) {
+    font-size: $small - 0.2 !important;
+  }
 }
 .tab-content.tabs-active {
   display: inline-block;
@@ -1137,102 +1313,221 @@ canvas {
 .tablinks.tabs-active {
   white-space: nowrap;
   transition: font-size 0.5s;
-  font-weight: $regular;
-  font-size: $small + 0.2;
+  font-weight: $bold;
+  font-size: $small + 0.7;
+  padding-left: 2.2rem !important;
+  padding-right: 2rem;
+  @include respond-to(lg-screen) {
+    font-size: $small + 1;
+    padding-right: 3rem;
+  }
   &:after {
+    @include respond-to(lg-screen) {
+      font-size: 5rem;
+      padding-left: 3rem;
+      line-height: 5.5rem;
+    }
+    display: inline-block;
     white-space: nowrap;
-    content: "\276D" !important;
-    padding-left: 1.5rem;
+    font-family: FontAwesome;
+    font-size: 5rem;
+    font-weight: 100;
+    content: "\f105" !important;
+    padding-left: 2rem;
+    vertical-align: middle;
+    line-height: 5.5rem;
   }
 }
-
-//Section 4
-
+// Section 4
 .products__title-main {
   font-size: $small + 1.4;
   font-weight: $bold;
+  @include respond-to(lg-screen) {
+    font-size: $medium + 1.4;
+  }
 }
 .products__block-main {
   padding: 10px 0;
   font-size: $small - 0.4;
+  @include respond-to(lg-screen) {
+    font-size: $small;
+  }
 }
 .products__desc-main {
-  @extend .services__desc-main;
+  font-size: $small - 0.4;
+  font-weight: $light;
+  line-height: $medium - 0.8;
   padding: 10px 0;
+  @include respond-to(lg-screen) {
+    font-size: $small + 0.2;
+    font-weight: $light;
+    line-height: $medium + 0.2;
+    padding: 15px 0;
+  }
+}
+.products__desc-right {
+  padding: 5px 20px 5px 0;
+  @include respond-to(lg-screen) {
+    padding: 10px 20px 25px 0;
+  }
+}
+.products__desc-left {
+  padding: 5px 0 5px 20px;
+  @include respond-to(lg-screen) {
+    padding: 10px 0 10px 25px;
+  }
 }
 .products__btn-main {
   @extend .btn__secondary-dark;
-  font-size: $small - 0.3;
-  font-weight: $regular;
+  font-size: $small - 0.7;
+  font-weight: $regular + 100;
+  @include respond-to(lg-screen) {
+    font-size: $small - 0.4 !important;
+    font-weight: $regular + 200;
+    padding: 12px 42px;
+  }
 }
 .products__btn2-main {
   @extend .btn__secondary-white;
-  font-size: $small - 0.3;
-  font-weight: $regular;
+  font-size: $small - 0.7;
+  font-weight: $regular + 100;
+  @include respond-to(lg-screen) {
+    font-size: $small - 0.4 !important;
+    font-weight: $regular + 200;
+    padding: 12px 42px;
+  }
 }
-
-//Section 5
-
-.projects__tab-main {
-  @extend .dark__painted-txt;
-  font-size: $small - 0.6;
-  font-weight: $regular;
-}
-.projects__title-main {
-  font-size: $small + 1;
-  font-weight: $bold;
-  padding: 5px 0;
-}
-.projects__subtitle-main {
-  font-size: $small;
-  font-weight: $regular;
-}
-.projects__desc-main {
-  @extend .services__desc-main;
-  padding: 5px 0;
-}
-.btn__projects-main {
-  @extend .btn__secondary-dark;
-  font-size: $small - 0.3;
-  font-weight: $regular;
+// Section 5
+.projects__secondary-title {
+  font-size: $small + 0.5rem;
+  line-height: $small + 1rem;
+  text-align: center;
+  font-weight: $light !important;
+  @include respond-to(lg-screen) {
+    font-size: $small + 1rem;
+    line-height: $small + 1rem;
+  }
 }
 .projects__block-main {
-  padding: 10px 0;
+  padding: 30px 0;
+  @include respond-to(lg-screen) {
+    padding: 85px 0;
+  }
+  .projects__tab-main {
+    @extend .dark__painted-txt;
+    font-size: $small - 0.6;
+    font-weight: $regular;
+  }
+  .projects__title-main {
+    font-size: $small + 1;
+    font-weight: $bold;
+    padding: 5px 0;
+    @include respond-to(lg-screen) {
+      font-size: $medium;
+    }
+  }
+  .projects__subtitle-main {
+    font-size: $small;
+    font-weight: $regular;
+    @include respond-to(lg-screen) {
+      font-size: $small + 0.7;
+    }
+  }
+  .projects__desc-main {
+    font-size: $small - 0.6;
+    font-weight: $light;
+    line-height: $small + 0.5;
+    padding: 10px 50px 0 50px;
+    @include respond-to(lg-screen) {
+      font-size: $small;
+      font-weight: $light;
+      line-height: $small + 1;
+      padding: 30px 50px 0 50px;
+    }
+  }
+  .btn__projects-main {
+    @extend .btn__secondary-dark;
+    font-size: $small - 0.7;
+    font-weight: $regular;
+  }
+  .projects__hours-main {
+    padding: 15px 50px;
+    @include respond-to(lg-screen) {
+      padding: 25px 50px;
+    }
+  }
+  .projects__num-main {
+    font-weight: $bold;
+    font-size: $small + 1;
+  }
 }
 .projects__head-main {
   @extend .section__main-title;
-  padding: 20px 0;
+  padding: 5px 0;
+  @include respond-to(lg-screen) {
+    line-height: $large + 4.5;
+  }
 }
 .projects__img-main {
   width: 100%;
-  padding: 35px 0;
+  padding: 15px 0;
+  @include respond-to(lg-screen) {
+    padding: 80px 0;
+  }
 }
-
-//Section 6
-
+// Section 6
+.cta__info-block {
+  padding: 10vh 0;
+}
+.cta__right-border {
+  border-right: 2px solid $white;
+  height: 50vh;
+}
 .cta__title-main {
   font-size: $medium + 0.2;
   font-weight: $bold;
+  padding: 13vh 0;
+  @include respond-to(lg-screen) {
+    font-size: $large + 0.2;
+  }
 }
 .cta__btn-main {
   @extend .btn__underline-common;
   font-size: $small + 0.5;
+  @include respond-to(lg-screen) {
+    font-size: $small + 1.5;
+  }
 }
 .cta__block-main {
   text-align: center;
-  padding: 50px 0;
+  padding: 20vh 0;
 }
 .cta__padding-main {
-  padding-top: 50px;
+  padding-top: 15vh;
 }
+// Section 7
 
-//Section 7
-
+.news__row {
+  @include respond-to(lg-screen) {
+    margin-bottom: 5rem !important;
+  }
+}
+.news__head-main {
+  @extend .section__main-title;
+  @include respond-to(lg-screen) {
+    font-size: $large + 1rem !important; 
+    line-height: $large + 1.5rem !important;
+    padding: 15px 0 !important;
+  }
+}
 .news__card-main {
   padding-top: 10px;
   padding-bottom: 10px;
   .news__img-main {
     width: 100%;
+    @include respond-to(lg-screen) {
+      padding: 10px 0;
+    }
   }
   .news__block-main {
     padding: 5px 0;
@@ -1249,7 +1544,11 @@ canvas {
     }
   }
   .news__title-main {
-    @extend .projects__subtitle-main;
+    font-size: $small;
+    font-weight: $regular;
+    @include respond-to(lg-screen) {
+      font-size: $small + 1;
+    }
   }
   .news__desc-main {
     font-size: $small - 0.4;
@@ -1257,20 +1556,22 @@ canvas {
     line-height: $medium - 1.3;
     text-align: justify;
     padding: 5px 0;
+    @include respond-to(lg-screen) {
+      font-size: $small + 0.4;
+      line-height: $medium - 0.6;
+      padding: 20px 0;
+    }
   }
   .btn__news-main {
     @extend .btn__secondary-dark;
-    font-size: $small - 0.3;
+    font-size: $small - 0.7;
     font-weight: $regular;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//------------------------------------------about page----------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ------------------------------------------about page----------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .about__block-left {
   text-align: left;
   border-left: 1px solid $dark;
@@ -1297,9 +1598,7 @@ canvas {
   font-weight: $regular;
   padding: 15px 0;
 }
-
-//Section 2
-
+// Section 2
 .background__team-about {
   background-image: url("/static/images/team/about.svg");
   .about__team-img {
@@ -1340,9 +1639,7 @@ canvas {
     }
   }
 }
-
-//Section 3
-
+// Section 3
 .about__cta-subtitle {
   font-weight: $regular;
   font-size: $small + 0.5rem;
@@ -1364,13 +1661,10 @@ canvas {
     font-size: $small + 0.2 !important;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//----------------------------------------services index--------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 2
-
+// --------------------------------------------------------------------------------------------//
+// ----------------------------------------services index--------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 2
 .services__carousel-block {
   padding: 50px 0;
   text-align: center;
@@ -1386,9 +1680,7 @@ canvas {
     font-size: $small + 0.2;
   }
 }
-
-//Section 3
-
+// Section 3
 .services__guarantees-block {
   padding: 60px 0px;
   text-align: center;
@@ -1422,9 +1714,7 @@ canvas {
     }
   }
 }
-
-//Section 4
-
+// Section 4
 .services__cta-block {
   text-align: center;
   .services__cta-subtitle {
@@ -1438,13 +1728,10 @@ canvas {
     font-weight: $light;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//----------------------------------------services show---------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ----------------------------------------services show---------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .service__service-img {
   height: 20vh;
 }
@@ -1454,9 +1741,7 @@ canvas {
 .service__btn-desc {
   @include uni-title($small + 0.2, $regular, center, 10px, 10px);
 }
-
-//Section 2
-
+// Section 2
 .service__centered-cards {
   padding: 20px 15%;
   .service__card-block {
@@ -1477,9 +1762,7 @@ canvas {
     }
   }
 }
-
-//Section 4
-
+// Section 4
 .service__form-block {
   padding: 20px 20px 0 45px;
   .service__field-block {
@@ -1500,13 +1783,10 @@ canvas {
 .service__submit-block {
   padding: 5px;
 }
-
-//--------------------------------------------------------------------------------------------//
-//----------------------------------------products index--------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ----------------------------------------products index--------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .btn__products-main {
   @extend .btn__secondary-dark;
   font-size: $small - 0.3;
@@ -1521,9 +1801,7 @@ canvas {
 .products__tab-content {
   border-left: 3px solid $dark !important;
 }
-
-//Section 2
-
+// Section 2
 .btn__products-carousel {
   @extend .btn__secondary-white;
   font-size: $small - 0.3;
@@ -1534,21 +1812,16 @@ canvas {
   font-size: $small - 0.6;
   font-weight: $regular;
 }
-
-//Section 3
-
+// Section 3
 .products__subtitle-cta {
   @extend .section__secondary-title;
   text-align: center;
   padding: 20px 0;
 }
-
-//--------------------------------------------------------------------------------------------//
-//----------------------------------------product show----------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ----------------------------------------product show----------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .product__show-term {
   padding: 30px 0;
   text-align: center;
@@ -1565,13 +1838,10 @@ canvas {
     font-weight: $bold;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//---------------------------------------portfolio index--------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ---------------------------------------portfolio index--------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .portfolio__items-block {
   padding: 20px 0;
   .portfolio__tab-card {
@@ -1587,9 +1857,7 @@ canvas {
     float: left;
   }
 }
-
-//Section 2
-
+// Section 2
 .portfolio__title-cases {
   font-size: $small + 0.2;
   font-weight: $regular;
@@ -1603,16 +1871,12 @@ canvas {
   width: 100%;
   padding: 10px 0;
 }
-
-//Section 3
-
+// Section 3
 .portfolio__testimonial-author {
   @extend .white__painted-txt;
   font-size: $small + 0.2;
 }
-
-//Section 4
-
+// Section 4
 .portfolio__field-model {
   height: 35px !important;
   width: 50%;
@@ -1643,13 +1907,10 @@ canvas {
     padding: 2px 0;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//---------------------------------------portfolio show---------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// ---------------------------------------portfolio show---------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .portfolio__show-type {
   @extend .white__painted-txt;
   font-size: $small - 0.5;
@@ -1669,9 +1930,7 @@ canvas {
 .portfolio__show-see {
   @include uni-title($small + 0.5, $bold, center, 25vh, 0);
 }
-
-//Section 2
-
+// Section 2
 .key__objective-block {
   padding: 50px 0;
   .border__left-strong {
@@ -1722,15 +1981,11 @@ canvas {
     font-weight: $thin;
   }
 }
-
-//Section 3-4
-
+// Section 3-4
 .portfolio__design-pack img {
   width: 60%;
 }
-
-//Section 5
-
+// Section 5
 .portfolio__testimonial-logo {
   padding-top: 40px;
   height: 100px;
@@ -1744,13 +1999,10 @@ canvas {
 .portfolio__cta-order {
   @include uni-title($small + 0.3, $bold, center, 20px, 20px);
 }
-
-//--------------------------------------------------------------------------------------------//
-//-----------------------------------------blog index-----------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// -----------------------------------------blog index-----------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .blog__search-wrap {
   position: relative;
   .blog__search-btn {
@@ -1790,15 +2042,11 @@ canvas {
   font-size: $small - 0.3;
   font-weight: $regular;
 }
-
-//Section 2
-
+// Section 2
 .blog__news-block {
   padding: 5px 0;
 }
-
-//Section 3
-
+// Section 3
 .news__date-inv {
   @extend .white__painted-txt;
   font-size: $small - 0.6;
@@ -1809,17 +2057,13 @@ canvas {
   font-size: $small - 0.3;
   font-weight: $regular;
 }
-
-//Section 4
-
+// Section 4
 .blog__cta-block {
   padding: 50px 0;
 }
-
-//--------------------------------------------------------------------------------------------//
-//---------------------------------------blog categories--------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
+// --------------------------------------------------------------------------------------------//
+// ---------------------------------------blog categories--------------------------------------//
+// --------------------------------------------------------------------------------------------//
 .blog__category-page {
   padding: 75px 0;
   .blog__search-block {
@@ -1827,13 +2071,10 @@ canvas {
     padding-bottom: 10px;
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//-------------------------------------------contacts-----------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// -------------------------------------------contacts-----------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .contacts__contacts-title {
   @include uni-title($small, $light, center, 5px, 5px);
 }
@@ -1850,22 +2091,17 @@ canvas {
   height: 60vh;
   width: 100%;
 }
-
-//--------------------------------------------------------------------------------------------//
-//-------------------------------------------support------------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Section 1
-
+// --------------------------------------------------------------------------------------------//
+// -------------------------------------------support------------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Section 1
 .support__subtitle-txt {
   @include uni-title($small + 0.3, $light, center, 5px, 5px);
 }
 .support__redirect-info {
   @include uni-title($small - 0.3, $regular, center, 15px, 15px);
 }
-
-//Section 2
-
+// Section 2
 .tech__block {
   padding: 20px 0;
   .support__tech-block {
@@ -1885,11 +2121,9 @@ canvas {
     }
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//---------------------------------------------404--------------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
+// --------------------------------------------------------------------------------------------//
+// ---------------------------------------------404--------------------------------------------//
+// --------------------------------------------------------------------------------------------//
 .page-404 {
   height: 100vh;
   margin: 0 auto;
@@ -1916,43 +2150,11 @@ canvas {
     }
   }
 }
-
-//--------------------------------------------------------------------------------------------//
-//---------------------------------------------END--------------------------------------------//
-//--------------------------------------------------------------------------------------------//
-
-//Temporary Responsive
-
+// --------------------------------------------------------------------------------------------//
+// ---------------------------------------------END--------------------------------------------//
+// --------------------------------------------------------------------------------------------//
+// Temporary Responsive
 @media screen and (max-width: 860px) {
-  .nav {
-    margin-top: 80px;
-    padding-left: 0;
-    background: #000000f2;
-  }
-  .active {
-    display: block;
-  }
-  .nav > li {
-    float: none;
-  }
-  .nav ul {
-    display: block;
-  }
-  .logo {
-    display: none;
-  }
-  .mobile-logo {
-    float: left;
-  }
-  .navbar__lang-switcher {
-    display: none;
-  }
-  .navbar__lang-mobile {
-    display: inline-flex;
-  }
-  ul {
-    text-align: center;
-  }
 }
 @media only screen and (max-width: 1000px) {
   .container-tech {

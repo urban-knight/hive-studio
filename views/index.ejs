@@ -80,7 +80,7 @@
             <div class="vertical-tab-wrap">
               <div class="vert-tabs">
                 <% for (var [i, service] of services.entries()) { %>
-                  <button class="tablinks tabs-active" data-tab="tab-<%= i %>" data-bind="click: backToTop">
+                  <button class="tablinks <%=(i==0?" tabs-active ":" ")%>" data-tab="tab-<%= i %>" data-bind="click: backToTop">
                     <%= service.name %>
                   </button>
                   <% } %>
@@ -88,15 +88,24 @@
               <% for (var [i, service] of services.entries()) { %>
                 <div id="tab-<%= i %>" class="tab-content <%=(i==0?" tabs-active ":" ")%>">
                   <div class="animated slideInDown">
-                    <p class="services__desc-main">
-                      <%= service.ext_desc %>
-                    </p>
-                    <a class="btn__services-main" href="/services/<%= service.url %>">
-                      See Detalis
-                    </a>
+                    <div class="services__desc-block">
+                      <div class="services__desc-main">
+                        <%- service.ext_desc %>
+                      </div>
+                      <div class="services__btn-block">
+                        <a class="btn__services-main" href="/services/<%= service.url %>">
+                          <%= langer.SERVICE_BTN %>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <% } %>
+            </div>
+            <div class="btn-main__border-white">
+              <a class="btn-main__sm-white" href="#">
+                <%- langer.SERVICE_MAIN_BTN %>
+              </a>
             </div>
           </div>
         </div>
@@ -114,19 +123,21 @@
                   <%= (i%2 == 0?"right-border-black":"right-border") %>
                 <% } %>
               '>
-                    <h2 class="products__title-main">
-                      <%= product.name %>.</h2>
-                    <div class="products__block-main">
-                      <a class='dark__painted-txt <%= (i%2 == 0?"":"white__painted-txt s-md") %>'>
-                        <%- product.price %>
+                    <div class='<%= (j%2 == 0?"products__desc-right":"products__desc-left") %>'>
+                      <h2 class="products__title-main">
+                        <%= product.name %>.</h2>
+                      <div class="products__block-main">
+                        <a class='dark__painted-txt <%= (i%2 == 0?"":"white__painted-txt") %>'>
+                          <%- product.price %>
+                        </a>
+                      </div>
+                      <div class="products__desc-main">
+                        <%- product.desc %>
+                      </div>
+                      <a class='<%= (i%2 == 0?"products__btn-main":"products__btn2-main") %>' href="/products/<%= product.url %>">
+                        <%= langer.PRODUCT_BTN %>
                       </a>
                     </div>
-                    <div class="products__desc-main">
-                      <%- product.desc %>
-                    </div>
-                    <a class='products__btn-main <%= (i%2 == 0?"":"products__btn2-main") %>' href="/products/<%= product.url %>">
-                      <%= langer.PRODUCT_BTN %>
-                    </a>
                   </div>
                   <% } %>
               </div>
@@ -139,6 +150,7 @@
                   <h2 class="projects__head-main">
                     <%= langer.PROJECTS_HEADING %>
                   </h2>
+                  <h3 class="projects__secondary-title">our efficiency confirmed by our works</h3>
                   <div class="wrapper">
                     <div class="owl-carousel">
                       <div>
@@ -149,6 +161,8 @@
                           <p class="projects__desc-main">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
+                          <p class="projects__hours-main">
+                            <span class="projects__num-main">242</span> hours spent</p>
                           <a class="btn__projects-main" href="#">
                             See Detalis
                           </a>
@@ -165,6 +179,8 @@
                           <p class="projects__desc-main">If you want a site that contains all the effective mechanisms for the product presentation and
                             sales on the Internet, an online store will cope with this task. This interactive website is
                             designed to provide certain goods to your clients via account</p>
+                          <p class="projects__hours-main">
+                            <span class="projects__num-main">242</span> hours spent</p>
                           <a class="btn__projects-main" href="#">
                             See Detalis
                           </a>
@@ -186,8 +202,8 @@
 
             <div class='fp-js dark-section' data-fp-js="order">
               <div class="container">
-                <div class="row">
-                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 right-border">
+                <div class="cta__info-block">
+                  <div class="col-xl-6 col-md-6 col-sm-6 col-xs-12 cta__right-border">
                     <h2 class="cta__title-main">
                       <%= langer.ORDER_HEADING %>
                     </h2>
@@ -199,22 +215,22 @@
                       </a>
                     </div>
                   </div>
-                  <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 cta__padding-main">
-                    <div class="btn-main__border-white">
-                      <a class="btn-main__lg-white" href="#">
-                        <%- langer.ORDER_BTN %>
-                      </a>
-                    </div>
+                </div>
+                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12 cta__padding-main">
+                  <div class="btn-main__border-white">
+                    <a class="btn-main__lg-white" href="#">
+                      <%- langer.ORDER_BTN %>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
             <div class='fp-js white-section' data-fp-js="blog">
               <div class="container">
-                <h2 class="section__main-title">
+                <h2 class="news__head-main">
                   <%= langer.BLOG_HEADING %>
                 </h2>
-                <div class="row">
+                <div class="row news__row">
                   <div class="col-xl-4 col-md-4 col-sm-12 col-xs-12 news__card-main">
                     <img class="news__img-main" src="/static/images/blog/post-1.jpg">
                     <div class="news__block-main">

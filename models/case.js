@@ -4,7 +4,7 @@ var CaseSchema = mongoose.Schema({
     en: {
         name: {type: String},
     },
-    ua: {
+    uk: {
         name: {type: String},
     },
     ru: {
