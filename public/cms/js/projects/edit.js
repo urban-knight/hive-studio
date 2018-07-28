@@ -230,7 +230,7 @@ $(document).ready(function () {
     $('.selectpicker[name="project[category]"]').selectpicker('val', JSON.stringify(category));
 
     // Populate Data-array displays
-    var keys = ['scope-en', 'scope-ua', 'scope-ru'];
+    var keys = ['scope-en', 'scope-uk', 'scope-ru'];
     keys.forEach(function (key) { populateDisplay(key) }, this);
     activateRemoveBtn();
     activateEditBtn();
