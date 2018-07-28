@@ -168,7 +168,7 @@ $(document).ready(function () {
     });
 
     // Populate Data-array displays
-    var keys = ['keywords-en', 'keywords-ua', 'keywords-ru'];
+    var keys = ['keywords-en', 'keywords-uk', 'keywords-ru'];
     keys.forEach(function (key) { populateDisplay(key) }, this);
     activateRemoveBtn();
     activateEditBtn();

@@ -106,7 +106,7 @@
 							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
 						</li>
 						<li role="presentation">
-							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+							<a data-toggle="tab" href="#lang_uk" class="panel-title">Ukrainian</a>
 						</li>
 						<li role="presentation">
 							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
@@ -119,7 +119,7 @@
 									<label>URL: </label>
 									<div class="input-group">
 										<span class="input-group-addon" id="url-addon" lang="en">
-											<strong>https://www.hive-studio.net/blog/<%= activeCategory.en.url %>/</strong>
+											<strong>https://hive-studio.net/blog/<%= activeCategory.en.url %>/</strong>
 										</span>
 										<input class="form-control post-url" type="text" name="post[en][url]" lang="en" aria-describedby="url-addon" value="<%= post.en.url %>" required>
 									</div>
@@ -140,30 +140,30 @@
 									<textarea id="en-post-body" class="form-control post-body" type="text" name="post[en][body]" lang="en" rows="12"><%= post.en.body %></textarea>
 								</div>
 							</div>
-							<div id="lang_ua" class="tab-pane fade in">
+							<div id="lang_uk" class="tab-pane fade in">
 								<div class="form-group">
 									<label>URL: </label>
 									<div class="input-group">
-										<span class="input-group-addon" id="url-addon" lang="ua">
-											<strong>https://www.ua.hive-studio.net/blog/<%= activeCategory.ua.url %>/</strong>
+										<span class="input-group-addon" id="url-addon" lang="uk">
+											<strong>https://hive-studio.net/uk/blog/<%= activeCategory.uk.url %>/</strong>
 										</span>
-										<input class="form-control post-url" type="text" name="post[ua][url]" lang="uk" aria-describedby="url-addon" value="<%= post.ua.url %>" required>
+										<input class="form-control post-url" type="text" name="post[uk][url]" lang="uk" aria-describedby="url-addon" value="<%= post.uk.url %>" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Title: </label>
 									<a class="btn btn-primary btn-lang" target="post-title" lang="uk">translate</a>
-									<input class="form-control post-title" type="text" name="post[ua][title]" lang="uk" value="<%= post.ua.title %>" required>
+									<input class="form-control post-title" type="text" name="post[uk][title]" lang="uk" value="<%= post.uk.title %>" required>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Description: </label>
 									<a class="btn btn-primary btn-lang" target="post-desc" lang="uk">translate</a>
-									<textarea id="uk-post-desc" class="form-control post-desc" type="text" name="post[ua][desc]" lang="uk" rows="6"><%= post.ua.desc %></textarea>
+									<textarea id="uk-post-desc" class="form-control post-desc" type="text" name="post[uk][desc]" lang="uk" rows="6"><%= post.uk.desc %></textarea>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Post Body: </label>
 									<a class="btn btn-primary btn-lang" target="post-body" lang="uk">translate</a>
-									<textarea id="uk-post-body" class="form-control post-body" type="text" name="post[ua][body]" lang="uk" rows="12"><%= post.ua.body %></textarea>
+									<textarea id="uk-post-body" class="form-control post-body" type="text" name="post[uk][body]" lang="uk" rows="12"><%= post.uk.body %></textarea>
 								</div>
 							</div>
 							<div id="lang_ru" class="tab-pane fade in">
@@ -171,7 +171,7 @@
 									<label>URL: </label>
 									<div class="input-group">
 										<span class="input-group-addon" id="url-addon" lang="ru">
-											<strong>https://www.ru.hive-studio.net/blog/<%= activeCategory.ru.url %>/</strong>
+											<strong>https://hive-studio.net/ru/blog/<%= activeCategory.ru.url %>/</strong>
 										</span>
 										<input class="form-control post-url" type="text" name="post[ru][url]" lang="ru" aria-describedby="url-addon" value="<%= post.ru.url %>" required>
 									</div>

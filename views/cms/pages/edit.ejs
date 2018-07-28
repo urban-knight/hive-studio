@@ -29,7 +29,7 @@
 							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
 						</li>
 						<li role="presentation">
-							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+							<a data-toggle="tab" href="#lang_uk" class="panel-title">Ukrainian</a>
 						</li>
 						<li role="presentation">
 							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
@@ -42,7 +42,7 @@
 									<label>URL: </label>
 									<div class="input-group">
 										<span class="input-group-addon" id="url-addon">
-											<strong>https://www.hive-studio.net/</strong>
+											<strong>https://hive-studio.net/</strong>
 										</span>
 										<input class="form-control page-url" type="text" name="page[en][url]" lang="en" aria-describedby="url-addon" value="<%= page.en.url %>" required>
 									</div>
@@ -83,37 +83,37 @@
   									</div>
   								</div>
 							</div>
-							<div id="lang_ua" class="tab-pane fade in">
+							<div id="lang_uk" class="tab-pane fade in">
 								<div class="form-group">
 									<label>URL: </label>
 									<div class="input-group">
 										<span class="input-group-addon" id="url-addon">
-											<strong>https://www.ua.hive-studio.net/</strong>
+											<strong>https://hive-studio.net/uk/</strong>
 										</span>
-										<input class="form-control page-url" type="text" name="page[ua][url]" lang="uk" aria-describedby="url-addon" value="<%= page.ua.url %>" required>
+										<input class="form-control page-url" type="text" name="page[uk][url]" lang="uk" aria-describedby="url-addon" value="<%= page.uk.url %>" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Name: </label>
 									<a class="btn btn-primary btn-lang" target="page-name" lang="uk">translate</a>
-									<input class="form-control page-name" type="text" name="page[ua][name]" lang="uk" value="<%= page.ua.name %>" required>
+									<input class="form-control page-name" type="text" name="page[uk][name]" lang="uk" value="<%= page.uk.name %>" required>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Short Description: </label>
 									<a class="btn btn-primary btn-lang" target="page-short-desc" lang="uk">translate</a>
-									<input class="form-control page-short-desc" type="text" name="page[ua][short_desc]" lang="uk" value="<%= page.ua.short_desc %>" required>
+									<input class="form-control page-short-desc" type="text" name="page[uk][short_desc]" lang="uk" value="<%= page.uk.short_desc %>" required>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Page Context: </label>
 									<a class="btn btn-primary btn-lang" target="page-short-desc" lang="uk">translate</a>
-									<input class="form-control page-context" type="text" name="page[ua][page_context]" lang="uk" value="<%= page.ua.page_context %>" required>
+									<input class="form-control page-context" type="text" name="page[uk][page_context]" lang="uk" value="<%= page.uk.page_context %>" required>
 								</div>
 								<div class="form-group">
 									<label class="data-params">Description: </label>
 									<a class="btn btn-primary btn-lang" target="page-desc" lang="uk">translate</a>
-									<textarea id="uk-page-desc" class="form-control page-desc" type="text" name="page[ua][desc]" lang="uk" rows="6"><%= page.ua.desc %></textarea>
+									<textarea id="uk-page-desc" class="form-control page-desc" type="text" name="page[uk][desc]" lang="uk" rows="6"><%= page.uk.desc %></textarea>
 								</div>
-								<input type="text" id="keywords-ua" name="page[ua][keywords]" value="<%= JSON.stringify(page.ua.keywords) %>" hidden>
+								<input type="text" id="keywords-uk" name="page[uk][keywords]" value="<%= JSON.stringify(page.uk.keywords) %>" hidden>
 								<label class="data-params">Keywords: </label>
 								<div class="item-container project-items row">
   									<div class="col-lg-12">
@@ -121,7 +121,7 @@
   									</div>
   									<div class="col-lg-12">
 	  									<div class="item-form hidden">
-										  	<input class="form-control item-field" type="text" name="keywords-ua">
+										  	<input class="form-control item-field" type="text" name="keywords-uk">
 	  										<a class="btn btn-primary-inversed item-cancel"><i class="glyphicon glyphicon-remove"></i></a>
 	  										<a class="btn btn-primary-inversed item-save"><i class="glyphicon glyphicon-ok"></i></a>
 	  									</div> 
@@ -134,7 +134,7 @@
 									<label>URL: </label>
 									<div class="input-group">
 										<span class="input-group-addon" id="url-addon">
-											<strong>https://www.ru.hive-studio.net/</strong>
+											<strong>https://hive-studio.net/ru/</strong>
 										</span>
 										<input class="form-control page-url" type="text" name="page[ru][url]" lang="ru" aria-describedby="url-addon" value="<%= page.ru.url %>" required>
 									</div>

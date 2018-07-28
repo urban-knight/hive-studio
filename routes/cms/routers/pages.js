@@ -17,8 +17,7 @@ router.get("/new", wrap(async (req, res) => {
 router.post("/", wrap(async (req, res) => {
     var page = req.body.page;
 
-    var langs = ["en", "ua", "ru"];
-    for (lang of langs) {
+    for (lang of global.langs) {
         if (typeof page[lang].keywords == "string") {
             page[lang].keywords = JSON.parse(page[lang].keywords);
         }
@@ -40,8 +39,7 @@ router.put("/:id", wrap(async (req, res) => {
     var id = req.params.id;
     var page = req.body.page;
 
-    var langs = ["en", "ua", "ru"];
-    for (lang of langs) {
+    for (lang of global.langs) {
         if (typeof page[lang].keywords == "string") {
             page[lang].keywords = JSON.parse(page[lang].keywords);
         }
