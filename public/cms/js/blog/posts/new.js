@@ -17,7 +17,7 @@ var append = function (tag) {
 };
 
 function appendCatURL(category){
-    var langs = ["en", "ua", "ru"];
+    var langs = ["en", "uk", "ru"];
 
     for (lang of langs){
         var url = $(".input-group-addon[lang='" + lang + "']").find("strong").text();
