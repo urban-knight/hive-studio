@@ -9,7 +9,7 @@
 							<a data-toggle="tab" href="#lang_en" class="panel-title">English</a>
 						</li>
 						<li role="presentation">
-							<a data-toggle="tab" href="#lang_ua" class="panel-title">Ukrainian</a>
+							<a data-toggle="tab" href="#lang_uk" class="panel-title">Ukrainian</a>
 						</li>
 						<li role="presentation">
 							<a data-toggle="tab" href="#lang_ru" class="panel-title">Russian</a>
@@ -23,7 +23,7 @@
 										<label>URL: </label>
 										<div class="input-group">
 											<span class="input-group-addon" id="url-addon">
-												<strong>https://www.hive-studio.net/products/</strong>
+												<strong>https://hive-studio.net/products/</strong>
 											</span>
 											<input class="form-control product-url" type="text" name="product[en][url]" lang="en" aria-describedby="url-addon" value="<%= product.en.url %>" required>
 										</div>
@@ -49,35 +49,35 @@
 										<textarea id="en-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[en][ext_desc]" lang="en" rows="12" ><%= product.en.ext_desc %></textarea>
 									</div>
 								</div>
-								<div id="lang_ua" class="tab-pane fade in">
+								<div id="lang_uk" class="tab-pane fade in">
 									<div class="form-group">
 										<label>URL: </label>
 										<div class="input-group">
 											<span class="input-group-addon" id="url-addon">
-												<strong>https://www.ua.hive-studio.net/products/</strong>
+												<strong>https://hive-studio.net/uk/produkty/</strong>
 											</span>
-											<input class="form-control product-url" type="text" name="product[ua][url]" lang="uk" aria-describedby="url-addon" value="<%= product.ua.url %>" required>
+											<input class="form-control product-url" type="text" name="product[uk][url]" lang="uk" aria-describedby="url-addon" value="<%= product.uk.url %>" required>
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="data-params">Name: </label>
 										<a class="btn btn-primary btn-lang" target="product-name" lang="uk">translate</a>
-										<input class="form-control product-name" type="text" name="product[ua][name]" lang="uk" value="<%= product.ua.name %>" required>
+										<input class="form-control product-name" type="text" name="product[uk][name]" lang="uk" value="<%= product.uk.name %>" required>
 									</div>
 									<div class="form-group">
 										<label class="data-params">Price: </label>
 										<a class="btn btn-primary btn-lang" target="product-price" lang="uk">translate</a>
-										<input class="form-control product-price" type="text" name="product[ua][price]" lang="uk" value="<%= product.ua.price %>" required>
+										<input class="form-control product-price" type="text" name="product[uk][price]" lang="uk" value="<%= product.uk.price %>" required>
 									</div>
 									<div class="form-group">
 										<label class="data-params">Description: </label>
 										<a class="btn btn-primary btn-lang" target="product-desc" lang="uk">translate</a>
-										<textarea id="uk-product-desc" class="form-control product-desc" type="text" name="product[ua][desc]" lang="uk" rows="6" ><%= product.ua.desc %></textarea>
+										<textarea id="uk-product-desc" class="form-control product-desc" type="text" name="product[uk][desc]" lang="uk" rows="6" ><%= product.uk.desc %></textarea>
 									</div>
 									<div class="form-group">
 										<label class="data-params">Extended description: </label>
 										<a class="btn btn-primary btn-lang" target="product-ext-desc" lang="uk">translate</a>
-										<textarea id="uk-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[ua][ext_desc]" lang="uk" rows="12" ><%= product.ua.ext_desc %></textarea>
+										<textarea id="uk-product-ext-desc" class="form-control product-ext-desc" type="text" name="product[uk][ext_desc]" lang="uk" rows="12" ><%= product.uk.ext_desc %></textarea>
 									</div>
 								</div>
 								<div id="lang_ru" class="tab-pane fade in">
@@ -85,7 +85,7 @@
 										<label>URL: </label>
 										<div class="input-group">
 											<span class="input-group-addon" id="url-addon">
-												<strong>https://www.ru.hive-studio.net/products/</strong>
+												<strong>https://hive-studio.net/ru/produkty/</strong>
 											</span>
 											<input class="form-control product-url" type="text" name="product[ru][url]" lang="ru" aria-describedby="url-addon" value="<%= product.ru.url %>" required>
 										</div>

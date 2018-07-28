@@ -51,8 +51,7 @@ router.post("/", wrap(async (req, res) => {
             project.category = JSON.parse(project.category);
         }
 
-        var langs = ["en", "ua", "ru"];
-        for (lang of langs) {
+        for (lang of global.langs) {
             if (typeof project[lang].scope == "string") {
                 project[lang].scope = JSON.parse(project[lang].scope);
             }
@@ -108,8 +107,7 @@ router.put("/:id", wrap(async (req, res) => {
         project.category = JSON.parse(project.category);
     }
 
-    var langs = ["en", "ua", "ru"];
-    for (lang of langs) {
+    for (lang of global.langs) {
         if (typeof project[lang].scope == "string") {
             project[lang].scope = JSON.parse(project[lang].scope);
         }
